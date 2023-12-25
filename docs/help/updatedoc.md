@@ -4,18 +4,60 @@
 
 1. 安装文档环境可以参考[mkdocs.org](https://www.mkdocs.org)
 
+	1.1  `pip install mkdocs-pdf-export-plugin`之后在配置文件中启用插件
+	```
+	plugins:
+	  - pdf-export
+	```
+
+	1.2 `pip install pymdown-extensions`
+
+	1.3 `pip install markdown-callouts`
+
+	1.4 `pip install mdx-gh-links`
+
+	1.5 `pip install mkdocs-click`
+
+	1.6 `pip install mkdocs-autorefs`
+
+	1.7 `pip install mkdocstrings`和`pip install 'mkdocstrings[crystal,python]'`
+
+	1.8 ` pip install mkdocs-gitbook`
+
+	1.9 ` pip install mkdocs-with-pdf`
+	```
+	plugins:
+	- with-pdf
+	```
+
+	1.10 `$ pip install markdown-checklist`
+	```
+	markdown_extensions:
+	- markdown_checklist.extension
+	```
+
+	1.11 `pip install mkdocs-video`
+	```
+	plugins:
+    - mkdocs-video
+	```
+
+
+
 2. 修改文档内容
 
     2.1 运行`git clone https://github.com/RflyBUAA/RflySimRTDoc.git`
 
-    2.2 运行`git checkout master` (注意：默认分支是gh-pages, 所以需要手动切换)
+    2.2 运行`git checkout master` (注意：默认分支可能是`gh-pages`, 开发前请确认当前分支不是`gh-pages`)
+
+	2.3 修改文档，markdown格式
+
+	2.4 运行`mkdocs build`，之后会在根目录下生成/更新`site`文件夹下的内容
     
-    2.3 运行`mkdocs serve`可以本地预览效果
+    2.5 运行`mkdocs serve`可以本地预览效果
 
-3. 运行`mkdocs build`，之后会在根目录下生成/更新`site`文件夹下的内容
+3. 运行`mkdocs gh-deploy`以提交site下的更改
 
-4. 运行`mkdocs gh-deploy`以提交site下的更改
+4. 如果`mkdocs gh-deploy`本身没能自动将更改push到远端仓库，那么手动`git push origin gh-pages` 
 
-5. 如果`mkdocs gh-deploy`本身没能自动将更改push到远端仓库，那么手动`git push origin gh-pages` 
-
-6. 提交master分支的更改
+5. 提交master分支的更改
