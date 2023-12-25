@@ -1,0 +1,12 @@
+site_name: RflySim-RT
+site_url: https://rflysimRT.github.io/
+nav:
+    - 快速开始: 
+        - 简介: quickstart/快速开始.md
+    - 帮助:
+        - 如何更新文档: help/updatedoc.md
+
+theme: 
+    name: readthedocs
+    # name: mkdocs
+    highlightjs: true
