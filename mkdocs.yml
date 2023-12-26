@@ -10,8 +10,8 @@ nav:
         - 快速开始: quickstart/快速开始.md
     - 帮助:
         - 如何更新文档: help/updatedoc.md
-    # - 测试:
-    #     - 测试: test/test.md
+    - 测试:
+        - 测试: test/test.md
 
 theme: 
     name: readthedocs
@@ -43,12 +43,20 @@ markdown_extensions:
       repo: mkdocs
   - mkdocs-click
   - markdown_checklist.extension
+  - markdown_captions
 
 plugins:
+  - search
   - autorefs
   - mkdocs-video:
       is_video: true
       video_autoplay: false
+  - resize-images:
+      source-dir: img-large
+      target-dir: img
+      enable_cache: True
+      size: [400, 400]
+      extensions: ['.jpg', '.jpeg', '.png', '.gif', '.svg']
 
 # watch:
 #   - mkdocs

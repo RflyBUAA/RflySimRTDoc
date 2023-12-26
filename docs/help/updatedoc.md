@@ -7,7 +7,7 @@
 	1.1  `pip install mkdocs-pdf-export-plugin`之后在配置文件中启用插件
 	```
 	plugins:
-	  - pdf-export
+		- pdf-export
 	```
 
 	1.2 `pip install pymdown-extensions`
@@ -22,26 +22,43 @@
 
 	1.7 `pip install mkdocstrings`和`pip install 'mkdocstrings[crystal,python]'`
 
-	1.8 ` pip install mkdocs-gitbook`
+	1.8 `pip install mkdocs-gitbook`
 
-	1.9 ` pip install mkdocs-with-pdf`
+	1.9 `pip install mkdocs-with-pdf`
 	```
 	plugins:
-	- with-pdf
+		- with-pdf
 	```
 
-	1.10 `$ pip install markdown-checklist`
+	1.10 `pip install markdown-checklist`
 	```
 	markdown_extensions:
-	- markdown_checklist.extension
+		- markdown_checklist.extension
 	```
 
 	1.11 `pip install mkdocs-video`
 	```
 	plugins:
-    - mkdocs-video
+    	- mkdocs-video
 	```
 
+	1.12 `pip install mkdocs-git-revision-date-localized-plugin`
+	```
+	plugins:
+  		- git-revision-date-localized
+	```
+
+	1.13 `pip install markdown-captions`
+	```
+	markdown_extensions:
+  		- markdown_captions
+	```
+
+	1.14 `pip install mkdocs-resize-images`
+	```
+	plugins:
+  		- resize-images
+	```
 
 
 2. 修改文档内容
