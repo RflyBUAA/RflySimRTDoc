@@ -42,7 +42,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> RflySim-RT
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -50,23 +54,23 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">快速开始</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#2">2. 硬件连接</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 硬件连接</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#21">2.1 关键硬件清单</a>
+    <li class="toctree-l3"><a class="reference internal" href="#11">1.1 关键硬件清单</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#23">2.3 硬件接口定义图</a>
+    <li class="toctree-l3"><a class="reference internal" href="#12">1.2 硬件接口定义图</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#24">2.4 其他连接</a>
+    <li class="toctree-l3"><a class="reference internal" href="#13">1.3 其他连接</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3">3. 飞控固件设置</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. 飞控固件设置</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4">4. 固件参数设置</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3">3. 固件参数设置</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5">5. 开发板固件安装</a>
+    <li class="toctree-l2"><a class="reference internal" href="#4">4. 开发板固件安装</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#6">6. 飞控上电</a>
+    <li class="toctree-l2"><a class="reference internal" href="#5">5. 飞控上电</a>
     </li>
     </ul>
                   </li>
@@ -74,6 +78,11 @@
               <p class="caption"><span class="caption-text">帮助</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../help/updatedoc/">如何更新文档</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">测试</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
                   </li>
               </ul>
       </div>
@@ -102,61 +111,97 @@
             <div class="section" itemprop="articleBody">
               
                 <div><h1 id="_1">快速开始<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
-<h2 id="2">2. 硬件连接<a class="headerlink" href="#2" title="Permanent link"></a></h2>
-<h3 id="21">2.1 关键硬件清单<a class="headerlink" href="#21" title="Permanent link"></a></h3>
+<p>首先介绍硬件连接，读者请按照文档指引完成硬件连接。之后介绍软件配置，读者可据此实现第一次运行。</p>
+<h2 id="1">1. 硬件连接<a class="headerlink" href="#1" title="Permanent link"></a></h2>
+<h3 id="11">1.1 关键硬件清单<a class="headerlink" href="#11" title="Permanent link"></a></h3>
 <ul>
-<li>ALINX MPSoC开发板, 开发板型号AXU2CG-E, 主控芯片型号XCZU2CG-SFVC784-1-E</li>
-<li>Pixhawk 4（该型号目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。Pixhawk 6系类没有提供外置SPI接口）</li>
-<li>GH1.25转杜邦连接线</li>
-<li><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&amp;id=609757779633&amp;ns=1&amp;abbucket=8&amp;skuId=4447338308660">正点原子串口转wifi模块</a></li>
+<li>仿真器：ALINX MPSoC开发板，开发板型号AXU2CG-E，主控芯片型号XCZU2CG-SFVC784-1-E</li>
+<li>自动驾驶仪：Pixhawk 4</li>
+<li>连接线：GH1.25转杜邦连接线</li>
+<li>通信模块：<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&amp;id=609757779633&amp;ns=1&amp;abbucket=8&amp;skuId=4447338308660">正点原子串口转wifi模块</a></li>
 </ul>
-<!-- WARNING: Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。Pixhawk 6系列没有提供外置SPI接口 -->
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。Pixhawk 6系列没有提供外置SPI接口</p>
+<p>Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。Pixhawk 6系列没有提供外置SPI接口。</p>
 </div>
-<h3 id="23">2.3 硬件接口定义图<a class="headerlink" href="#23" title="Permanent link"></a></h3>
+<h3 id="12">1.2 硬件接口定义图<a class="headerlink" href="#12" title="Permanent link"></a></h3>
 <p>将飞控与开发板对应引脚使用GH1.25杜邦线对应连接在一起, 引脚定义查看下面几副图.  </p>
 <p><strong>pixhawk 4 接口定义图</strong></p>
-<blockquote>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>每个接口的左数第一个引脚是PIN 1, 也就是VCC</p>
-</blockquote>
-</blockquote>
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627393529101-bbd46a6d-b028-48f9-b1b0-a6badc5ada6e.png#averageHue=%23ececec&height=506&id=u1c6491a7&originHeight=506&originWidth=428&originalType=binary&ratio=1&rotation=0&showTitle=false&size=46557&status=done&style=none&title=&width=428) -->
-
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627450886931-a7743dbe-4e5b-4b0d-97b2-ea6686ae5a51.png#averageHue=%23889792&height=503&id=uf8126912&originHeight=648&originWidth=681&originalType=binary&ratio=1&rotation=0&showTitle=false&size=946513&status=done&style=none&title=&width=529) -->
-
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627393619541-fd66ba9d-cb8c-450d-bf8c-02481b2a5b9d.png#averageHue=%23f4f3f3&height=472&id=u5bafd894&originHeight=472&originWidth=631&originalType=binary&ratio=1&rotation=0&showTitle=false&size=44326&status=done&style=none&title=&width=631)! -->
-
-<!-- [image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627393693107-afb43656-12c8-46db-96f1-55970b879e00.png#averageHue=%23f2f2f1&height=541&id=uea23bbf0&originHeight=541&originWidth=610&originalType=binary&ratio=1&rotation=0&showTitle=false&size=54559&status=done&style=none&title=&width=610) -->
-
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627393717322-62410e1c-ac24-4bff-a627-32462a05eb9c.png#averageHue=%23f4f3f2&height=714&id=u6d916738&originHeight=714&originWidth=627&originalType=binary&ratio=1&rotation=0&showTitle=false&size=69934&status=done&style=none&title=&width=627) -->
-
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627393763560-84d2655c-e2a3-48df-995c-7c4f8fccc813.png#averageHue=%23f2f2f1&height=541&id=ud649b3cf&originHeight=541&originWidth=617&originalType=binary&ratio=1&rotation=0&showTitle=false&size=57279&status=done&style=none&title=&width=617) -->
-
-<!-- [Pixhawk4-Pinouts.pdf](https://www.yuque.com/attachments/yuque/0/2021/pdf/1166025/1627387378406-23e412b3-557b-4c01-bcb7-93daf58663f1.pdf) -->
-
+</div>
+<p>
+<figure><img src="../../img/pixhawk4pinout.png"><figcaption>图：Pixhawk 4 上用到的接口</figcaption>
+</figure>
+</p>
+<p>
+<figure><img src="../../img/pixhawk4connect.png"><figcaption>图：Pixhawk 4 连接实物图</figcaption>
+</figure>
+</p>
+<p>
+<figure><img src="../../img/pixhawki2c.png"><figcaption>图：Pixhawk I2C接口定义</figcaption>
+</figure>
+</p>
+<p>
+<figure><img src="../../img/pixhawkgps.png"><figcaption>图：Pixhawk GPS接口定义</figcaption>
+</figure>
+</p>
+<p>
+<figure><img src="../../img/pixhawkspi.png"><figcaption>图：Pixhawk SPI接口定义</figcaption>
+</figure>
+</p>
+<p>
+<figure><img src="../../img/pixhawkpwmout.png"><figcaption>图：Pixhawk PWM接口定义</figcaption>
+</figure>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>以上给出了所用到的接口定义。更详细的接口定义可以参考
+<a href="https://www.yuque.com/attachments/yuque/0/2021/pdf/1166025/1627387378406-23e412b3-557b-4c01-bcb7-93daf58663f1.pdf">Pixhawk4-Pinouts.pdf</a></p>
+</div>
 <p><strong>开发板IO接口定义图, 管脚和红框中的定义标记依次对应</strong></p>
-<!-- ![开发板管脚定义.png](https://cdn.nlark.com/yuque/0/2022/png/1166025/1651756798075-09daedfc-e1e9-42d0-aac4-1bae9356ed41.png#averageHue=%23889d87&clientId=u50b462d9-52dd-4&from=drop&id=u187c2ac2&originHeight=1191&originWidth=1739&originalType=binary&ratio=1&rotation=0&showTitle=false&size=2924980&status=done&style=none&taskId=ubb531707-86c7-4ecd-9703-cf8405667d6&title=) -->
-
-<p>如上图, 将串口wifi模块安装到开发板对应的位置上(位置见上图左下角).  效果图如下</p>
+<p>
+<figure><img src="../../img-large/%E5%BC%80%E5%8F%91%E6%9D%BF%E7%AE%A1%E8%84%9A%E5%AE%9A%E4%B9%89.png"><figcaption>图：开发板IO接口定义</figcaption>
+</figure>
+</p>
+<p>如上图（<code>图：开发板IO接口定义</code>）所示，将串口wifi模块安装到开发板左下角位置上。效果图如下</p>
+<p>
+<figure><img src="../../img/wifi%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%88%E6%9E%9C.png"><figcaption>图：wifi模块的安装效果</figcaption>
+</figure>
+</p>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627398665804-20ddf57c-881a-4e30-9eb3-e97b722219c7.png#averageHue=%236b7274&height=434&id=u6f8a0674&originHeight=737&originWidth=821&originalType=binary&ratio=1&rotation=0&showTitle=false&size=799912&status=done&style=none&title=&width=484) -->
 
-<h3 id="24">2.4 其他连接<a class="headerlink" href="#24" title="Permanent link"></a></h3>
-<ol>
-<li>连接开发板的PS串口到电脑(该串口可用于系统调试, 建议使用<a href="https://mobaxterm.mobatek.net/"><strong>MobaXterm</strong></a>[Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/)[SecureCRT](https://www.vandyke.com/products/securecrt/index.html)之类的软件连接串口, 实现命令行功能, 串口助手之类的软件体验稍差)</li>
-<li>开发板电源(<a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.32f12e8dZlbJXh&amp;id=599221327119&amp;_u=rqvdro2801a">可以购买带开关的DC电源线, 免去电源插拔的繁琐操作</a>)</li>
-</ol>
-<h2 id="3">3. 飞控固件设置<a class="headerlink" href="#3" title="Permanent link"></a></h2>
-<p>SocFPGA HIL仿真平台通过模拟真实的传感器实现半物理仿真, 故而需要让飞控默认使用外置传感器与开发板进行通信, 故而<strong>需要对飞控的传感器启动脚本进行简单修改重新编译烧录到飞控中</strong>. 
-<strong>飞控固件支持的版本是v1.11，对于v1.12的支持请参考</strong><a href="https://www.yuque.com/rflysocfpgahil/lkdltx/goxg0w?view=doc_embed">如何使用PX4 1.12固件</a><strong>, ** 对于使用RflySim可以在安装目录下找到飞控固件目录</strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\中的rc.board_sensors文件, **</p>
-<blockquote>
-<p>如果使用官方原生固件, 同理, 也需要到对应的目录Firmware\boards\px4\fmu-v5\init\下修改rc.board_sensors文件, 需要修改内容也是一样的</p>
-</blockquote>
-<p>使用编辑器打开rc.board_sensors, 建议使用vscode之类的编辑软件编辑, 修改如下
-</p><pre class="highlight"><code class="language-shell">#!/bin/sh
+<h3 id="13">1.3 其他连接<a class="headerlink" href="#13" title="Permanent link"></a></h3>
+<p>1.将开发板的PS串口通过数据线与电脑USB接口连接</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>串口用于系统调试，建议使用<a href="https://mobaxterm.mobatek.net/"><strong>MobaXterm</strong></a>\
+<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a>\
+<a href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a>\
+<a href="https://github.com/kingToolbox/WindTerm">WindTerm</a>
+等的工具在电脑上打开串口连接，实现命令行功能。尽管其他的串口助手软件也可使用，但是无法实现命令行的交互效果。</p>
+</div>
+<p>2.连接开发板电源</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.32f12e8dZlbJXh&amp;id=599221327119&amp;_u=rqvdro2801a">可以购买带开关的DC电源线, 免去电源插拔的繁琐操作</a></p>
+</div>
+<h2 id="2">2. 飞控固件设置<a class="headerlink" href="#2" title="Permanent link"></a></h2>
+<p><strong>RflySim-RT</strong>借助FPGA模拟真实的传感器逻辑从而实现硬件在环仿真的目的。比较通用的做法是将原有传感器去除，并在原有焊接接口上飞线并与仿真平台连接。好在，Pixhawk 4上提供了外置的SPI和I2C接口，可以借助这些接口直接与仿真器连接。因此，需要让飞控默认使用外置SPI和I2C接口，与仿真器进行通信。
+这里采用修改PX4启动脚本的方式让自动驾驶仪在启动的时候优先尝试连接外部SPI的IMU，从而实现一次烧录，既能用于仿真也能用于实飞的目的。这里修改<strong>飞控的传感器启动脚本进行简单修改重新编译烧录到飞控中</strong>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>默认支持PX4 v1.11版本的固件。对于v1.12的支持请参考<a href="https://www.yuque.com/rflysocfpgahil/lkdltx/goxg0w?view=doc_embed">如何使用PX4 1.12固件</a>。区别主要在于启动脚本的修改内容有细微的变化。 </p>
+</div>
+<p>这里假设用户使用RflySim进行控制算法的开发。为了能够与RflySim-RT实现仿真，需要修改固件源码的启动脚本。对于Pixhawk 4飞控而言，启动脚本路径位于<strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\rc.board_sensors</strong>。
+其他类型的飞控可在路径 <strong>\Firmware\boards</strong> 中查找。<code>X</code>是RflySim的安装盘符，默认是C盘。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果使用官方原生固件，也需要到对应的目录<code>Firmware\boards\px4\fmu-v5\init\</code>下修改rc.board_sensors文件，需要修改内容也是一样的。建议使用vscode之类的编辑软件。因为回车符的区别，不建议使用Windows系统的记事本。</p>
+</div>
+<p>使用编辑器打开rc.board_sensors。修改为如下内容
+</p><pre class="highlight"><code>#!/bin/sh
 #
 # PX4 FMUv5 specific board sensors init
 #------------------------------------------------------------------------------
@@ -185,55 +230,54 @@ ms5611 -s start
 fi
 #icm20689 -S start
 #ms5611 -X start</code></pre>
-修改后的脚本逻辑是优先启动外置传感器, 如果启动失败则会启动内置传感器, 这样相同的固件可以不经修改既可以运行在本仿真平台上, 也可以实飞. 当然了, 还是建议仿真一个飞控, 实飞一个飞控.
-<strong>请再次确认飞控中安装的PX4飞控固件版本是1.11.3版本!</strong>
-<strong>并且飞控的模式是四旋翼!</strong>
-<h2 id="4">4. 固件参数设置<a class="headerlink" href="#4" title="Permanent link"></a></h2>
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2022/png/1166025/1645510605585-f56a5cab-38cb-46b7-93a5-92def97cd6aa.png#averageHue=%23282524&clientId=u08cbd0eb-5f2e-4&from=paste&height=29&id=uf7b9a51d&originHeight=27&originWidth=640&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5828&status=done&style=none&taskId=u4d86f03d-69a0-406a-b10f-8e0d3dbf3ee&title=&width=692) -->
-
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2022/png/1166025/1645510733198-50b354c6-e1cd-4e29-a958-267e0006d63b.png#averageHue=%232a2725&clientId=u08cbd0eb-5f2e-4&from=paste&height=34&id=uebd37f1e&originHeight=30&originWidth=618&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7849&status=done&style=none&taskId=ucfdcfeab-6d4f-448e-bec2-5c6741fdb75&title=&width=692) -->
-<h2 id="5">5. 开发板固件安装<a class="headerlink" href="#5" title="Permanent link"></a></h2>
-<p>开发板采用SD启动方式. 步骤如下:</p>
-<ol>
-<li>
-<p>从开发板上取下SD卡, 使用读卡器将固件复制到SD卡根目录上.  固件下载链接：<a href="https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653">https://bhpan.buaa.edu.cn:443/link/    1FF3201F500F3D00A9C483235A36B653</a>有效期限：2023-09-01 23:59</p>
-<blockquote>
-<p><strong>SD卡需要提前格式化为FAT32格式!! 一般默认也是FAT32格式. **
-</strong>固件的名字必须是BOOT.bin**</p>
-</blockquote>
-</li>
-<li>
-<p>确保开发板的上电启动模式为SD卡模式(需要设置拨码开关).</p>
-<blockquote>
-<p>拨码开关设置参考下图, 应设置为0101, 对应到图中从左到右是<strong>上下上下</strong></p>
-</blockquote>
-</li>
-</ol>
-<!-- > ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627396480265-8544e806-bcf6-4f0c-90a4-4988783e9080.png#averageHue=%231f211e&height=207&id=vJWr5&originHeight=396&originWidth=1160&originalType=binary&ratio=1&rotation=0&showTitle=false&size=810277&status=done&style=none&title=&width=605) -->
-
-<ol>
-<li>将SD卡插回到开发板上.</li>
-</ol>
-<p>完成以上设置后, 给开发板通电, 并且连接USB到电脑, 可以在设备管理器中看到(<strong>可能需要安装驱动</strong>), 使用串口终端连接串口</p>
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627396642253-0f6ee54e-6d5b-46c9-a37d-6b2bbcdedeae.png#averageHue=%23f5f1ed&height=42&id=udbbda1a3&originHeight=42&originWidth=387&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7032&status=done&style=none&title=&width=387) -->
-<p>这里使用MobaXterm举例打开串口, 波特率设置为115200, 打开后在串口终端里输入<strong>help</strong>并且<strong>回车</strong></p>
-<!-- ![shell.gif](https://cdn.nlark.com/yuque/0/2021/gif/1166025/1627397344446-6c638b00-be4e-493a-9173-5699fe8b41ee.gif#averageHue=%23fcfcfb&height=909&id=u456abdcb&originHeight=909&originWidth=1627&originalType=binary&ratio=1&rotation=0&showTitle=false&size=621814&status=done&style=none&title=&width=1627) -->
-<p>当然也可以先连接串口再打开开发板, 或者按下开发板的复位键, 应该能看到更多启动信息</p>
-<!-- ![shell2.gif](https://cdn.nlark.com/yuque/0/2021/gif/1166025/1627397631533-cf07ba30-2b24-49d6-9575-f814a48c3e06.gif#averageHue=%23262626&height=778&id=u638e1feb&originHeight=778&originWidth=1383&originalType=binary&ratio=1&rotation=0&showTitle=false&size=301592&status=done&style=none&title=&width=1383) -->
-<p>如果连接了串口转wifi模块, 此时打开RflySim3D软件应该可以看到一架四旋翼飞行器出现在窗口中(如果没有显示，可能是被防火墙拦截，可以先关闭防火墙)</p>
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627397741790-b8d942db-2165-4b31-9297-0d349db6c5f7.png#averageHue=%234d5b39&height=720&id=u4672d79d&originHeight=720&originWidth=1280&originalType=binary&ratio=1&rotation=0&showTitle=false&size=2027812&status=done&style=none&title=&width=1280) -->
-
-<h2 id="6">6. 飞控上电<a class="headerlink" href="#6" title="Permanent link"></a></h2>
-<p>此时为飞控连接电脑(确保已经按照前面步骤重刷修改过启动脚本的固件), 打开QGC可以看到地面站连接到飞控. 在地面站的控制台中输入sensors status 回车, 可以看到飞控读取到的传感器信息. 这里演示的QGC版本比较新, 旧版本操作可能有出入但是基本相同.</p>
-<!-- ![QGC.gif](https://cdn.nlark.com/yuque/0/2021/gif/1166025/1627398206891-71b4ba41-5aa9-42d5-94b8-8703440db8fa.gif#averageHue=%235d6769&height=913&id=ufc1a3e51&originHeight=913&originWidth=1708&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7495071&status=done&style=none&title=&width=1708) -->
-<p>如果配置过程没问题得话, 可以获得传感器状态信息如下, 这些传感器数据实际上是FPGA模拟出来的, 飞控却会认为这是真实的传感器.  </p>
-<!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627398254378-871db728-274a-4df1-b0ba-6be5ac84584a.png#averageHue=%23383635&height=766&id=ud5bafd89&originHeight=766&originWidth=781&originalType=binary&ratio=1&rotation=0&showTitle=false&size=179455&status=done&style=none&title=&width=781) -->
-<p>如果没有上图效果请再次确认</p>
+<p>修改后的脚本逻辑是优先启动外置传感器，如果启动失败则会启动内置传感器，这样相同的固件可以不经修改既可以运行在本仿真平台上，也可以实飞。当然了，还是建议仿真一个飞控，实飞一个飞控。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <ul>
-<li>飞控的Px4 版本是1.11.3.</li>
-<li>且飞行模式是四旋翼模式.</li>
-<li>确认飞控和开发板物理接线正确. </li>
-<li>检查地线是否正确连接.</li>
+<li>请再次确认飞控中安装的PX4飞控固件版本是1.11.3版本。<br> 
+<img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E5%9B%BA%E4%BB%B6%E7%89%88%E6%9C%AC.png"></li>
+<li>且飞控的模式是四旋翼。<br>
+<img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E6%9C%BA%E6%9E%B6%E7%B1%BB%E5%9E%8B.png"></li>
+</ul>
+</div>
+<h2 id="3">3. 固件参数设置<a class="headerlink" href="#3" title="Permanent link"></a></h2>
+<p>成功运行仿真系统只需要修改以下参数为指定值，见下图
+<img alt="" src="../../img-large/SER_GPS1_BAUD.png"></p>
+<p><img alt="" src="../../img-large/GPS_UBX_DYNMODEL.png"></p>
+<h2 id="4">4. 开发板固件安装<a class="headerlink" href="#4" title="Permanent link"></a></h2>
+<p>开发板采用SD启动方式。操作步骤如下:</p>
+<p>1.从开发板上取下SD卡，使用读卡器将固件复制到SD卡根目录上。
+固件下载链接：<a href="https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653">https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653</a>有效期限：2023-09-01 23:59</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>SD卡需要提前格式化为FAT32格式。</li>
+<li>固件的名字必须是BOOT.bin。</li>
+</ul>
+</div>
+<p>2.通过拨码开关，设置开发板的上电启动模式为SD卡模式。拨码开关设置参考下图，应设置为0101，对应到图中从左到右是<strong>上下上下</strong>。</p>
+<p><img alt="" src="../../img-large/%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p>3.将SD卡插回到开发板上。</p>
+<hr>
+<p>完成以上设置后，给开发板通电，并且连接USB到电脑，可以在设备管理器中看到（<strong>确认已经安装CP210X的驱动</strong>），使用串口终端连接串口。</p>
+<p><img alt="" src="../../img-large/%E4%B8%B2%E5%8F%A3%E5%9C%A8%E8%AE%BE%E5%A4%87%E4%B8%8A%E7%9A%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p>这里使用MobaXterm举例打开串口，波特率设置为115200，打开后在串口终端里输入<strong>help</strong>并且<strong>回车</strong>。见下图：</p>
+<p><img alt="" src="../../img-large/shell.gif"></p>
+<p>当然也可以先连接串口再打开开发板，或者按下开发板的复位键，应该能看到更多启动信息。见下图：
+<img alt="" src="../../img-large/shell2.gif"></p>
+<p>如果连接了串口转wifi模块，打开RflySim3D软件应该可以看到一架四旋翼飞行器出现在窗口中（如果没有显示，请先检查wifi模块是否正常连接到局域网中）</p>
+<p><img alt="" src="../../img-large/%E5%9B%9B%E6%97%8B%E7%BF%BC%E9%A3%9E%E8%A1%8C%E5%99%A8%E5%9C%A83D%E4%B8%AD%E6%98%BE%E7%A4%BA.png"></p>
+<h2 id="5">5. 飞控上电<a class="headerlink" href="#5" title="Permanent link"></a></h2>
+<p>连接飞控与电脑（确保已经按照前面步骤重刷修改过启动脚本的固件），打开QGC可以看到地面站连接到飞控. 在地面站的控制台中输入<code>sensors status</code> 回车，可以看到飞控读取到的传感器信息。</p>
+<p><img alt="" src="../../img-large/QGC.gif"></p>
+<p>如果配置过程没问题得话，可以获得传感器状态信息如下图。这些传感器数据实际上是FPGA模拟出来的，飞控却会认为这是真实的传感器。</p>
+<p><img alt="" src="../../img-large/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F%E4%BC%A0%E6%84%9F%E5%99%A8%E8%BF%9E%E6%8E%A5.png"></p>
+<p>如果没有上图效果请再次确认  </p>
+<ul>
+<li>飞控的Px4 版本是1.11.3。</li>
+<li>且飞行模式是四旋翼模式。</li>
+<li>确认飞控和开发板物理接线正确。 </li>
+<li>检查地线是否正确连接。</li>
 </ul></div>
               
             </div>
@@ -275,6 +319,7 @@ fi
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
