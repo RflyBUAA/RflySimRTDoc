@@ -4,7 +4,7 @@
 
 1. 安装文档环境可以参考[mkdocs.org](https://www.mkdocs.org)
 
-	1.1  `pip install mkdocs-pdf-export-plugin`之后在配置文件中启用插件
+	1.1  `pip install mkdocs-pdf-export-plugin`之后在配置文件`mkdocs.yml`中启用插件
 	```
 	plugins:
 		- pdf-export
