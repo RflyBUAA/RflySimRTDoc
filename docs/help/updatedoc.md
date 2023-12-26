@@ -48,7 +48,7 @@
   		- git-revision-date-localized
 	```
 
-	1.13 `pip install markdown-captions`
+	1.13 `pip install markdown-captions`与`pip install mkdocs-video`在使用中存在冲突
 	```
 	markdown_extensions:
   		- markdown_captions

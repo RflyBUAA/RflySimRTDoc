@@ -43,7 +43,7 @@ markdown_extensions:
       repo: mkdocs
   - mkdocs-click
   - markdown_checklist.extension
-  - markdown_captions
+  # - markdown_captions
 
 plugins:
   - search
