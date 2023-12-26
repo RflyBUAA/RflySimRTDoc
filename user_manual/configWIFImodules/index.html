@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/user_manual/configWIFImodules/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>配置wifi模块 - RflySim-RT</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u914d\u7f6ewifi\u6a21\u5757";
+        var mkdocs_page_input_path = "user_manual/configWIFImodules.md";
+        var mkdocs_page_url = "/RflySimRTDoc/user_manual/configWIFImodules/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', "G-274394082");
+      </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RflySim-RT
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">快速开始</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quickstart/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/">快速开始</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">用户手册</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">配置wifi模块</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">初次使用</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">更换网络后：</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">更多设置请参考：</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configforPX41_12/">适配PX4 1.12固件</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../modifyModelParam/">修改模型参数</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensorsCalculate/">校准传感器</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">开发手册</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">更换用户定义模型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置用户定义模型参数</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">帮助</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../help/updatedoc/">如何更新文档</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">测试</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RflySim-RT</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">用户手册</li>
+      <li class="breadcrumb-item active">配置wifi模块</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/RflyBUAA/RflySimRTDoc/edit/master/docs/user_manual/configWIFImodules.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="wifi">配置WIFI模块<a class="headerlink" href="#wifi" title="Permanent link"></a></h1>
+<p>请自行准备USB转串口模块</p>
+<h2 id="_1">初次使用<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<p>第一次使用设置：无线模块连接到局域网路由器中（COM-SAT模式）采用UDP模式。PC通过USB转串口与wifi模块连接，通过串口AT指令配置。模块出厂<strong>默认波特率115200：</strong></p>
+<ol>
+<li><strong>AT+CWMODE=1</strong>  设置wifi模式为SAT，也就是作为网卡连接局域网</li>
+<li><strong>AT+RST</strong> 重启模块并生效</li>
+<li><strong>AT+CWJAP="E603","buaae603"</strong>  指定wifi名称和密码</li>
+<li><strong>AT+CIPMUX=0</strong>   开启单连接</li>
+<li><strong>AT+CIPSTART="UDP","192.168.1.XXX",14550 </strong>指定模块要转发的目标机地址和目标端口号</li>
+</ol>
+<h2 id="_2">更换网络后：<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<p>具体端口号需要根据自己的需要设置，文档中的14550只是QGC用的端口号，Rflysim3D用的（可能）是20010。同样使用串口AT指令设置：</p>
+<ul>
+<li><strong>退出透传模式：</strong>+++(不包括换行符，否则无效)</li>
+<li><strong>获得连接状态：AT+CIPSTATUS</strong></li>
+</ul>
+<!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357693609-64b1ba55-ad10-44d0-be4e-4cc18b0ce256.png#averageHue=%230d490d&height=66&id=KS4JA&originHeight=78&originWidth=391&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7433&status=done&style=none&title=&width=333) -->
+
+<ul>
+<li><strong>获取模块 IP 地址：AT+CIFSR</strong>  </li>
+</ul>
+<!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357074005-f527bd1d-80c8-4aa8-b2d5-4fd8572fae8f.png#averageHue=%230e4a0e&height=66&id=w2dJj&originHeight=74&originWidth=371&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7563&status=done&style=none&title=&width=333) -->
+
+<ul>
+<li><strong>指定（修改）WIFI名称和密码：   AT+CWJAP="E603","buaae603"</strong> </li>
+<li><strong>指定上电透传模式参数：AT+SAVETRANSLINK=1,"192.168.199.246",14550,"UDP",14551 </strong>指令参数依次表示：<strong>是否自动进入透传模式（1或0）、目标IP、目标端口号、TCP或者UDP、TCP侦测（默认为关闭，可不写）、本地端口号</strong></li>
+<li><strong>修改串口比特率</strong>：<strong>AT+UART=921600,8,1,0,0</strong></li>
+</ul>
+<!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357052829-c00b0375-f6bc-44e8-ba03-71b9f71b58d6.png#averageHue=%23074507&height=45&id=oevYq&originHeight=50&originWidth=366&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3230&status=done&style=none&title=&width=329) -->
+
+<ul>
+<li><strong>退出开机透传模式：AT+SAVETRANSLINK=0</strong></li>
+</ul>
+<h2 id="_3">更多设置请参考：<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/1166025/1663297701072-8afc670e-7056-4274-bc65-264ab8bc136a.pdf">ATK-ESP8266 WIFI用户手册_V1.3.pdf</a></p></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../quickstart/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/" class="btn btn-neutral float-left" title="快速开始"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../configforPX41_12/" class="btn btn-neutral float-right" title="适配PX4 1.12固件">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../quickstart/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../configforPX41_12/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

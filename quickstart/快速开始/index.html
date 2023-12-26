@@ -75,6 +75,24 @@
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">用户手册</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configWIFImodules/">配置wifi模块</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/modifyModelParam/">修改模型参数</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/sensorsCalculate/">校准传感器</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">开发手册</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">更换用户定义模型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置用户定义模型参数</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">帮助</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../help/updatedoc/">如何更新文档</a>
@@ -126,17 +144,191 @@
 </div>
 <h3 id="12">1.2 硬件接口定义图<a class="headerlink" href="#12" title="Permanent link"></a></h3>
 <p>将飞控与开发板对应引脚使用GH1.25杜邦线对应连接在一起, 引脚定义查看下面几副图.  </p>
-<p><strong>pixhawk 4 接口定义图</strong></p>
+<p><strong>Pixhawk 4 接口定义图</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>每个接口的左数第一个引脚是PIN 1, 也就是VCC</p>
 </div>
 <p><img alt="图：Pixhawk 4 上用到的接口" src="../../img/pixhawk4pinout.png"></p>
 <p><img alt="图：Pixhawk 4 连接实物图" src="../../img/pixhawk4connect.png"></p>
-<p><img alt="图：Pixhawk I2C接口定义" src="../../img/pixhawki2c.png"></p>
-<p><img alt="图：Pixhawk GPS接口定义" src="../../img/pixhawkgps.png"></p>
-<p><img alt="图：Pixhawk SPI接口定义" src="../../img/pixhawkspi.png"></p>
-<p><img alt="图：Pixhawk PWM接口定义" src="../../img/pixhawkpwmout.png"></p>
+<p>I2C A接口定义</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Signal</th>
+<th>Volt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1(red)</td>
+<td>VCC</td>
+<td>+5V</td>
+</tr>
+<tr>
+<td>2(black)</td>
+<td>SCL4</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>3(black)</td>
+<td>SDA4</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>4(black)</td>
+<td>GND</td>
+<td>+3.3V</td>
+</tr>
+</tbody>
+</table>
+<p>Pixhawk GPS接口定义</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Signal</th>
+<th>Volt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1(red)</td>
+<td>VCC</td>
+<td>+5V</td>
+</tr>
+<tr>
+<td>2(black)</td>
+<td>TX4(out)</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>3(black)</td>
+<td>RX4(in)</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>4(black)</td>
+<td>SCL1</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>5(black)</td>
+<td>SDA1</td>
+<td>+3.3V</td>
+</tr>
+</tbody>
+</table>
+<p>Pixhawk SPI接口定义</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Signal</th>
+<th>Volt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1(red)</td>
+<td>VCC</td>
+<td>+5V</td>
+</tr>
+<tr>
+<td>2(black)</td>
+<td>SCK</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>3(black)</td>
+<td>MISO</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>4(black)</td>
+<td>MOSI</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>5(black)</td>
+<td>CS1</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>6(black)</td>
+<td>CS2</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>7(black)</td>
+<td>GND</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<p>Pixhawk I/O PWM OUT同FMU PWM OUT接口定义</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Signal</th>
+<th>Volt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1(red)</td>
+<td>VDD_SERVO</td>
+<td></td>
+</tr>
+<tr>
+<td>2(black)</td>
+<td>IO_CH1\FMU_CH1</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>3(black)</td>
+<td>IO_CH2\FMU_CH2</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>4(black)</td>
+<td>IO_CH3\FMU_CH3</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>5(black)</td>
+<td>IO_CH4\FMU_CH4</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>6(black)</td>
+<td>IO_CH5\FMU_CH5</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>7(black)</td>
+<td>IO_CH6\FMU_CH6</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>8(black)</td>
+<td>IO_CH7\FMU_CH7</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>9(black)</td>
+<td>IO_CH8\FMU_CH8</td>
+<td>+3.3V</td>
+</tr>
+<tr>
+<td>10(black)</td>
+<td>GND</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>以上给出了所用到的接口定义。更详细的接口定义可以参考
@@ -259,7 +451,7 @@ fi
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../help/updatedoc/" class="btn btn-neutral float-right" title="如何更新文档">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../user_manual/configWIFImodules/" class="btn btn-neutral float-right" title="配置wifi模块">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -287,7 +479,7 @@ fi
     
     
     
-      <span><a href="../../help/updatedoc/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../user_manual/configWIFImodules/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

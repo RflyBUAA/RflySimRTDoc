@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userDefineModel/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userDefineParam/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://rflybuaa.github.io/RflySimRTDoc/help/updatedoc/</loc>
          <lastmod>2023-12-26</lastmod>
          <changefreq>daily</changefreq>
@@ -17,6 +27,26 @@
     </url>
     <url>
          <loc>https://rflybuaa.github.io/RflySimRTDoc/test/test/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rflybuaa.github.io/RflySimRTDoc/user_manual/configWIFImodules/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rflybuaa.github.io/RflySimRTDoc/user_manual/configforPX41_12/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rflybuaa.github.io/RflySimRTDoc/user_manual/modifyModelParam/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rflybuaa.github.io/RflySimRTDoc/user_manual/sensorsCalculate/</loc>
          <lastmod>2023-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
