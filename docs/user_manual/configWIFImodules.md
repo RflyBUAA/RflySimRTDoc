@@ -84,12 +84,12 @@ AT+CWJAP="<wifi-name>","<password>"
 AT+SAVETRANSLINK=<mode>,<remote IP>,<remote port>,<type>,<TCP keep alive>,<UDP local port>
 ```
 
-|参数	|说明	|
+|参数				|说明						|
 |---|---|
-|<mode\>				|是否上电开启透传，0或者1	|
+|<mode\>			|是否上电开启透传，0或者1	|
 |<remote IP\>		|远端IP	"192.168.XXX.XXX"	|
 |<remote port\>		|远端端口号					|
-|<type\>				|"TCP"或者"UDP"				|
+|<type\>			|"TCP"或者"UDP"				|
 |<TCP keep alive\>	|默认关闭，可省略			|
 |<UDP local port\>	|UDP模式的本地端口号		|
 
