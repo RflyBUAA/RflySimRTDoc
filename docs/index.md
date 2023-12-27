@@ -31,3 +31,8 @@ RflySim-RT基于SocFPGA打造，仿真对象的模型以中断的方式运行在
 
 下面视频展示了基于该平台实现的四旋翼飞行器的硬件在环仿真
 ![type:video](./videos/simplatform.mp4)
+
+---
+文档最新提交的变化
+
+{{ latest_changes }}

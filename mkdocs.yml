@@ -60,6 +60,8 @@ markdown_extensions:
 plugins:
   - search
   - autorefs
+  - git-latest-changes #展示最近一次更新的变化
+  - git-latest-release
   - mkdocs-video:
       is_video: true
       video_autoplay: false

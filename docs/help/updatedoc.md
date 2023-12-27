@@ -60,6 +60,19 @@
   		- resize-images
 	```
 
+	1.15 `pip install mkdocs-git-latest-changes-plugin`
+	```
+	plugins:
+  		- git-latest-changes
+	```
+	在需要的位置添加{{ latest_changes }}，即可显示最近一次提交涉及的更改。
+
+	1.16 ` pip install mkdocs-latest-release-plugin`
+	```
+	plugins:
+  		- git-latest-release
+	```
+
 
 2. 修改文档内容
 
