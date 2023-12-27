@@ -8,6 +8,8 @@
 
 NOTE: 必须使用串口助手来完成设置
 
+初次使用请按照[1 初次使用](../user_manual/configWIFImodules.md#1)和[2 设置网络](../user_manual/configWIFImodules.md#2) 的指引完成操作。后续更换网络连接则只需要按照[2 设置网络](../user_manual/configWIFImodules.md#2)中的步骤操作即可。
+
 ## 1 初次使用
 目的：需要设置无线模块连接到局域网路由器中（COM-SAT模式）采用UDP模式。这部分操作仅仅面向新购买的串口转WIFI模块。
 
@@ -79,9 +81,22 @@ AT+CWJAP="<wifi-name>","<password>"
 
 5.指定上电透传模式参数。
 ```
+AT+SAVETRANSLINK=<mode>,<remote IP>,<remote port>,<type>,<TCP keep alive>,<UDP local port>
+```
+
+|参数	|说明	|
+|---|---|
+|<mode\>				|是否上电开启透传，0或者1	|
+|<remote IP\>		|远端IP	"192.168.XXX.XXX"	|
+|<remote port\>		|远端端口号					|
+|<type\>				|"TCP"或者"UDP"				|
+|<TCP keep alive\>	|默认关闭，可省略			|
+|<UDP local port\>	|UDP模式的本地端口号		|
+
+例如：
+```
 AT+SAVETRANSLINK=1,"192.168.XXX.XXX",20010,"UDP",20011
 ```
-该指令参数以逗号分隔，每个部分的含义依次为：是否自动进入透传模式（1或0）、目标IP、目标端口号、TCP或者UDP、TCP侦测（默认为关闭，可不写）、本地端口号
 
 6.修改串口比特率
 ```
@@ -96,8 +111,5 @@ AT+SAVETRANSLINK=0
 ```
 
 
-## 3 更多设置请参考：
+## 3 更多设置请参考
 [ATK-ESP8266 WIFI用户手册_V1.3.pdf](https://www.yuque.com/attachments/yuque/0/2022/pdf/1166025/1663297701072-8afc670e-7056-4274-bc65-264ab8bc136a.pdf)
-
-
-

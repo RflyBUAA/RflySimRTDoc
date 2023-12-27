@@ -9,7 +9,7 @@ nav:
     - 快速开始: 
         - 快速开始: quickstart/快速开始.md
     - 用户手册:
-        - 配置wifi模块: user_manual/configWIFImodules.md
+        - 配置WIFI模块: user_manual/configWIFImodules.md
         - 适配PX4 1.12固件: user_manual/configforPX41_12.md
         - 修改模型参数: user_manual/modifyModelParam.md
         - 校准传感器: user_manual/sensorsCalculate.md
