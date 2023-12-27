@@ -331,7 +331,7 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>以上给出了所用到的接口定义。更详细的接口定义可以参考
+<p>以上给出了所用到的接口定义。更详细的接口定义可以参考<br>
 <a href="https://www.yuque.com/attachments/yuque/0/2021/pdf/1166025/1627387378406-23e412b3-557b-4c01-bcb7-93daf58663f1.pdf">Pixhawk4-Pinouts.pdf</a></p>
 </div>
 <p><strong>开发板IO接口定义图, 管脚和红框中的定义标记依次对应</strong></p>
@@ -344,10 +344,10 @@
 <p>1.将开发板的PS串口通过数据线与电脑USB接口连接</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>串口用于系统调试，建议使用<a href="https://mobaxterm.mobatek.net/"><strong>MobaXterm</strong></a>\
-<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a>\
-<a href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a>\
-<a href="https://github.com/kingToolbox/WindTerm">WindTerm</a>
+<p>串口用于系统调试，建议使用<a href="https://mobaxterm.mobatek.net/"><strong>MobaXterm</strong></a>\<br>
+<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a>\<br>
+<a href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a>\<br>
+<a href="https://github.com/kingToolbox/WindTerm">WindTerm</a><br>
 等的工具在电脑上打开串口连接，实现命令行功能。尽管其他的串口助手软件也可使用，但是无法实现命令行的交互效果。</p>
 </div>
 <p>2.连接开发板电源</p>
@@ -356,19 +356,19 @@
 <p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.32f12e8dZlbJXh&amp;id=599221327119&amp;_u=rqvdro2801a">可以购买带开关的DC电源线, 免去电源插拔的繁琐操作</a></p>
 </div>
 <h2 id="2">2. 飞控固件设置<a class="headerlink" href="#2" title="Permanent link"></a></h2>
-<p><strong>RflySim-RT</strong>借助FPGA模拟真实的传感器逻辑从而实现硬件在环仿真的目的。比较通用的做法是将原有传感器去除，并在原有焊接接口上飞线并与仿真平台连接。好在，Pixhawk 4上提供了外置的SPI和I2C接口，可以借助这些接口直接与仿真器连接。因此，需要让飞控默认使用外置SPI和I2C接口，与仿真器进行通信。
+<p><strong>RflySim-RT</strong>借助FPGA模拟真实的传感器逻辑从而实现硬件在环仿真的目的。比较通用的做法是将原有传感器去除，并在原有焊接接口上飞线并与仿真平台连接。好在，Pixhawk 4上提供了外置的SPI和I2C接口，可以借助这些接口直接与仿真器连接。因此，需要让飞控默认使用外置SPI和I2C接口，与仿真器进行通信。<br>
 这里采用修改PX4启动脚本的方式让自动驾驶仪在启动的时候优先尝试连接外部SPI的IMU，从而实现一次烧录，既能用于仿真也能用于实飞的目的。这里修改<strong>飞控的传感器启动脚本进行简单修改重新编译烧录到飞控中</strong>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>默认支持PX4 v1.11版本的固件。对于v1.12的支持请参考<a href="https://www.yuque.com/rflysocfpgahil/lkdltx/goxg0w?view=doc_embed">如何使用PX4 1.12固件</a>。区别主要在于启动脚本的修改内容有细微的变化。 </p>
 </div>
-<p>这里假设用户使用RflySim进行控制算法的开发。为了能够与RflySim-RT实现仿真，需要修改固件源码的启动脚本。对于Pixhawk 4飞控而言，启动脚本路径位于<strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\rc.board_sensors</strong>。
+<p>这里假设用户使用RflySim进行控制算法的开发。为了能够与RflySim-RT实现仿真，需要修改固件源码的启动脚本。对于Pixhawk 4飞控而言，启动脚本路径位于<strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\rc.board_sensors</strong>。<br>
 其他类型的飞控可在路径 <strong>\Firmware\boards</strong> 中查找。<code>X</code>是RflySim的安装盘符，默认是C盘。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果使用官方原生固件，也需要到对应的目录<code>Firmware\boards\px4\fmu-v5\init\</code>下修改rc.board_sensors文件，需要修改内容也是一样的。建议使用vscode之类的编辑软件。因为回车符的区别，不建议使用Windows系统的记事本。</p>
 </div>
-<p>使用编辑器打开rc.board_sensors。修改为如下内容
+<p>使用编辑器打开rc.board_sensors。修改为如下内容<br>
 </p><pre class="highlight"><code>#!/bin/sh
 #
 # PX4 FMUv5 specific board sensors init
@@ -402,19 +402,19 @@ fi
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
-<li>请再次确认飞控中安装的PX4飞控固件版本是1.11.3版本。<br> 
+<li>请再次确认飞控中安装的PX4飞控固件版本是1.11.3版本。<br> <br>
 <img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E5%9B%BA%E4%BB%B6%E7%89%88%E6%9C%AC.png"></li>
-<li>且飞控的模式是四旋翼。<br>
+<li>且飞控的模式是四旋翼。<br><br>
 <img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E6%9C%BA%E6%9E%B6%E7%B1%BB%E5%9E%8B.png"></li>
 </ul>
 </div>
 <h2 id="3">3. 固件参数设置<a class="headerlink" href="#3" title="Permanent link"></a></h2>
-<p>成功运行仿真系统只需要修改以下参数为指定值，见下图
+<p>成功运行仿真系统只需要修改以下参数为指定值，见下图<br>
 <img alt="" src="../../img-large/SER_GPS1_BAUD.png"></p>
 <p><img alt="" src="../../img-large/GPS_UBX_DYNMODEL.png"></p>
 <h2 id="4">4. 开发板固件安装<a class="headerlink" href="#4" title="Permanent link"></a></h2>
 <p>开发板采用SD启动方式。操作步骤如下:</p>
-<p>1.从开发板上取下SD卡，使用读卡器将固件复制到SD卡根目录上。
+<p>1.从开发板上取下SD卡，使用读卡器将固件复制到SD卡根目录上。<br>
 固件下载链接：<a href="https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653">https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653</a>有效期限：2023-09-01 23:59</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -431,7 +431,7 @@ fi
 <p><img alt="" src="../../img-large/%E4%B8%B2%E5%8F%A3%E5%9C%A8%E8%AE%BE%E5%A4%87%E4%B8%8A%E7%9A%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
 <p>这里使用MobaXterm举例打开串口，波特率设置为115200，打开后在串口终端里输入<strong>help</strong>并且<strong>回车</strong>。见下图：</p>
 <p><img alt="" src="../../img-large/shell.gif"></p>
-<p>当然也可以先连接串口再打开开发板，或者按下开发板的复位键，应该能看到更多启动信息。见下图：
+<p>当然也可以先连接串口再打开开发板，或者按下开发板的复位键，应该能看到更多启动信息。见下图：<br>
 <img alt="" src="../../img-large/shell2.gif"></p>
 <p>如果连接了串口转wifi模块，打开RflySim3D软件应该可以看到一架四旋翼飞行器出现在窗口中（如果没有显示，请先检查wifi模块是否正常连接到局域网中）</p>
 <p><img alt="" src="../../img-large/%E5%9B%9B%E6%97%8B%E7%BF%BC%E9%A3%9E%E8%A1%8C%E5%99%A8%E5%9C%A83D%E4%B8%AD%E6%98%BE%E7%A4%BA.png"></p>
@@ -440,13 +440,15 @@ fi
 <p><img alt="" src="../../img-large/QGC.gif"></p>
 <p>如果配置过程没问题得话，可以获得传感器状态信息如下图。这些传感器数据实际上是FPGA模拟出来的，飞控却会认为这是真实的传感器。</p>
 <p><img alt="" src="../../img-large/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F%E4%BC%A0%E6%84%9F%E5%99%A8%E8%BF%9E%E6%8E%A5.png"></p>
-<p>如果没有上图效果请再次确认  </p>
+<div class="admonition info inline end">
+<p class="admonition-title">如果没有出现以上效果请再次确认</p>
 <ul>
 <li>飞控的Px4 版本是1.11.3。</li>
 <li>且飞行模式是四旋翼模式。</li>
 <li>确认飞控和开发板物理接线正确。 </li>
 <li>检查地线是否正确连接。</li>
-</ul></div>
+</ul>
+</div></div>
               
             </div>
           </div><footer>

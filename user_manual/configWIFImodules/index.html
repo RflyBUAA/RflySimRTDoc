@@ -59,11 +59,11 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">配置wifi模块</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">初次使用</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1">1 初次使用</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">更换网络后：</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2 设置网络</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">更多设置请参考：</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3">3 更多设置请参考：</a>
     </li>
     </ul>
                   </li>
@@ -117,40 +117,66 @@
             <div class="section" itemprop="articleBody">
               
                 <div><h1 id="wifi">配置WIFI模块<a class="headerlink" href="#wifi" title="Permanent link"></a></h1>
-<p>请自行准备USB转串口模块</p>
-<h2 id="_1">初次使用<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
-<p>第一次使用设置：无线模块连接到局域网路由器中（COM-SAT模式）采用UDP模式。PC通过USB转串口与wifi模块连接，通过串口AT指令配置。模块出厂<strong>默认波特率115200：</strong></p>
-<ol>
-<li><strong>AT+CWMODE=1</strong>  设置wifi模式为SAT，也就是作为网卡连接局域网</li>
-<li><strong>AT+RST</strong> 重启模块并生效</li>
-<li><strong>AT+CWJAP="E603","buaae603"</strong>  指定wifi名称和密码</li>
-<li><strong>AT+CIPMUX=0</strong>   开启单连接</li>
-<li><strong>AT+CIPSTART="UDP","192.168.1.XXX",14550 </strong>指定模块要转发的目标机地址和目标端口号</li>
-</ol>
-<h2 id="_2">更换网络后：<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
-<p>具体端口号需要根据自己的需要设置，文档中的14550只是QGC用的端口号，Rflysim3D用的（可能）是20010。同样使用串口AT指令设置：</p>
+<p>这套系统需要使用<strong>串口转WIFI模块</strong>发送模型的位置姿态等用于显示的数据。用户可以使用任何串口转WIFI模块，只需要按照串口正确连接即可。<br>
+要求为：串口转WIFI模块配置为波特率921600，并以UDP透传模式向局域网中用户指定主机IP和端口20010发送数据。</p>
+<p>这里以正点原子的<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&amp;id=609757779633&amp;ns=1&amp;abbucket=8&amp;skuId=4447338308660">ATK-ESP8266</a>为例说明配置方法。其他模块配置要求类似，但是用到的指令可能有所区别。<br>
+配置前需要自行准备USB转串口模块，以便与串口转WIFI模块连接配置其参数。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>必须使用串口助手来完成设置</p>
+</div>
+<h2 id="1">1 初次使用<a class="headerlink" href="#1" title="Permanent link"></a></h2>
+<p>目的：需要设置无线模块连接到局域网路由器中（COM-SAT模式）采用UDP模式。这部分操作仅仅面向新购买的串口转WIFI模块。</p>
+<p>方法：PC通过USB转串口与WIFI模块连接，通过串口AT指令配置。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>WIFI模块模块出厂默认波特率115200</p>
+</div>
+<p>1.设置WIFI模式为SAT，也就是作为网卡连接局域网<br>
+</p><pre class="highlight"><code>AT+CWMODE=1</code></pre>
+<p>2.重启模块，使前面的设置生效<br>
+</p><pre class="highlight"><code>AT+RST</code></pre>
+<p>3.指定WIFI名称和密码，将<code>&lt;wifi-name&gt;</code>替换为局域网网络名称，将<code>&lt;password&gt;</code>替换为局域网密码<br>
+</p><pre class="highlight"><code>AT+CWJAP="&lt;wifi-name&gt;","&lt;password&gt;"</code></pre>
+<p>4.启用单连接模式<br>
+</p><pre class="highlight"><code>AT+CIPMUX=0</code></pre>
+<p>5.指定模块要转发的目标机地址和目标端口号。将<code>192.168.XXX.XXX</code>改为目标主机的IP地址，不建议设置为<code>255.255.255.255</code>。<br>
+</p><pre class="highlight"><code>AT+CIPSTART="UDP","192.168.XXX.XXX",14550</code></pre>
+<h2 id="2">2 设置网络<a class="headerlink" href="#2" title="Permanent link"></a></h2>
+<p>如果在使用中更换了局域网络，那么需要重新设置WIFI模块的网络连接。<br>
+RflySim3D从端口20010读取飞行器的位置姿态数据。</p>
+<!-- TIP: QGC地面站的端口号是14550 -->
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
-<li><strong>退出透传模式：</strong>+++(不包括换行符，否则无效)</li>
-<li><strong>获得连接状态：AT+CIPSTATUS</strong></li>
+<li>QGC地面站的端口号是14550</li>
+<li>RflySim3D的端口号是<strong>20010</strong></li>
+<li>串口转WIFI模块串口端最终应配置为<strong>921600</strong>波特率</li>
 </ul>
+</div>
+<p>1.退出透传模式（不包括换行符，否则无效）<br>
+</p><pre class="highlight"><code>+++</code></pre>
+<p>2.查看当前连接状态</p>
+<pre class="highlight"><code>AT+CIPSTATUS</code></pre>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357693609-64b1ba55-ad10-44d0-be4e-4cc18b0ce256.png#averageHue=%230d490d&height=66&id=KS4JA&originHeight=78&originWidth=391&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7433&status=done&style=none&title=&width=333) -->
 
-<ul>
-<li><strong>获取模块 IP 地址：AT+CIFSR</strong>  </li>
-</ul>
+<p>3.获取模块 IP 地址<br>
+</p><pre class="highlight"><code>AT+CIFSR</code></pre>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357074005-f527bd1d-80c8-4aa8-b2d5-4fd8572fae8f.png#averageHue=%230e4a0e&height=66&id=w2dJj&originHeight=74&originWidth=371&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7563&status=done&style=none&title=&width=333) -->
 
-<ul>
-<li><strong>指定（修改）WIFI名称和密码：   AT+CWJAP="E603","buaae603"</strong> </li>
-<li><strong>指定上电透传模式参数：AT+SAVETRANSLINK=1,"192.168.199.246",14550,"UDP",14551 </strong>指令参数依次表示：<strong>是否自动进入透传模式（1或0）、目标IP、目标端口号、TCP或者UDP、TCP侦测（默认为关闭，可不写）、本地端口号</strong></li>
-<li><strong>修改串口比特率</strong>：<strong>AT+UART=921600,8,1,0,0</strong></li>
-</ul>
+<p>4.指定（修改）WIFI名称和密码<br>
+</p><pre class="highlight"><code>AT+CWJAP="&lt;wifi-name&gt;","&lt;password&gt;"</code></pre>
+<p>5.指定上电透传模式参数。<br>
+</p><pre class="highlight"><code>AT+SAVETRANSLINK=1,"192.168.XXX.XXX",20010,"UDP",20011</code></pre><br>
+该指令参数以逗号分隔，每个部分的含义依次为：是否自动进入透传模式（1或0）、目标IP、目标端口号、TCP或者UDP、TCP侦测（默认为关闭，可不写）、本地端口号
+<p>6.修改串口比特率<br>
+</p><pre class="highlight"><code>AT+UART=921600,8,1,0,0</code></pre>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357052829-c00b0375-f6bc-44e8-ba03-71b9f71b58d6.png#averageHue=%23074507&height=45&id=oevYq&originHeight=50&originWidth=366&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3230&status=done&style=none&title=&width=329) -->
 
-<ul>
-<li><strong>退出开机透传模式：AT+SAVETRANSLINK=0</strong></li>
-</ul>
-<h2 id="_3">更多设置请参考：<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<p>7.退出开机透传模式<br>
+</p><pre class="highlight"><code>AT+SAVETRANSLINK=0</code></pre>
+<h2 id="3">3 更多设置请参考：<a class="headerlink" href="#3" title="Permanent link"></a></h2>
 <p><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/1166025/1663297701072-8afc670e-7056-4274-bc65-264ab8bc136a.pdf">ATK-ESP8266 WIFI用户手册_V1.3.pdf</a></p></div>
               
             </div>

@@ -176,55 +176,55 @@
 <p>A Guide to installing, using and creating MkDocs Plugins</p>
 <hr>
 <h2 id="installing-plugins">Installing Plugins<a class="headerlink" href="#installing-plugins" title="Permanent link"></a></h2>
-<p>Before a plugin can be used, it must be installed on the system. If you are
-using a plugin which comes with MkDocs, then it was installed when you installed
-MkDocs. However, to install third party plugins, you need to determine the
+<p>Before a plugin can be used, it must be installed on the system. If you are<br>
+using a plugin which comes with MkDocs, then it was installed when you installed<br>
+MkDocs. However, to install third party plugins, you need to determine the<br>
 appropriate package name and install it using <code>pip</code>:</p>
 <pre class="highlight"><code class="language-bash">pip install mkdocs-foo-plugin</code></pre>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Installing an MkDocs plugin means installing a Python package and executing any code that the author has put in there. So, exercise the usual caution; there's no attempt at sandboxing.</p>
 </div>
-<p>Once a plugin has been successfully installed, it is ready to use. It just needs
-to be <a href="#using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/catalog">Catalog</a>
+<p>Once a plugin has been successfully installed, it is ready to use. It just needs<br>
+to be <a href="#using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/catalog">Catalog</a><br>
 repository has a large ranked list of plugins that you can install and use.</p>
 <h2 id="using-plugins">Using Plugins<a class="headerlink" href="#using-plugins" title="Permanent link"></a></h2>
-<p>The <a href="../user-guide/configuration.md#plugins"><code>plugins</code></a> configuration option should contain a list of plugins to
-use when building the site. Each "plugin" must be a string name assigned to the
-plugin (see the documentation for a given plugin to determine its "name"). A
+<p>The <a href="../user-guide/configuration.md#plugins"><code>plugins</code></a> configuration option should contain a list of plugins to<br>
+use when building the site. Each "plugin" must be a string name assigned to the<br>
+plugin (see the documentation for a given plugin to determine its "name"). A<br>
 plugin listed here must already be <a href="#installing-plugins">installed</a>.</p>
 <pre class="highlight"><code class="language-yaml">plugins:
   - search</code></pre>
-<p>Some plugins may provide configuration options of their own. If you would like
-to set any configuration options, then you can nest a key/value mapping
-(<code>option_name: option value</code>) of any options that a given plugin supports. Note
-that a colon (<code>:</code>) must follow the plugin name and then on a new line the option
-name and value must be indented and separated by a colon. If you would like to
-define multiple options for a single plugin, each option must be defined on a
+<p>Some plugins may provide configuration options of their own. If you would like<br>
+to set any configuration options, then you can nest a key/value mapping<br>
+(<code>option_name: option value</code>) of any options that a given plugin supports. Note<br>
+that a colon (<code>:</code>) must follow the plugin name and then on a new line the option<br>
+name and value must be indented and separated by a colon. If you would like to<br>
+define multiple options for a single plugin, each option must be defined on a<br>
 separate line.</p>
 <pre class="highlight"><code class="language-yaml">plugins:
   - search:
       lang: en
       foo: bar</code></pre>
-<p>For information regarding the configuration options available for a given plugin,
+<p>For information regarding the configuration options available for a given plugin,<br>
 see that plugin's documentation.</p>
-<p>For a list of default plugins and how to override them, see the
+<p>For a list of default plugins and how to override them, see the<br>
 <a href="../user-guide/configuration.md#plugins">configuration</a> documentation.</p>
 <h2 id="developing-plugins">Developing Plugins<a class="headerlink" href="#developing-plugins" title="Permanent link"></a></h2>
-<p>Like MkDocs, plugins must be written in Python. It is generally expected that
-each plugin would be distributed as a separate Python module, although it is
-possible to define multiple plugins in the same module. At a minimum, a MkDocs
-Plugin must consist of a <a href="#baseplugin">BasePlugin</a> subclass and an <a href="#entry-point">entry point</a> which
+<p>Like MkDocs, plugins must be written in Python. It is generally expected that<br>
+each plugin would be distributed as a separate Python module, although it is<br>
+possible to define multiple plugins in the same module. At a minimum, a MkDocs<br>
+Plugin must consist of a <a href="#baseplugin">BasePlugin</a> subclass and an <a href="#entry-point">entry point</a> which<br>
 points to it.</p>
 <h3 id="baseplugin">BasePlugin<a class="headerlink" href="#baseplugin" title="Permanent link"></a></h3>
-<p>A subclass of <code>mkdocs.plugins.BasePlugin</code> should define the behavior of the plugin.
-The class generally consists of actions to perform on specific events in the build
+<p>A subclass of <code>mkdocs.plugins.BasePlugin</code> should define the behavior of the plugin.<br>
+The class generally consists of actions to perform on specific events in the build<br>
 process as well as a configuration scheme for the plugin.</p>
 <p>All <code>BasePlugin</code> subclasses contain the following attributes:</p>
 <h4 id="config_scheme">config_scheme<a class="headerlink" href="#config_scheme" title="Permanent link"></a></h4>
-<p>A tuple of configuration validation instances. Each item must consist of a
-two item tuple in which the first item is the string name of the
-configuration option and the second item is an instance of
+<p>A tuple of configuration validation instances. Each item must consist of a<br>
+two item tuple in which the first item is the string name of the<br>
+configuration option and the second item is an instance of<br>
 <code>mkdocs.config.config_options.BaseConfigOption</code> or any of its subclasses.</p>
 <p>For example, the following <code>config_scheme</code> defines three configuration options: <code>foo</code>, which accepts a string; <code>bar</code>, which accepts an integer; and <code>baz</code>, which accepts a boolean value.</p>
 <pre class="highlight"><code class="language-python">class MyPlugin(mkdocs.plugins.BasePlugin):
@@ -248,7 +248,7 @@ class MyPlugin(mkdocs.plugins.BasePlugin[MyPluginConfig]):
 <h5 id="examples-of-config-definitions">Examples of config definitions<a class="headerlink" href="#examples-of-config-definitions" title="Permanent link"></a></h5>
 <details class="example" open="open">
 <summary>Example</summary>
-<p>
+<p><br>
 </p><pre class="highlight"><code class="language-python">from mkdocs.config import base, config_options as c
 
 class _ValidationOptions(base.Config):
@@ -275,7 +275,7 @@ class MyPluginConfig(base.Config):
 <!-- -->
 <details class="example">
 <summary>Example</summary>
-<p>
+<p><br>
 </p><pre class="highlight"><code class="language-python">import numbers
 from mkdocs.config import base, config_options as c
 
@@ -294,16 +294,16 @@ class MyPluginConfig(base.Config):
     - width: 12
       height: 2</code></pre>
 </details>
-<p>When the user's configuration is loaded, the above scheme will be used to
-validate the configuration and fill in any defaults for settings not
-provided by the user. The validation classes may be any of the classes
-provided in <code>mkdocs.config.config_options</code> or a third party subclass defined
+<p>When the user's configuration is loaded, the above scheme will be used to<br>
+validate the configuration and fill in any defaults for settings not<br>
+provided by the user. The validation classes may be any of the classes<br>
+provided in <code>mkdocs.config.config_options</code> or a third party subclass defined<br>
 in the plugin.</p>
-<p>Any settings provided by the user which fail validation or are not defined
+<p>Any settings provided by the user which fail validation or are not defined<br>
 in the <code>config_scheme</code> will raise a <code>mkdocs.config.base.ValidationError</code>.</p>
 <h4 id="config">config<a class="headerlink" href="#config" title="Permanent link"></a></h4>
-<p>A dictionary of configuration options for the plugin, which is populated by
-the <code>load_config</code> method after configuration validation has completed. Use
+<p>A dictionary of configuration options for the plugin, which is populated by<br>
+the <code>load_config</code> method after configuration validation has completed. Use<br>
 this attribute to access options provided by the user.</p>
 <pre class="highlight"><code class="language-python">def on_pre_build(self, config, **kwargs):
     if self.config['baz']:
@@ -318,24 +318,24 @@ this attribute to access options provided by the user.</p>
 </div>
 <p>All <code>BasePlugin</code> subclasses contain the following method(s):</p>
 <h4 id="load_configoptions">load_config(options)<a class="headerlink" href="#load_configoptions" title="Permanent link"></a></h4>
-<p>Loads configuration from a dictionary of options. Returns a tuple of
-<code>(errors, warnings)</code>. This method is called by MkDocs during configuration
+<p>Loads configuration from a dictionary of options. Returns a tuple of<br>
+<code>(errors, warnings)</code>. This method is called by MkDocs during configuration<br>
 validation and should not need to be called by the plugin.</p>
 <h4 id="on_event_name">on_&lt;event_name&gt;()<a class="headerlink" href="#on_event_name" title="Permanent link"></a></h4>
-<p>Optional methods which define the behavior for specific <a href="#events">events</a>. The plugin
-should define its behavior within these methods. Replace <code>&lt;event_name&gt;</code> with
-the actual name of the event. For example, the <code>pre_build</code> event would be
+<p>Optional methods which define the behavior for specific <a href="#events">events</a>. The plugin<br>
+should define its behavior within these methods. Replace <code>&lt;event_name&gt;</code> with<br>
+the actual name of the event. For example, the <code>pre_build</code> event would be<br>
 defined in the <code>on_pre_build</code> method.</p>
-<p>Most events accept one positional argument and various keyword arguments. It
-is generally expected that the positional argument would be modified (or
-replaced) by the plugin and returned. If nothing is returned (the method
-returns <code>None</code>), then the original, unmodified object is used. The keyword
-arguments are simply provided to give context and/or supply data which may
-be used to determine how the positional argument should be modified. It is
-good practice to accept keyword arguments as <code>**kwargs</code>. In the event that
-additional keywords are provided to an event in a future version of MkDocs,
+<p>Most events accept one positional argument and various keyword arguments. It<br>
+is generally expected that the positional argument would be modified (or<br>
+replaced) by the plugin and returned. If nothing is returned (the method<br>
+returns <code>None</code>), then the original, unmodified object is used. The keyword<br>
+arguments are simply provided to give context and/or supply data which may<br>
+be used to determine how the positional argument should be modified. It is<br>
+good practice to accept keyword arguments as <code>**kwargs</code>. In the event that<br>
+additional keywords are provided to an event in a future version of MkDocs,<br>
 there will be no need to alter your plugin.</p>
-<p>For example, the following event would add an additional static_template to
+<p>For example, the following event would add an additional static_template to<br>
 the theme config:</p>
 <pre class="highlight"><code class="language-python">class MyPlugin(BasePlugin):
     def on_config(self, config, **kwargs):
@@ -349,7 +349,7 @@ the theme config:</p>
     return config</code></pre>
 </div>
 <h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link"></a></h3>
-<p>There are three kinds of events: <a href="#global-events">Global Events</a>, <a href="#page-events">Page Events</a> and
+<p>There are three kinds of events: <a href="#global-events">Global Events</a>, <a href="#page-events">Page Events</a> and<br>
 <a href="#template-events">Template Events</a>.</p>
 <details class="card">
   <summary>
@@ -370,112 +370,112 @@ the theme config:</p>
 <h4 id="one-time-events">One-time Events<a class="headerlink" href="#one-time-events" title="Permanent link"></a></h4>
 <p>One-time events run once per <code>mkdocs</code> invocation. The only case where these tangibly differ from <a href="#global-events">global events</a> is for <code>mkdocs serve</code>: global events, unlike these, will run multiple times -- once per <em>build</em>.</p>
 <h5 id="on_startup">on_startup<a class="headerlink" href="#on_startup" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_startup
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_startup<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_shutdown">on_shutdown<a class="headerlink" href="#on_shutdown" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_shutdown
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_shutdown<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_serve">on_serve<a class="headerlink" href="#on_serve" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_serve
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_serve<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h4 id="global-events">Global Events<a class="headerlink" href="#global-events" title="Permanent link"></a></h4>
-<p>Global events are called once per build at either the beginning or end of the
-build process. Any changes made in these events will have a global effect on the
+<p>Global events are called once per build at either the beginning or end of the<br>
+build process. Any changes made in these events will have a global effect on the<br>
 entire site.</p>
 <h5 id="on_config">on_config<a class="headerlink" href="#on_config" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_config
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_config<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_pre_build">on_pre_build<a class="headerlink" href="#on_pre_build" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_pre_build
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_pre_build<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_files">on_files<a class="headerlink" href="#on_files" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_files
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_files<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_nav">on_nav<a class="headerlink" href="#on_nav" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_nav
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_nav<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_env">on_env<a class="headerlink" href="#on_env" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_env
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_env<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_post_build">on_post_build<a class="headerlink" href="#on_post_build" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_post_build
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_post_build<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_build_error">on_build_error<a class="headerlink" href="#on_build_error" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_build_error
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_build_error<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h4 id="template-events">Template Events<a class="headerlink" href="#template-events" title="Permanent link"></a></h4>
-<p>Template events are called once for each non-page template. Each template event
-will be called for each template defined in the <a href="../user-guide/configuration.md#extra_templates">extra_templates</a> config setting
-as well as any <a href="../user-guide/configuration.md#static_templates">static_templates</a> defined in the theme. All template events are
+<p>Template events are called once for each non-page template. Each template event<br>
+will be called for each template defined in the <a href="../user-guide/configuration.md#extra_templates">extra_templates</a> config setting<br>
+as well as any <a href="../user-guide/configuration.md#static_templates">static_templates</a> defined in the theme. All template events are<br>
 called after the <a href="#on_env">env</a> event and before any <a href="#page-events">page events</a>.</p>
 <h5 id="on_pre_template">on_pre_template<a class="headerlink" href="#on_pre_template" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_pre_template
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_pre_template<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_template_context">on_template_context<a class="headerlink" href="#on_template_context" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_template_context
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_template_context<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_post_template">on_post_template<a class="headerlink" href="#on_post_template" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_post_template
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_post_template<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h4 id="page-events">Page Events<a class="headerlink" href="#page-events" title="Permanent link"></a></h4>
-<p>Page events are called once for each Markdown page included in the site. All
-page events are called after the <a href="#on_post_template">post_template</a> event and before the
+<p>Page events are called once for each Markdown page included in the site. All<br>
+page events are called after the <a href="#on_post_template">post_template</a> event and before the<br>
 <a href="#on_post_build">post_build</a> event.</p>
 <h5 id="on_pre_page">on_pre_page<a class="headerlink" href="#on_pre_page" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_pre_page
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_pre_page<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_page_read_source">on_page_read_source<a class="headerlink" href="#on_page_read_source" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_read_source
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_page_read_source<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_page_markdown">on_page_markdown<a class="headerlink" href="#on_page_markdown" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_markdown
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_page_markdown<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_page_content">on_page_content<a class="headerlink" href="#on_page_content" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_content
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_page_content<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_page_context">on_page_context<a class="headerlink" href="#on_page_context" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_context
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_page_context<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h5 id="on_post_page">on_post_page<a class="headerlink" href="#on_post_page" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_post_page
-    options:
-        show_root_heading: false
+<p>::: mkdocs.plugins.BasePlugin.on_post_page<br>
+    options:<br>
+        show_root_heading: false<br>
         show_root_toc_entry: false</p>
 <h3 id="event-priorities">Event Priorities<a class="headerlink" href="#event-priorities" title="Permanent link"></a></h3>
 <p>For each event type, corresponding methods of plugins are called in the order that the plugins appear in the <code>plugins</code> <a href="../user-guide/configuration.md#plugins">config</a>.</p>
@@ -490,14 +490,14 @@ page events are called after the <a href="#on_post_template">post_template</a> e
 <h4 id="mkdocsexceptionsconfigurationerror">::: mkdocs.exceptions.ConfigurationError<a class="headerlink" href="#mkdocsexceptionsconfigurationerror" title="Permanent link"></a></h4>
 <h4 id="mkdocsexceptionsbuilderror">::: mkdocs.exceptions.BuildError<a class="headerlink" href="#mkdocsexceptionsbuilderror" title="Permanent link"></a></h4>
 <h4 id="mkdocsexceptionspluginerror">::: mkdocs.exceptions.PluginError<a class="headerlink" href="#mkdocsexceptionspluginerror" title="Permanent link"></a></h4>
-<p>Unexpected and uncaught exceptions will interrupt the build process and produce
-typical Python tracebacks, which are useful for debugging your code. However,
-users generally find tracebacks overwhelming and often miss the helpful error
-message. Therefore, MkDocs will catch any of the errors listed above, retrieve
-the error message, and exit immediately with only the helpful message displayed
+<p>Unexpected and uncaught exceptions will interrupt the build process and produce<br>
+typical Python tracebacks, which are useful for debugging your code. However,<br>
+users generally find tracebacks overwhelming and often miss the helpful error<br>
+message. Therefore, MkDocs will catch any of the errors listed above, retrieve<br>
+the error message, and exit immediately with only the helpful message displayed<br>
 to the user.</p>
-<p>Therefore, you might want to catch any exceptions within your plugin and raise a
-<code>PluginError</code>, passing in your own custom-crafted message, so that the build
+<p>Therefore, you might want to catch any exceptions within your plugin and raise a<br>
+<code>PluginError</code>, passing in your own custom-crafted message, so that the build<br>
 process is aborted with a helpful message.</p>
 <p>The <a href="#on_build_error">on_build_error</a> event will be triggered for any exception.</p>
 <p>For example:</p>
@@ -520,7 +520,7 @@ class MyPlugin(BasePlugin):
 <p>To ensure that your plugins' log messages adhere with MkDocs' formatting and <code>--verbose</code>/<code>--debug</code> flags, please write the logs to a logger under the <code>mkdocs.plugins.</code> namespace.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>
+<p><br>
 </p><pre class="highlight"><code class="language-python">import logging
 
 log = logging.getLogger(f"mkdocs.plugins.{__name__}")
@@ -541,19 +541,19 @@ if log.getEffectiveLevel() &lt;= logging.DEBUG:
 <h4 id="mkdocspluginsget_plugin_logger">::: mkdocs.plugins.get_plugin_logger<a class="headerlink" href="#mkdocspluginsget_plugin_logger" title="Permanent link"></a></h4>
 </div>
 <h3 id="entry-point">Entry Point<a class="headerlink" href="#entry-point" title="Permanent link"></a></h3>
-<p>Plugins need to be packaged as Python libraries (distributed on PyPI separate
-from MkDocs) and each must register as a Plugin via a setuptools <code>entry_points</code>.
+<p>Plugins need to be packaged as Python libraries (distributed on PyPI separate<br>
+from MkDocs) and each must register as a Plugin via a setuptools <code>entry_points</code>.<br>
 Add the following to your <code>setup.py</code> script:</p>
 <pre class="highlight"><code class="language-python">entry_points={
     'mkdocs.plugins': [
         'pluginname = path.to.some_plugin:SomePluginClass',
     ]
 }</code></pre>
-<p>The <code>pluginname</code> would be the name used by users (in the config file) and
-<code>path.to.some_plugin:SomePluginClass</code> would be the importable plugin itself
-(<code>from path.to.some_plugin import SomePluginClass</code>) where <code>SomePluginClass</code> is a
-subclass of <a href="#baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple
-Plugin classes could exist in the same module. Simply define each as a separate
+<p>The <code>pluginname</code> would be the name used by users (in the config file) and<br>
+<code>path.to.some_plugin:SomePluginClass</code> would be the importable plugin itself<br>
+(<code>from path.to.some_plugin import SomePluginClass</code>) where <code>SomePluginClass</code> is a<br>
+subclass of <a href="#baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple<br>
+Plugin classes could exist in the same module. Simply define each as a separate<br>
 entry point.</p>
 <pre class="highlight"><code class="language-python">entry_points={
     'mkdocs.plugins': [
@@ -561,7 +561,7 @@ entry point.</p>
         'featureB = path.to.my_plugins:PluginB'
     ]
 }</code></pre>
-<p>Note that registering a plugin does not activate it. The user still needs to
+<p>Note that registering a plugin does not activate it. The user still needs to<br>
 tell MkDocs to use it via the config.</p>
 <h3 id="publishing-a-plugin">Publishing a Plugin<a class="headerlink" href="#publishing-a-plugin" title="Permanent link"></a></h3>
 <p>You should publish a package on <a href="https://pypi.org/">PyPI</a>, then add it to the <a href="https://github.com/mkdocs/catalog">Catalog</a> for discoverability. Plugins are strongly recommended to have a unique plugin name (entry point name) according to the catalog.</p></div>
