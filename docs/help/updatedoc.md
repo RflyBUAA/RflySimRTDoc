@@ -12,7 +12,7 @@
 
 	1.2 `pip install pymdown-extensions`
 
-	1.3 `pip install markdown-callouts`
+	1.3 `pip install markdown-callouts`详见https://github.com/sondregronas/mkdocs-callouts
 
 	1.4 `pip install mdx-gh-links`
 

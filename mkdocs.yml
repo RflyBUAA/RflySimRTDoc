@@ -39,10 +39,14 @@ markdown_extensions:
   - toc:
       permalink: 
   - attr_list
+  - md_in_html
   - def_list
   - tables
   - pymdownx.highlight:
       use_pygments: false
+  - nl2br
+  - admonition
+  - pymdownx.details
   - pymdownx.snippets
   - pymdownx.superfences
   - callouts
