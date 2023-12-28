@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userDefineParam/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/envConfig/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>设置用户定义模型参数 - RflySim-RT</title>
+    <title>安装开发环境 - RflySim-RT</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u8bbe\u7f6e\u7528\u6237\u5b9a\u4e49\u6a21\u578b\u53c2\u6570";
-        var mkdocs_page_input_path = "dev_manual/userDefineParam.md";
-        var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userDefineParam/";
+        var mkdocs_page_name = "\u5b89\u88c5\u5f00\u53d1\u73af\u5883";
+        var mkdocs_page_input_path = "dev_manual/envConfig.md";
+        var mkdocs_page_url = "/RflySimRTDoc/dev_manual/envConfig/";
       </script>
     
     <!--[if lt IE 9]>
@@ -68,13 +68,25 @@
               </ul>
               <p class="caption"><span class="caption-text">开发手册</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../envConfig/">安装开发环境</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">安装开发环境</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 系统和软件要求</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#11-matlab-2021a">1.1 安装MATLAB 2021a和相关补丁</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#12">1.2 安装硬件支持包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#13-xilinx-unified-20201">1.3 安装Xilinx Unified 2020.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#14-vs2017">1.4 安装VS2017</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../userDefineModel/">更换用户定义模型</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">设置用户定义模型参数</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置用户定义模型参数</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">帮助</span></p>
@@ -102,9 +114,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">开发手册</li>
-      <li class="breadcrumb-item active">设置用户定义模型参数</li>
+      <li class="breadcrumb-item active">安装开发环境</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/edit/master/docs/dev_manual/userDefineParam.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/RflyBUAA/RflySimRTDoc/edit/master/docs/dev_manual/envConfig.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -112,13 +124,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">增加用户定义模型参数<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+                <div><h1 id="_1">安装开发环境<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<h2 id="1">1. 系统和软件要求<a class="headerlink" href="#1" title="Permanent link"></a></h2>
+<p><strong>操作系统</strong>：Windows 10/11</p>
+<p>软件清单，见下表：</p>
+<table>
+<thead>
+<tr>
+<th>软件名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MATLAB 2021a</td>
+<td>需要安装Vivado补丁</td>
+</tr>
+<tr>
+<td>HDL Coder Support Package for Xilinx Zynq Platform</td>
+<td>硬件支持包</td>
+</tr>
+<tr>
+<td>HDL Coder Support Package for Xilinx FPGA Boards</td>
+<td>硬件支持包</td>
+</tr>
+<tr>
+<td>Embedded Coder Support Package for Xilinx Zynq Platform</td>
+<td>硬件支持包</td>
+</tr>
+<tr>
+<td>Embedded Coder Support Package for ARM Cortex-A Processors</td>
+<td>硬件支持包</td>
+</tr>
+<tr>
+<td>Xilinx Unified 2020.1 (Vitis和Vivado)</td>
+<td>编译平台代码生成固件</td>
+</tr>
+<tr>
+<td>VS2017</td>
+<td>用于代码生成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11-matlab-2021a">1.1 安装MATLAB 2021a和相关补丁<a class="headerlink" href="#11-matlab-2021a" title="Permanent link"></a></h3>
+<p>在安装好MATLAB 2021a后，安装用于Vivado的补丁。<a href="https://ww2.mathworks.cn/support/bugreports/2656440">点击此处</a>获取更详细内容。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>不安装该补丁会导致无法正常生成用于FPGA的IP CORE</p>
+</div>
+<ol>
+<li><a href="https://ww2.mathworks.cn/support/bugreports/2656440">点击</a>进入页面（可能需要注册登录）下载补丁附件<code>attachment_2656440_2022-01-07.zip</code>。</li>
+<li>下载后解压，可以看到里面包含了用于不同MATLAB版本补丁。</li>
+<li>在解压后文件夹中，打开名为<code>R2021a</code>的文件夹，将里面的文件<code>IPEmitterVivado.p</code>覆盖<code>&lt;MATLAB&gt;\toolbox\hdlcoder\hdlcommon\+hdlturnkey\+ip\IPEmitterVivado.p</code>（提前对被覆盖文件做好备份）。<code>&lt;MATLAB&gt;</code>表示MATLAB 2021a的安装根目录。</li>
+</ol>
+<h3 id="12">1.2 安装硬件支持包<a class="headerlink" href="#12" title="Permanent link"></a></h3>
+<ol>
+<li>将下载好的支持包复制到下载目录下面：路径示例<code>C:\Users\&lt;username&gt;\Downloads\MathWorks\SupportPackages\R2021a</code>。&lt;username&gt;表示你的电脑用户名</li>
+<li>到MATLAB安装路径<code>&lt;MATLAB&gt;\bin\win64</code>下双击运行<code>SupportSoftwareInstaller.exe</code>。</li>
+<li>接下来按照提示操作即可。</li>
+</ol>
+<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../videos/%E5%AE%89%E8%A3%85%E7%A1%AC%E4%BB%B6%E6%94%AF%E6%8C%81%E5%8C%85.mp4" type="video/mp4"></source></video></div></p>
+<h3 id="13-xilinx-unified-20201">1.3 安装Xilinx Unified 2020.1<a class="headerlink" href="#13-xilinx-unified-20201" title="Permanent link"></a></h3>
+<h3 id="14-vs2017">1.4 安装VS2017<a class="headerlink" href="#14-vs2017" title="Permanent link"></a></h3>
+<ul>
+<li>MATLAB 2021a 对于2022年暂时需要打Matlab提供的vivado补丁，具体见：[Simulink生成IPCore的Bug修复方式]</li>
+<li>HDL Coder Support Package for Xilinx Zynq Platform<code>已离线</code></li>
+<li>HDL Coder Support Package for Xilinx FPGA Boards(似乎非必要)<code>已离线</code></li>
+<li>Embedded Coder Support Package for Xilinx Zynq Platform<code>已离线</code>(似乎非必要,和下面的二选一)</li>
+<li>Embedded Coder Support Package for ARM Cortex-A Processors(目的是其包含的工具链Linaro Toolchain v4.8)<code>已经离线</code></li>
+<li>Vivado 2020.1</li>
+<li>为了编译四旋翼模型需要安装VS，我选用的是VS2017</li>
+</ul></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../userDefineModel/" class="btn btn-neutral float-left" title="更换用户定义模型"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../help/updatedoc/" class="btn btn-neutral float-right" title="如何更新文档">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../user_manual/sensorsCalculate/" class="btn btn-neutral float-left" title="校准传感器"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../userDefineModel/" class="btn btn-neutral float-right" title="更换用户定义模型">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -145,10 +227,10 @@
         </span>
     
     
-      <span><a href="../userDefineModel/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../user_manual/sensorsCalculate/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../help/updatedoc/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../userDefineModel/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
