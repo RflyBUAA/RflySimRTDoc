@@ -35,4 +35,6 @@ RflySim-RT基于SocFPGA打造，仿真对象的模型以中断的方式运行在
 ---
 文档最新提交的变化
 
+<!-- {{ git_latest_release }} -->
+
 {{ latest_changes }}
