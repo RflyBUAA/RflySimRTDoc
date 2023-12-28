@@ -14,6 +14,7 @@ nav:
         - 修改模型参数: user_manual/modifyModelParam.md
         - 校准传感器: user_manual/sensorsCalculate.md
     - 开发手册:
+        - 安装开发环境: dev_manual/envConfig.md
         - 更换用户定义模型: dev_manual/userDefineModel.md
         - 设置用户定义模型参数: dev_manual/userDefineParam.md
     - 帮助:
