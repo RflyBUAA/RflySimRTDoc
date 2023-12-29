@@ -85,6 +85,10 @@
 	```
 	ssh-keygen -t ed25519 -C "your_email@example.com"
 	```
+	或
+	```
+	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+	```
 	在输出的结果中可以看到类似这样的输出
 	```
 	Your public key has been saved in /home/kcx064/.ssh/id_ed25519.pub
