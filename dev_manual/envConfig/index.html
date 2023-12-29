@@ -84,11 +84,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-vitis">2. 导入Vitis工程源码</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3">3. 工程关系说明</a>
+    </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userDefineModel/">更换用户定义模型</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../userDefineModel/">生成仿真模型</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置用户定义模型参数</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置可调参数</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">帮助</span></p>
@@ -243,13 +245,40 @@
 <p>导入工程后，打开如下图的文件工程会更新该文件的信息，避免编译报错<br>
 <img alt="Pasted image 20230106164821.png" src="../../img-large/Pasted%20image%2020230106164821.png"></p>
 </details>
-<p>设置完成后，日后运行可直接用Vitis打开该源码目录为工作空间。</p></div>
+<p>设置完成后，日后运行可直接用Vitis打开该源码目录为工作空间。</p>
+<h2 id="3">3. 工程关系说明<a class="headerlink" href="#3" title="Permanent link"></a></h2>
+<p><img alt="" src="../../img-large/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
+<p>前面内容完成了Vitis工程的设置。接下来，完成Simulink工程和Vivado工程的设置。首先，用户自行选择合适的位置运行<br>
+</p><pre class="highlight"><code>git clone https://gitee.com/RflyBUAA/socfpga-hil-platformv2.git</code></pre><br>
+即可得到用于MATLAB/Simulink和Vivado的工程文件。下面给出了该工程内的文件说明。
+<table>
+<thead>
+<tr>
+<th>文件夹</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP</td>
+<td>Vivado工程路径</td>
+</tr>
+<tr>
+<td>PL</td>
+<td>MATLAB/Simulink工程路径</td>
+</tr>
+<tr>
+<td>Packages</td>
+<td>无关文件</td>
+</tr>
+</tbody>
+</table></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../../user_manual/sensorsCalculate/" class="btn btn-neutral float-left" title="校准传感器"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../userDefineModel/" class="btn btn-neutral float-right" title="更换用户定义模型">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../userDefineModel/" class="btn btn-neutral float-right" title="生成仿真模型">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>

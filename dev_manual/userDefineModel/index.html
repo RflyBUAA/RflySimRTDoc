@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userDefineModel/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>更换用户定义模型 - RflySim-RT</title>
+    <title>生成仿真模型 - RflySim-RT</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u66f4\u6362\u7528\u6237\u5b9a\u4e49\u6a21\u578b";
+        var mkdocs_page_name = "\u751f\u6210\u4eff\u771f\u6a21\u578b";
         var mkdocs_page_input_path = "dev_manual/userDefineModel.md";
         var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userDefineModel/";
       </script>
@@ -70,11 +70,11 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../envConfig/">安装开发环境</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">更换用户定义模型</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">生成仿真模型</a>
     <ul class="current">
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置用户定义模型参数</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置可调参数</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">帮助</span></p>
@@ -102,7 +102,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">开发手册</li>
-      <li class="breadcrumb-item active">更换用户定义模型</li>
+      <li class="breadcrumb-item active">生成仿真模型</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/RflyBUAA/RflySimRTDoc/edit/master/docs/dev_manual/userDefineModel.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -112,13 +112,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">更换用户定义模型<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+                <div><h1 id="_1">生成仿真模型<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<p>用MATLAB 2021a打开工程文件，该文件位于<a href="../envConfig/#3">PL文件夹中</a>，名为<code>PL.prj</code>。</p>
+<p>打开工程中的文件<code>.\Tools\CopyModelCode2VitisPrj.m</code>，该文件用于自动将生成的模型代码拷贝到vitis工程路径中，免去手动繁琐的操作。文件中<br>
+</p><pre class="highlight"><code>vitisPrjPath = 'D:\myWorkSpace\RflySimCourse\socfpga-hil-vitis\';
+unzip('code\Model.zip','Tools\Model')
+delete .\Tools\Model\code\Model_ert_rtw\ert_main.c  .\Tools\Model\code\Model_ert_rtw\buildInfo.mat  .\Tools\Model\code\Model_ert_rtw\defines.txt
+copyfile('.\Tools\Model',[vitisPrjPath,'HIL_APP\src\TaskINT\Model'])
+rmdir Tools\Model s</code></pre><br>
+修改<code>vitisPrjPath</code>的值为用户在<a href="../envConfig/#2-vitis">导入Vitis工程源码</a>中设置的路径。
+<p>设置安装路径（修改下面命令的路径为Xilinx软件的安装路径）<br>
+</p><pre class="highlight"><code>hdlsetuptoolpath('ToolName','Xilinx Vivado','ToolPath','D:\Xilinx\Vivado\2020.1\bin\vivado.bat');  </code></pre>
+<p>依次运行脚本</p>
+<ul>
+<li>PL\Model\H250DegradedParamInit4S.m</li>
+<li>PL\HIL_System\SensorParamInit.m</li>
+</ul>
+<p>打开模型文件</p>
+<ul>
+<li>PL\HIL_System\HIL_System.slx</li>
+</ul>
+<p>在模型最顶层找到model子系统，在子系统上右键，编译子系统，如下图所示</p>
+<p>编译模型<br>
+<img alt="" src="../../img-large/buildmodel.png"></p>
+<p>设置需要可调的参数。注意不要将模型采样时间设置为可调（保持为Inlined），这样会导致错误。<br>
+<img alt="" src="../../img-large/buildmodel2.png"></p>
+<p>编译后会显示生成的代码，可以在右侧查看到。<br>
+<img alt="" src="../../img-large/buildmodel3.png"></p>
+<p>最后运行脚本</p>
+<ul>
+<li>PL\Tools\CopyModelCode2VitisPrj.m</li>
+</ul>
+<p>此时，生成的模型文件已经更新到了Vitis工程中。请用户在HIL_System.slx框架内自定义自己的模型，但不要对模型的输入输出接口做任何更改。</p>
+<p>后面则是打开Vitis工程并编译，从而生成BOOT.bin文件。将该文件复制到仿真器的SD卡中，不要修改文件名称。</p></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../envConfig/" class="btn btn-neutral float-left" title="安装开发环境"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../userDefineParam/" class="btn btn-neutral float-right" title="设置用户定义模型参数">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../userDefineParam/" class="btn btn-neutral float-right" title="设置可调参数">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
