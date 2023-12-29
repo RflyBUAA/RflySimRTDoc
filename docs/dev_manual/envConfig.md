@@ -13,8 +13,8 @@
 |HDL Coder Support Package for Xilinx FPGA Boards|硬件支持包|
 |Embedded Coder Support Package for Xilinx Zynq Platform|硬件支持包|
 |Embedded Coder Support Package for ARM Cortex-A Processors|硬件支持包|
-|Xilinx Unified 2020.1 (Vitis和Vivado)|编译平台代码生成固件|
-|VS2017|用于代码生成|
+|Xilinx Unified 2020.1 (包含Vitis和Vivado)|编译平台代码生成固件|
+|Visual Studio 2017 (VS2017)|用于代码生成|
 
 ### 1.1 安装MATLAB 2021a和相关补丁
 在安装好MATLAB 2021a后，安装用于Vivado的补丁。[点击此处](https://ww2.mathworks.cn/support/bugreports/2656440)获取更详细内容。
@@ -56,8 +56,36 @@ WARNING: 不安装该补丁会导致无法正常生成用于FPGA的IP CORE
 
 后续按照安装指引操作即可。
 
-### 1.4 安装VS2017
+### 1.4 安装Visual Studio 2017
 
 该版本不是唯一。可以安装其他VS版本。但是不建议安装最新版本。目前MALAB采用2021a，因此推荐采用早于2021年发布的VS版本。
-[下载页面](https://github.com/RflyBUAA/RflySimRTDoc/tree/gh-pages/software)
+[vs_Community.exe下载](https://github.com/RflyBUAA/RflySimRTDoc/tree/gh-pages/software)
 
+## 2. 导入Vitis工程源码
+
+请提前安装好git工具，安装路径不要有空格！并设置好git的环境变量。
+
+??? TIP "1. 下载代码并用Vitis打开源代码根目录"
+	运行
+	```
+	git clone https://gitee.com/RflyBUAA/socfpga-hil-vitis.git
+	```
+	用Vitis将该仓库目录作为工作空间打开，如下图所示
+	![Pasted image 20230106164214.png](../img-large/Pasted image 20230106164214.png)
+
+??? TIP "2. 导入工程"
+	在上一步结束后的软件界面上，进行Import...（导入）操作，如下图所示
+	![Pasted image 20230106164332.png](../img-large/Pasted image 20230106164332.png)
+
+??? TIP "3. 选择Eclipse方式导入"
+	![Pasted image 20230106164358.png](../img-large/Pasted image 20230106164358.png)
+
+??? TIP "4. 导入设置"
+	设置为前面clone仓库本地目录，并完成相关设置
+	![Pasted image 20230106164635.png](../img-large/Pasted image 20230106164635.png)
+
+??? TIP "5. 检查导入结果"
+	导入工程后，打开如下图的文件工程会更新该文件的信息，避免编译报错
+	![Pasted image 20230106164821.png](../img-large/Pasted image 20230106164821.png)
+
+设置完成后，日后运行可直接用Vitis打开该源码目录为工作空间。

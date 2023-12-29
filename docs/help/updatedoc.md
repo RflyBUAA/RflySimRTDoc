@@ -12,7 +12,7 @@
 
 	1.2 `pip install pymdown-extensions`
 
-	1.3 `pip install markdown-callouts`详见https://github.com/sondregronas/mkdocs-callouts
+	1.3 `pip install markdown-callouts`详见[https://github.com/sondregronas/mkdocs-callouts](https://github.com/sondregronas/mkdocs-callouts)
 
 	1.4 `pip install mdx-gh-links`
 
@@ -65,7 +65,7 @@
 	plugins:
   		- git-latest-changes
 	```
-	在需要的位置添加{{ latest_changes }}，即可显示最近一次提交涉及的更改。
+	即可显示最近几次提交涉及的更改。
 
 	1.16 ` pip install mkdocs-latest-release-plugin`
 	```
