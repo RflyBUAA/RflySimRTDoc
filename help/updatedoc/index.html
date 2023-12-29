@@ -154,12 +154,17 @@
     - git-latest-release</code></pre>
 </li>
 <li>
+<p>配置git用户<br>
+    </p><pre class="highlight"><code>git config --global user.name "Your Name"
+git config --global user.email "email@example.com"</code></pre>
+</li>
+<li>
 <p>修改文档内容</p>
-<p>2.1 运行<code>git clone https://github.com/RflyBUAA/RflySimRTDoc.git</code></p>
-<p>2.2 运行<code>git checkout master</code> (注意：默认分支可能是<code>gh-pages</code>, 开发前请确认当前分支不是<code>gh-pages</code>)</p>
-<p>2.3 修改文档，markdown格式</p>
-<p>2.4 运行<code>mkdocs build</code>，之后会在根目录下生成/更新<code>site</code>文件夹下的内容</p>
-<p>2.5 运行<code>mkdocs serve</code>可以本地预览效果</p>
+<p>3.1 运行<code>git clone https://github.com/RflyBUAA/RflySimRTDoc.git</code></p>
+<p>3.2 运行<code>git checkout master</code> (注意：默认分支可能是<code>gh-pages</code>, 开发前请确认当前分支不是<code>gh-pages</code>)</p>
+<p>3.3 修改文档，markdown格式</p>
+<p>3.4 运行<code>mkdocs build</code>，之后会在根目录下生成/更新<code>site</code>文件夹下的内容</p>
+<p>3.5 运行<code>mkdocs serve</code>可以本地预览效果</p>
 </li>
 <li>
 <p>运行<code>mkdocs gh-deploy</code>以提交site下的更改</p>
