@@ -183,18 +183,36 @@
 <li>到MATLAB安装路径<code>&lt;MATLAB&gt;\bin\win64</code>下双击运行<code>SupportSoftwareInstaller.exe</code>。</li>
 <li>接下来按照提示操作即可。</li>
 </ol>
-<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../videos/%E5%AE%89%E8%A3%85%E7%A1%AC%E4%BB%B6%E6%94%AF%E6%8C%81%E5%8C%85.mp4" type="video/mp4"></source></video></div></p>
-<h3 id="13-xilinx-unified-20201">1.3 安装Xilinx Unified 2020.1<a class="headerlink" href="#13-xilinx-unified-20201" title="Permanent link"></a></h3>
-<h3 id="14-vs2017">1.4 安装VS2017<a class="headerlink" href="#14-vs2017" title="Permanent link"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>MATLAB 2021a 对于2022年暂时需要打Matlab提供的vivado补丁，具体见：[Simulink生成IPCore的Bug修复方式]</li>
-<li>HDL Coder Support Package for Xilinx Zynq Platform<code>已离线</code></li>
-<li>HDL Coder Support Package for Xilinx FPGA Boards(似乎非必要)<code>已离线</code></li>
-<li>Embedded Coder Support Package for Xilinx Zynq Platform<code>已离线</code>(似乎非必要,和下面的二选一)</li>
-<li>Embedded Coder Support Package for ARM Cortex-A Processors(目的是其包含的工具链Linaro Toolchain v4.8)<code>已经离线</code></li>
-<li>Vivado 2020.1</li>
-<li>为了编译四旋翼模型需要安装VS，我选用的是VS2017</li>
-</ul></div>
+<li>Embedded Coder Support Package for Xilinx Zynq Platform（似乎非必要，和下面支持包的二选一即可，保险起见全部安装）</li>
+<li>Embedded Coder Support Package for ARM Cortex-A Processors（目的是其包含的工具链Linaro Toolchain v4.8）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">详细操作细节可以参考下面视频</p>
+<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../videos/%E5%AE%89%E8%A3%85%E7%A1%AC%E4%BB%B6%E6%94%AF%E6%8C%81%E5%8C%85.mp4" type="video/mp4"></source></video></div></p>
+</div>
+<h3 id="13-xilinx-unified-20201">1.3 安装Xilinx Unified 2020.1<a class="headerlink" href="#13-xilinx-unified-20201" title="Permanent link"></a></h3>
+<p><a href="https://china.xilinx.com/support/download/index.html/content/xilinx/zh/downloadNav/vitis/archive-vitis.html">点此查看下载页面</a>。下载连接为：<a href="https://china.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.1_0602_1208.tar.gz">https://china.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.1_0602_1208.tar.gz</a>（需要注册登录账号）</p>
+<p>将下载的软件包解压并运行安装程序。下面介绍几个关键选项</p>
+<details class="tip">
+<summary>1. 选择Vitis</summary>
+<p><img alt="" src="../../img-large/vitis_install_1.png"></p>
+</details>
+<details class="tip">
+<summary>2. 保持默认安装选项即可</summary>
+<p><img alt="" src="../../img-large/vitis_install_2.png"></p>
+</details>
+<details class="tip">
+<summary>3. 设置安装路径。可以选择为所有用户安装。</summary>
+<p><img alt="" src="../../img-large/vitis_install_3.png"></p>
+</details>
+<p>后续按照安装指引操作即可。</p>
+<h3 id="14-vs2017">1.4 安装VS2017<a class="headerlink" href="#14-vs2017" title="Permanent link"></a></h3>
+<p>该版本不是唯一。可以安装其他VS版本。但是不建议安装最新版本。目前MALAB采用2021a，因此推荐采用早于2021年发布的VS版本。<br>
+<a href="https://github.com/RflyBUAA/RflySimRTDoc/tree/gh-pages/software">下载页面</a></p></div>
               
             </div>
           </div><footer>
