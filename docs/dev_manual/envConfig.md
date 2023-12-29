@@ -31,16 +31,33 @@ WARNING: 不安装该补丁会导致无法正常生成用于FPGA的IP CORE
 2. 到MATLAB安装路径`<MATLAB>\bin\win64`下双击运行`SupportSoftwareInstaller.exe`。
 3. 接下来按照提示操作即可。
 
-![type:video](../videos/安装硬件支持包.mp4)
+!!! NOTE 
+	- Embedded Coder Support Package for Xilinx Zynq Platform（似乎非必要，和下面支持包的二选一即可，保险起见全部安装）
+	- Embedded Coder Support Package for ARM Cortex-A Processors（目的是其包含的工具链Linaro Toolchain v4.8）
+
+!!! NOTE "详细操作细节可以参考下面视频"
+	![type:video](../videos/安装硬件支持包.mp4)
 
 ### 1.3 安装Xilinx Unified 2020.1
 
+
+[点此查看下载页面](https://china.xilinx.com/support/download/index.html/content/xilinx/zh/downloadNav/vitis/archive-vitis.html)。下载连接为：[https://china.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.1_0602_1208.tar.gz](https://china.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.1_0602_1208.tar.gz)（需要注册登录账号）
+
+将下载的软件包解压并运行安装程序。下面介绍几个关键选项
+
+??? TIP "1. 选择Vitis"
+	![](../img-large/vitis_install_1.png)
+
+??? TIP "2. 保持默认安装选项即可"
+	![](../img-large/vitis_install_2.png)
+
+??? TIP "3. 设置安装路径。可以选择为所有用户安装。"
+	![](../img-large/vitis_install_3.png)
+
+后续按照安装指引操作即可。
+
 ### 1.4 安装VS2017
 
-- MATLAB 2021a 对于2022年暂时需要打Matlab提供的vivado补丁，具体见：[Simulink生成IPCore的Bug修复方式]
-- HDL Coder Support Package for Xilinx Zynq Platform`已离线`
-- HDL Coder Support Package for Xilinx FPGA Boards(似乎非必要)`已离线`
-- Embedded Coder Support Package for Xilinx Zynq Platform`已离线`(似乎非必要,和下面的二选一)
-- Embedded Coder Support Package for ARM Cortex-A Processors(目的是其包含的工具链Linaro Toolchain v4.8)`已经离线`
-- Vivado 2020.1
-- 为了编译四旋翼模型需要安装VS，我选用的是VS2017
+该版本不是唯一。可以安装其他VS版本。但是不建议安装最新版本。目前MALAB采用2021a，因此推荐采用早于2021年发布的VS版本。
+[下载页面](https://github.com/RflyBUAA/RflySimRTDoc/tree/gh-pages/software)
+
