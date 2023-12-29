@@ -159,6 +159,8 @@
 git config --global user.email "email@example.com"</code></pre>
 <p>2.2 生成ssh key<br>
 </p><pre class="highlight"><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></pre><br>
+或<br>
+<pre class="highlight"><code>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></pre><br>
 在输出的结果中可以看到类似这样的输出<br>
 <pre class="highlight"><code>Your public key has been saved in /home/kcx064/.ssh/id_ed25519.pub</code></pre><br>
 运行cat命令查看.pub文件中的内容，例如<br>
