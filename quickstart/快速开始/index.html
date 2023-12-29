@@ -362,7 +362,7 @@
 这里采用修改PX4启动脚本的方式让自动驾驶仪在启动的时候优先尝试连接外部SPI的IMU，从而实现一次烧录，既能用于仿真也能用于实飞的目的。这里修改<strong>飞控的传感器启动脚本进行简单修改重新编译烧录到飞控中</strong>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>默认支持PX4 v1.11版本的固件。对于v1.12的支持请参考<a href="https://www.yuque.com/rflysocfpgahil/lkdltx/goxg0w?view=doc_embed">如何使用PX4 1.12固件</a>。区别主要在于启动脚本的修改内容有细微的变化。 </p>
+<p>默认支持PX4 v1.11版本的固件。对于v1.12的支持请参考<a href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>。区别主要在于启动脚本的修改内容有细微的变化。 </p>
 </div>
 <p>这里假设用户使用RflySim进行控制算法的开发。为了能够与RflySim-RT实现仿真，需要修改固件源码的启动脚本。对于Pixhawk 4飞控而言，启动脚本路径位于<strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\rc.board_sensors</strong>。<br>
 其他类型的飞控可在路径 <strong>\Firmware\boards</strong> 中查找。<code>X</code>是RflySim的安装盘符，默认是C盘。</p>
