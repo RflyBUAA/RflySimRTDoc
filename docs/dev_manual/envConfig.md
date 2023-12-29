@@ -89,3 +89,19 @@ WARNING: 不安装该补丁会导致无法正常生成用于FPGA的IP CORE
 	![Pasted image 20230106164821.png](../img-large/Pasted image 20230106164821.png)
 
 设置完成后，日后运行可直接用Vitis打开该源码目录为工作空间。
+
+## 3. 工程关系说明
+
+![](../img-large/开发流程图.png)
+
+前面内容完成了Vitis工程的设置。接下来，完成Simulink工程和Vivado工程的设置。首先，用户自行选择合适的位置运行
+```
+git clone https://gitee.com/RflyBUAA/socfpga-hil-platformv2.git
+```
+即可得到用于MATLAB/Simulink和Vivado的工程文件。下面给出了该工程内的文件说明。
+
+|文件夹|说明|
+|---|---|
+|IP |	Vivado工程路径	|
+|PL	|	MATLAB/Simulink工程路径		|
+|Packages|	无关文件	|
