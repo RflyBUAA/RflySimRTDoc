@@ -2,7 +2,7 @@
 
 本文文档使用MkDocs开发，配置简单。建议在WSL下进行开发。
 
-1. 安装文档环境可以参考[mkdocs.org](https://www.mkdocs.org)
+!!! TIP "1. 安装文档环境可以参考[mkdocs.org](https://www.mkdocs.org)"
 
 	1.1  `pip install mkdocs-pdf-export-plugin`之后在配置文件`mkdocs.yml`中启用插件
 	```
@@ -73,21 +73,46 @@
   		- git-latest-release
 	```
 
+!!! TIP "2. 配置Git用户"
 
-2. 修改文档内容
+	2.1 新安装的WSL首先配置Git用户信息
+	```
+	git config --global user.name "Your Name"
+	git config --global user.email "email@example.com"
+	```
 
-    2.1 运行`git clone https://github.com/RflyBUAA/RflySimRTDoc.git`
+	2.2 生成ssh key
+	```
+	ssh-keygen -t ed25519 -C "your_email@example.com"
+	```
+	在输出的结果中可以看到类似这样的输出
+	```
+	Your public key has been saved in /home/kcx064/.ssh/id_ed25519.pub
+	```
+	运行cat命令查看.pub文件中的内容，例如
+ 	```
+	cat /home/kcx064/.ssh/id_ed25519.pub
+	```
+	将输出的内容添加到github仓库的SSH keys中<br/>
+	2.3 安装Git lfs
+	```
+	sudo apt-get install git-lfs
+	```
 
-    2.2 运行`git checkout master` (注意：默认分支可能是`gh-pages`, 开发前请确认当前分支不是`gh-pages`)
+!!! TIP "3. 修改文档内容"
 
-	2.3 修改文档，markdown格式
+    3.1 运行`git clone https://github.com/RflyBUAA/RflySimRTDoc.git`
 
-	2.4 运行`mkdocs build`，之后会在根目录下生成/更新`site`文件夹下的内容
+    3.2 运行`git checkout master` (注意：默认分支可能是`gh-pages`, 开发前请确认当前分支不是`gh-pages`)
+
+	3.3 修改文档，markdown格式
+
+	3.4 运行`mkdocs build`，之后会在根目录下生成/更新`site`文件夹下的内容
     
-    2.5 运行`mkdocs serve`可以本地预览效果
+    3.5 运行`mkdocs serve`可以本地预览效果
 
-3. 运行`mkdocs gh-deploy`以提交site下的更改
+	3.6 运行`mkdocs gh-deploy`以提交site下的更改
 
-4. 如果`mkdocs gh-deploy`本身没能自动将更改push到远端仓库，那么手动`git push origin gh-pages` 
+	3.7 如果`mkdocs gh-deploy`本身没能自动将更改push到远端仓库，那么手动`git push origin gh-pages` 
 
-5. 提交master分支的更改
+	3.8 提交master分支的更改
