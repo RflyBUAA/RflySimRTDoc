@@ -4,10 +4,12 @@ site_description: Project documentation of RflySim-RT.
 site_author: kechenxu@buaa.edu.cn
 
 repo_url: https://github.com/RflyBUAA/RflySimRTDoc
+edit_uri: blob/master/docs/
 
-nav:
+nav: 
+    - index.md
     - 快速开始: 
-        - 快速开始: quickstart/快速开始.md
+        - 快速开始: quickstart/quickstart.md
     - 用户手册:
         - 配置WIFI模块: user_manual/configWIFImodules.md
         - 适配PX4 1.12固件: user_manual/configforPX41_12.md
@@ -61,8 +63,8 @@ markdown_extensions:
 plugins:
   - search
   - autorefs
-  - git-latest-changes #展示最近一次更新的变化
-  - git-latest-release
+  # - git-latest-changes #展示最近一次更新的变化
+  # - git-latest-release
   - mkdocs-video:
       is_video: true
       video_autoplay: false

@@ -36,7 +36,7 @@ WARNING: 不安装该补丁会导致无法正常生成用于FPGA的IP CORE
 	- Embedded Coder Support Package for ARM Cortex-A Processors（目的是其包含的工具链Linaro Toolchain v4.8）
 
 !!! NOTE "详细操作细节可以参考下面视频"
-	![type:video](../videos/安装硬件支持包.mp4)
+	![type:video](../videos/installhsp.mp4)
 
 ### 1.3 安装Xilinx Unified 2020.1
 

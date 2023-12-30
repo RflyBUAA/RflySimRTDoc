@@ -19,12 +19,12 @@ param
 |param list									|列出可修改的参数													|
 |param listfile								|列出根目录下的文件													|
 |param save									|保存当前参数到默认参数文件中										|
-|param save [filename]						|保存当前参数到指定参数文件中，并且将该<br/>文件设置为默认参数文件		|
+|param save <filename\>						|保存当前参数到指定参数文件中，并且将该<br/>文件设置为默认参数文件		|
 |param load									|加载默认参数文件													|
-|param load [filename]						|加载指定参数文件													|
-|param set [index] [value]					|修改模型参数值														|
-|param set [index] [value_index] [value]	|修改模型参数值，参数为矩阵时按列排布															|
-|param set [filename]						|设置指定文件为默认参数文件，如果该文件<br/>不存在，系统重启时将按照参数默认值创建<br/>该文件。	|
+|param load <filename\>						|加载指定参数文件													|
+|param set <index\> <value\>					|修改模型参数值														|
+|param set <index\> <value_index\> <value\>	|修改模型参数值，参数为矩阵时按列排布															|
+|param set <filename\>						|设置指定文件为默认参数文件，如果该文件<br/>不存在，系统重启时将按照参数默认值创建<br/>该文件。	|
 
  <!--    param list          列出可修改的参数
     param listfile     列出根目录下的文件
@@ -110,10 +110,10 @@ param
 	File <H250.json> Save Successfully.
 	```
 
-??? NOTE "param save [filename]"
+??? NOTE "param save <filename\>"
 	保存参数到指定参数文件中，文件不存在则创建，且会将新指定的文件设置为默认参数文件。
 
-	- [filename]：目标参数文件。注意包含文件后缀`.json`。
+	- <filename\>：目标参数文件。注意包含文件后缀`.json`。
 
 	使用效果如下
 	```
@@ -130,10 +130,10 @@ param
 	File <H250.json> Load Successfully.
 	```
 
-??? NOTE "param load [filename]"
+??? NOTE "param load <filename\>"
 	加载指定参数文件。
 
-	- [filename]：目标参数文件。注意包含文件后缀`.json`。
+	- <filename\>：目标参数文件。注意包含文件后缀`.json`。
 
 	使用效果如下
 	```
@@ -142,29 +142,29 @@ param
 	File <H250.json> is updated to FrameConfigPath Successfully.
 	```
 
-??? NOTE "param set [index]  [value]"
-	修改指定参数在内存中的数值，适用于标量参数。重启后会恢复为默认参数文件中的参数值。如要长期保存参数，请再使用param save命令或者param save [filename]
+??? NOTE "param set <index\>  <value\>"
+	修改指定参数在内存中的数值，适用于标量参数。重启后会恢复为默认参数文件中的参数值。如要长期保存参数，请再使用param save命令或者param save <filename\>
 	
-	- [index]：参数序号，也就是param list运行结果中的参数编号；
-	- [value]：要设置的数值。
+	- <index\>：参数序号，也就是param list运行结果中的参数编号；
+	- <value\>：要设置的数值。
 
-??? NOTE "param set [index]  [value_index]  [value]" 
-	功能上与param set [index] [value]相同。适用于向量和数组参数。
+??? NOTE "param set <index\>  <value_index\>  <value\>" 
+	功能上与param set <index\> <value\>相同。适用于向量和数组参数。
 
-	- [index]：参数序号，也就是param list中的参数前的编号
-	- [value_index]：参数序号。特别的对于矩阵而言，value_index为列优先。例如对于3x3的矩阵参数，value_index的有效取值范围是0-8。具体序号如下
+	- <index\>：参数序号，也就是param list中的参数前的编号
+	- <value_index\>：参数序号。特别的对于矩阵而言，value_index为列优先。例如对于3x3的矩阵参数，value_index的有效取值范围是0-8。具体序号如下
 	0    3    6
 	1    4    7
 	2    5    8
 	其他数组则按照从左到右的顺序并且从0开始。
-	- [value]：表示要设置的数值。
+	- <value\>：表示要设置的数值。
 
 	```
 	param set 2 3 1
 	```
 	上面的例子是将编号为**2**的参数中的编号为**3**的元素设置为**1**
 
-??? NOTE "param set [filename]"
+??? NOTE "param set <filename\>"
 
-	- [filename]：目标参数文件。注意包含文件后缀`.json`。
+	- <filename\>：目标参数文件。注意包含文件后缀`.json`。
 	设置默认参数文件。若文件不存在，依旧能够设置成功，且在重启后自动创建所指定的参数文件。
