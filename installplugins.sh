@@ -37,3 +37,5 @@ pip install mkdocs-resize-images
 pip install mkdocs-git-latest-changes-plugin
 
 pip install mkdocs-latest-release-plugin
+
+sudo apt-get install git-lfs

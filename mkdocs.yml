@@ -17,6 +17,7 @@ nav:
         - 校准传感器: user_manual/sensorsCalculate.md
     - 开发手册:
         - 安装开发环境: dev_manual/envConfig.md
+        - 生成FPGA平台文件: dev_manual/userFPGA.md
         - 生成仿真模型: dev_manual/userDefineModel.md
         - 设置可调参数: dev_manual/userDefineParam.md
     - 帮助:

@@ -53,4 +53,13 @@ hdlsetuptoolpath('ToolName','Xilinx Vivado','ToolPath','D:\Xilinx\Vivado\2020.1\
 
 ## 3. 生成仿真器启动文件
 
-后面则是打开Vitis工程并编译，从而生成BOOT.bin文件。将该文件复制到仿真器的SD卡中，不要修改文件名称。
+打开Vitis 2020.1，选择在[导入Vitis工程源码](../dev_manual/envConfig.md#2-vitis)中导入的工作空间。
+
+!!! NOTE 
+	第一次导入后，下次打开默认显示上次打开的工作空间。
+
+如下图所示，选中顶层工程HIL_APP_system，再选择Release模式，将开始编译
+![](../img-large/vitis_build1.png)
+编译后按照下图路径找到编译出的文件BOOT.BIN。
+![](../img-large/vitis_build2.png)
+将图中BOOT.BIN文件复制到仿真器的SD卡中，不要修改文件名称。
