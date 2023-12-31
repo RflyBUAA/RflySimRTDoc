@@ -20,7 +20,7 @@ nav:
         - 生成仿真模型: dev_manual/userDefineModel.md
         - 设置可调参数: dev_manual/userDefineParam.md
     - 帮助:
-        - 如何更新文档: help/updatedoc.md
+        - 如何更新文档: help/readme.md
     - 测试:
         - 测试: test/test.md
 
@@ -73,7 +73,7 @@ plugins:
       target-dir: img
       enable_cache: True
       size: [400, 400]
-      extensions: ['.jpg', '.jpeg', '.png', '.gif', '.svg']
+      extensions: ['.jpg', '.jpeg', '.png', '.svg']
 
 # watch:
 #   - mkdocs
