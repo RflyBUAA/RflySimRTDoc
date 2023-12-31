@@ -74,8 +74,16 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../envConfig/">安装开发环境</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../userFPGA/">生成FPGA平台文件</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">生成仿真模型</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 预备操作</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. 生成模型代码</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3">3. 生成仿真器启动文件</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置可调参数</a>
@@ -83,7 +91,7 @@
               </ul>
               <p class="caption"><span class="caption-text">帮助</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/updatedoc/">如何更新文档</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">测试</span></p>
@@ -117,6 +125,7 @@
             <div class="section" itemprop="articleBody">
               
                 <div><h1 id="_1">生成仿真模型<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<h2 id="1">1. 预备操作<a class="headerlink" href="#1" title="Permanent link"></a></h2>
 <p>用MATLAB 2021a打开工程文件，该文件位于<a href="../envConfig/#3">PL文件夹中</a>，名为<code>PL.prj</code>。</p>
 <p>打开工程中的文件<code>.\Tools\CopyModelCode2VitisPrj.m</code>，该文件用于自动将生成的模型代码拷贝到vitis工程路径中，免去手动繁琐的操作。文件中<br>
 </p><pre class="highlight"><code>vitisPrjPath = 'D:\myWorkSpace\RflySimCourse\socfpga-hil-vitis\';
@@ -125,6 +134,8 @@ delete .\Tools\Model\code\Model_ert_rtw\ert_main.c  .\Tools\Model\code\Model_ert
 copyfile('.\Tools\Model',[vitisPrjPath,'HIL_APP\src\TaskINT\Model'])
 rmdir Tools\Model s</code></pre><br>
 修改<code>vitisPrjPath</code>的值为用户在<a href="../envConfig/#2-vitis">导入Vitis工程源码</a>中设置的路径。
+<p><br></p>
+<h2 id="2">2. 生成模型代码<a class="headerlink" href="#2" title="Permanent link"></a></h2>
 <p>设置安装路径（修改下面命令的路径为Xilinx软件的安装路径）<br>
 </p><pre class="highlight"><code>hdlsetuptoolpath('ToolName','Xilinx Vivado','ToolPath','D:\Xilinx\Vivado\2020.1\bin\vivado.bat');  </code></pre>
 <p>依次运行脚本</p>
@@ -136,24 +147,42 @@ rmdir Tools\Model s</code></pre><br>
 <ul>
 <li>PL\HIL_System\HIL_System.slx</li>
 </ul>
-<p>在模型最顶层找到model子系统，在子系统上右键，编译子系统，如下图所示</p>
-<p>编译模型<br>
-<img alt="" src="../../img-large/buildmodel.png"></p>
+<p>在模型最顶层找到model子系统，在子系统上右键，编译子系统，关键步骤如下所示</p>
+<details class="tip">
+<summary>第一步：启动模型编译</summary>
+<p><img alt="" src="../../img-large/buildmodel.png"></p>
+</details>
+<details class="tip">
+<summary>第二步：选择需要暴露的参数</summary>
 <p>设置需要可调的参数。注意不要将模型采样时间设置为可调（保持为Inlined），这样会导致错误。<br>
 <img alt="" src="../../img-large/buildmodel2.png"></p>
-<p>编译后会显示生成的代码，可以在右侧查看到。<br>
+</details>
+<details class="tip">
+<summary>第三步：查看生成的代码</summary>
+<p>编译后会显示生成的代码，可以在右侧查看到<br>
 <img alt="" src="../../img-large/buildmodel3.png"></p>
+</details>
 <p>最后运行脚本</p>
 <ul>
 <li>PL\Tools\CopyModelCode2VitisPrj.m</li>
 </ul>
-<p>此时，生成的模型文件已经更新到了Vitis工程中。请用户在HIL_System.slx框架内自定义自己的模型，但不要对模型的输入输出接口做任何更改。</p>
-<p>后面则是打开Vitis工程并编译，从而生成BOOT.bin文件。将该文件复制到仿真器的SD卡中，不要修改文件名称。</p></div>
+<p>此时，生成的模型文件已经更新到了Vitis工程中。请用户在HIL_System.slx框架内自定义自己的模型，但不要对模型的输入输出接口做任何更改，也不要修改模型代码生成的相关配置，否则可能导致后续源码编译失败或者工作异常。</p>
+<h2 id="3">3. 生成仿真器启动文件<a class="headerlink" href="#3" title="Permanent link"></a></h2>
+<p>打开Vitis 2020.1，选择在<a href="../envConfig/#2-vitis">导入Vitis工程源码</a>中导入的工作空间。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>第一次导入后，下次打开默认显示上次打开的工作空间。</p>
+</div>
+<p>如下图所示，选中顶层工程HIL_APP_system，再选择Release模式，将开始编译<br>
+<img alt="" src="../../img-large/vitis_build1.png"><br>
+编译后按照下图路径找到编译出的文件BOOT.BIN。<br>
+<img alt="" src="../../img-large/vitis_build2.png"><br>
+将图中BOOT.BIN文件复制到仿真器的SD卡中，不要修改文件名称。</p></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../envConfig/" class="btn btn-neutral float-left" title="安装开发环境"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../userFPGA/" class="btn btn-neutral float-left" title="生成FPGA平台文件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../userDefineParam/" class="btn btn-neutral float-right" title="设置可调参数">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -181,7 +210,7 @@ rmdir Tools\Model s</code></pre><br>
         </span>
     
     
-      <span><a href="../envConfig/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../userFPGA/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../userDefineParam/" style="color: #fcfcfc">Next &raquo;</a></span>

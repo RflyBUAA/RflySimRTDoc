@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/user_manual/sensorsCalculate/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userFPGA/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>校准传感器 - RflySim-RT</title>
+    <title>生成FPGA平台文件 - RflySim-RT</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u6821\u51c6\u4f20\u611f\u5668";
-        var mkdocs_page_input_path = "user_manual/sensorsCalculate.md";
-        var mkdocs_page_url = "/RflySimRTDoc/user_manual/sensorsCalculate/";
+        var mkdocs_page_name = "\u751f\u6210FPGA\u5e73\u53f0\u6587\u4ef6";
+        var mkdocs_page_input_path = "dev_manual/userFPGA.md";
+        var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userFPGA/";
       </script>
     
     <!--[if lt IE 9]>
@@ -60,27 +60,27 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../configWIFImodules/">配置WIFI模块</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../configforPX41_12/">适配PX4 1.12固件</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../modifyModelParam/">修改模型参数</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/modifyModelParam/">修改模型参数</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">校准传感器</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/sensorsCalculate/">校准传感器</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/envConfig/">安装开发环境</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../envConfig/">安装开发环境</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">生成FPGA平台文件</a>
+    <ul class="current">
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../userDefineModel/">生成仿真模型</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置可调参数</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置可调参数</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">帮助</span></p>
@@ -107,10 +107,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">用户手册</li>
-      <li class="breadcrumb-item active">校准传感器</li>
+          <li class="breadcrumb-item">开发手册</li>
+      <li class="breadcrumb-item active">生成FPGA平台文件</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/user_manual/sensorsCalculate.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/dev_manual/userFPGA.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -118,39 +118,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="_1">传感器校准<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
-<p>用户应该首先熟悉安装有PX4固件的飞控（自动驾驶仪）正常的校准操作方法。本平台则是通过仿真器上的两个按钮来模拟实际中对飞控进行校准的物理操作，如对飞控的旋转。这两个按钮的具体作用在下图中给出。</p>
-<p><img alt="" src="../../img-large/%E6%8C%89%E9%94%AE%E8%AF%B4%E6%98%8E.png"></p>
-<p>上图中有两个按键。这里分别用左键和右键来描述。</p>
-<div class="admonition tip">
-<p class="admonition-title">左键</p>
-<p>模式切换，仿真器上电运行后为<strong>一般模式</strong>，之后通过该按键对模式进行循环切换，分别为<strong>一般模式</strong>、<strong>加速度校准模式</strong>、<strong>磁力计校准模式</strong>。陀螺仪校准只需要保持飞行器静止即可。</p>
+                <div><h1 id="fpga">生成FPGA平台文件<a class="headerlink" href="#fpga" title="Permanent link"></a></h1>
+<p>打开vivado打开FPGA工程<br>
+<img alt="" src="../../img-large/vivado_build1.png"></p>
+<p>找到工程启动文件<br>
+<img alt="" src="../../img-large/vivado_build2.png"></p>
+<p>如下图操作，可以看到FPGA即PL端的顶层逻辑<br>
+<img alt="" src="../../img-large/vivado_build3.png"></p>
+<p>综合<br>
+<img alt="" src="../../img-large/vivado_build4.png"></p>
+<p>综合完成后，可根据提示进入下一步。或者手动选择下一步。如图<br>
+<img alt="" src="../../img-large/vivado_build5.png"></p>
+<p><img alt="" src="../../img-large/vivado_build6.png"></p>
+<p>完成后，取消<br>
+<img alt="" src="../../img-large/vivado_build7.png"></p>
+<p>生成bit流文件<br>
+<img alt="" src="../../img-large/vivado_build8.png"></p>
+<div class="admonition note">
+<p class="admonition-title">在执行步骤的等待过程中可以按照下图操作查看进度</p>
+<p><img alt="" src="../../img-large/vivado_build9.png"></p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">右键</p>
-<ul>
-<li>进入加速度模式后，通过该按键可逐次转换飞行器的姿态。加速度校准需要将飞行器依次保持在六种姿态下维持一定时间完成校准。用户需要根据QGC地面站的提示，单击按键完成飞行器的姿态转换，从而完成校准步骤。在校准过程中用户可以在RflySim3D中看到飞行器的姿态变化。</li>
-<li>进图磁力计校准模式后，通过该按键可逐次转换飞行器的姿态，并按照QGC地面站磁力计校准的提示，继续单机按键模拟飞行器的转动完成校准过程。</li>
-</ul>
-</div>
-<details class="example">
-<summary>陀螺仪校准演示</summary>
-<p><img alt="" src="../../img-large/%E9%99%80%E8%9E%BA%E4%BB%AA%E6%A0%A1%E5%87%86.gif"></p>
-</details>
-<details class="example">
-<summary>加速度计校准演示</summary>
-<p><img alt="" src="../../img-large/%E5%8A%A0%E9%80%9F%E5%BA%A6%E8%AE%A1%E6%A0%A1%E5%87%86.gif"></p>
-</details>
-<details class="example">
-<summary>磁力计校准演示</summary>
-<p><img alt="" src="../../img-large/%E7%A3%81%E5%8A%9B%E8%AE%A1%E6%A0%A1%E5%87%86.gif"></p>
-</details></div>
+<p class="admonition-title">生成导出.xsa文件</p>
+<p><img alt="" src="../../img-large/vivado_build10.png"></p>
+<p><img alt="" src="../../img-large/vivado_build11.png"></p>
+<p><img alt="" src="../../img-large/vivado_build12.png"></p>
+<p><img alt="" src="../../img-large/vivado_build13.png"></p>
+</div></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../modifyModelParam/" class="btn btn-neutral float-left" title="修改模型参数"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../dev_manual/envConfig/" class="btn btn-neutral float-right" title="安装开发环境">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../envConfig/" class="btn btn-neutral float-left" title="安装开发环境"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../userDefineModel/" class="btn btn-neutral float-right" title="生成仿真模型">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -177,10 +177,10 @@
         </span>
     
     
-      <span><a href="../modifyModelParam/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../envConfig/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../dev_manual/envConfig/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../userDefineModel/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
