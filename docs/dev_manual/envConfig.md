@@ -68,7 +68,7 @@ WARNING: 不安装该补丁会导致无法正常生成用于FPGA的IP CORE
 ??? TIP "1. 下载代码并用Vitis打开源代码根目录"
 	运行
 	```
-	git clone https://gitee.com/RflyBUAA/socfpga-hil-vitis.git
+	git clone https://gitee.com/RflyBUAA/rfly-sim-rt-vitis.git
 	```
 	用Vitis将该仓库目录作为工作空间打开，如下图所示
 	![Pasted image 20230106164214.png](../img-large/Pasted image 20230106164214.png)
