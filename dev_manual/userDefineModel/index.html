@@ -14,7 +14,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "\u751f\u6210\u4eff\u771f\u6a21\u578b";
-        var mkdocs_page_input_path = "dev_manual/userDefineModel.md";
+        var mkdocs_page_input_path = "dev_manual\\userDefineModel.md";
         var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userDefineModel/";
       </script>
     
@@ -81,6 +81,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#1">1. 预备操作</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2">2. 生成模型代码</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-xsa">3. 更新.xsa文件</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#3">3. 生成仿真器启动文件</a>
     </li>
@@ -167,6 +169,11 @@ rmdir Tools\Model s</code></pre><br>
 <li>PL\Tools\CopyModelCode2VitisPrj.m</li>
 </ul>
 <p>此时，生成的模型文件已经更新到了Vitis工程中。请用户在HIL_System.slx框架内自定义自己的模型，但不要对模型的输入输出接口做任何更改，也不要修改模型代码生成的相关配置，否则可能导致后续源码编译失败或者工作异常。</p>
+<h2 id="3-xsa">3. 更新.xsa文件<a class="headerlink" href="#3-xsa" title="Permanent link"></a></h2>
+<p>如果已经对FPGA内部逻辑进行了修改，那么需要重新编译FPGA逻辑并导出xsa文件，详细可以参考<a href="../userFPGA/">生成FPGA平台文件</a>。在这里需要将生成好的xsa文件在vitis工程中同步，步骤如下所示：</p>
+<p><img alt="" src="../../img-large/update_xsa1.png"></p>
+<p>需要稍等片刻才会出现下图的对话框</p>
+<p><img alt="" src="../../img-large/update_xsa2.png"></p>
 <h2 id="3">3. 生成仿真器启动文件<a class="headerlink" href="#3" title="Permanent link"></a></h2>
 <p>打开Vitis 2020.1，选择在<a href="../envConfig/#2-vitis">导入Vitis工程源码</a>中导入的工作空间。</p>
 <div class="admonition note">

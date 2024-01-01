@@ -14,7 +14,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "\u8bbe\u7f6e\u53ef\u8c03\u53c2\u6570";
-        var mkdocs_page_input_path = "dev_manual/userDefineParam.md";
+        var mkdocs_page_input_path = "dev_manual\\userDefineParam.md";
         var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userDefineParam/";
       </script>
     
@@ -118,7 +118,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">设置可调参数<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+                <div><h1 id="_1">设置可调参数<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<p>在更新模型的环节中，我们设置了哪些参数作为全局变量的形式出现，只有以全局变量的形式出现才能够在vitis工程中将其暴露为可修改的参数。</p>
+<p>声明这些可调参数的文件位于路径<code>rfly-sim-rt-vitis\HIL_APP\src\Config\config.c</code>中。下面给出了一段示例代码。在代码中通过ADD_PARAM()来声明这些可调参数，如果需要自行添加新的参数那么需要在此增加新的声明。这些被声明的参数是在其他c文件中声明过的全局变量。<br>
+</p><pre class="highlight"><code class="language-C">const ModelParam modelParamList[] =
+{
+// 四旋翼
+        ADD_PARAM(Mass,&amp;ModelParam_Airframe_m,1),
+        ADD_PARAM(C_md,ModelParam_envC_md,3),
+        ADD_PARAM(J,ModelParam_Airframe_J,9),
+        ADD_PARAM(motorCr,&amp;ModelParam_motorCr,1),
+        ADD_PARAM(motorFitType,&amp;ModelParam_motorFitType,1),
+        ADD_PARAM(motorJm,&amp;ModelParam_motorJm,1),
+        ADD_PARAM(motorMinThr,&amp;ModelParam_motorMinThr,1),
+        ADD_PARAM(motorRateCurveCoeffi,ModelParam_motorRateCurveCoeffi,3),
+        ADD_PARAM(motorTc,&amp;ModelParam_motorTc,1),
+        ADD_PARAM(motorWb,&amp;ModelParam_motorWb,1),
+        ADD_PARAM(rotorCt,&amp;ModelParam_rotorCt,1),
+        ADD_PARAM(NoiseVarAcc0, ModelParam_NoiseVarAcc0,3),
+        ADD_PARAM(NoiseVarGyro0, ModelParam_NoiseVarGyro0,3),
+        ADD_PARAM(NoiseVarMag0, ModelParam_NoiseVarMag0,3),
+        ADD_PARAM(PositionAcc0, ModelParam_PositionAcc0,3),
+        ADD_PARAM(DisplayUAVType,&amp;RflySimDisplayUAVType,1),
+        ADD_PARAM(CopterID,&amp;RflySimCopterID,1),
+        ADD_PARAM(RotorDirection, RotorDirectionVector, 8),
+        ADD_PARAM(EfficiencyMatrix, EfficiencyMatrix, 48),
+//公共部分
+        ADD_PARAM(BoardRotation, BoardRotation,3),
+        ADD_PARAM(IST8310_ConvertRatio, &amp;IST8310_ConvertRatio,1),
+        ADD_PARAM(Using_OneShot, &amp;Using_OneShot,1)
+};</code></pre><br>
+ADD_PARAM()的声明如下<br>
+<pre class="highlight"><code class="language-c">#define ADD_PARAM(_name, _addr, _len)\
+        {\
+                .name = #_name,\
+                .addr = (double *)_addr, \
+                .len = _len \
+        }</code></pre><br>
+即ADD_PARAM()内部的三个参数分别是：<strong>参数的名称</strong>、<strong>参数的指针</strong>、<strong>参数的长度</strong>。如果是标量参数那么其具体表示形举例为<br>
+<pre class="highlight"><code class="language-c">ADD_PARAM(Using_OneShot, &amp;Using_OneShot,1)</code></pre><br>
+如果是数组（数组c\c++中指针，即名称本省就是指针，不需要添加专门的取址符号），那么具体表示形式举例为<br>
+<pre class="highlight"><code class="language-C">ADD_PARAM(BoardRotation, BoardRotation,3)</code></pre><br>
+<strong>参数名称</strong>与<a href="../../user_manual/modifyModelParam/">用户手册</a>中介绍的json文件中的参数名称对应。在json参数文件不存在或者存在但与这里声明的参数存在不一致的情况下，参数文件会由仿真系统重新创建，在创建过程中就根据<strong>参数名称</strong>生成相应的json参数文件。</div>
               
             </div>
           </div><footer>
