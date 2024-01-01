@@ -78,7 +78,7 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1-matlabfpga">1. MATLAB更新FPGA代码</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-vivadoxsa">2. Vivado编译生成xsa文件</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-vivadoxsa">2. Vivado编译生成.xsa文件</a>
     </li>
     </ul>
                   </li>
@@ -123,8 +123,23 @@
             <div class="section" itemprop="articleBody">
               
                 <div><h1 id="fpga">生成FPGA平台文件<a class="headerlink" href="#fpga" title="Permanent link"></a></h1>
+<p>这部分内容涉及的主要软件包括：MATLAB、Vivado。具体的关系为MATLAB/Simulink生成FPGA逻辑代码以IP Core的形式增加到vivado工程中，再由vivado工程编译并输出xsa文件。</p>
 <h2 id="1-matlabfpga">1. MATLAB更新FPGA代码<a class="headerlink" href="#1-matlabfpga" title="Permanent link"></a></h2>
-<h2 id="2-vivadoxsa">2. Vivado编译生成xsa文件<a class="headerlink" href="#2-vivadoxsa" title="Permanent link"></a></h2>
+<p>下图所示的四个模型文件用于生成FPGA IP Core的源码，这里以SensorHub.slx文件举例。</p>
+<p><img alt="" src="../../img-large/genFPGAcode5.png"></p>
+<p>在模型子系统上右键，打开对话窗口<br>
+<img alt="" src="../../img-large/genFPGAcode0.png"></p>
+<p>之后根据提示，选择Yes或者No，之后稍等片刻即可得到下图所示的对话框<br>
+<img alt="" src="../../img-large/genFPGAcode1.png"></p>
+<p>按照下图所示参数进行设置，并在每一步设置好后点击Run This Task，检查运行结果，如果有问题需要根据提示解决，然后再次运行，直到显示Passed。每一步都需要运行。下面几幅图给出了这些步骤的配置。<br>
+<img alt="" src="../../img-large/genFPGAcode2.png"></p>
+<p><img alt="" src="../../img-large/genFPGAcode3.png"></p>
+<p><img alt="" src="../../img-large/genFPGAcode3_1.png"></p>
+<p><img alt="" src="../../img-large/genFPGAcode3_2.png"></p>
+<p><img alt="" src="../../img-large/genFPGAcode4.png"></p>
+<p>前面四个slx模型文件生成的IP Core对应下图中标记处的模块。下图是FPGA逻辑的顶层框图（后文中还会再次提到）。<br>
+<img alt="" src="../../img-large/genFPGAcode6.png"></p>
+<h2 id="2-vivadoxsa">2. Vivado编译生成.xsa文件<a class="headerlink" href="#2-vivadoxsa" title="Permanent link"></a></h2>
 <p>打开vivado打开FPGA工程<br>
 <img alt="" src="../../img-large/vivado_build1.png"></p>
 <p>找到工程启动文件<br>
