@@ -1,5 +1,8 @@
 # 生成FPGA平台文件
 
+## 1. MATLAB更新FPGA代码
+
+## 2. Vivado编译生成xsa文件
 打开vivado打开FPGA工程
 ![](../img-large/vivado_build1.png)
 

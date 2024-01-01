@@ -51,6 +51,16 @@ hdlsetuptoolpath('ToolName','Xilinx Vivado','ToolPath','D:\Xilinx\Vivado\2020.1\
 
 此时，生成的模型文件已经更新到了Vitis工程中。请用户在HIL_System.slx框架内自定义自己的模型，但不要对模型的输入输出接口做任何更改，也不要修改模型代码生成的相关配置，否则可能导致后续源码编译失败或者工作异常。
 
+## 3. 更新.xsa文件
+如果已经对FPGA内部逻辑进行了修改，那么需要重新编译FPGA逻辑并导出xsa文件，详细可以参考[生成FPGA平台文件](../dev_manual/userFPGA.md)。在这里需要将生成好的xsa文件在vitis工程中同步，步骤如下所示：
+
+
+![](../img-large/update_xsa1.png)
+
+需要稍等片刻才会出现下图的对话框
+
+![](../img-large/update_xsa2.png)
+
 ## 3. 生成仿真器启动文件
 
 打开Vitis 2020.1，选择在[导入Vitis工程源码](../dev_manual/envConfig.md#2-vitis)中导入的工作空间。
