@@ -7,6 +7,10 @@
 本系统的硬件连接如下图所示。
 ![](../img-large/框图.png)
 
+!!! TIP 
+	本仿真系统也支持飞控系统RflyPilot，连接图如下。详细内容可以参考该[RflyPilot的文档](https://rflypilot.github.io)。
+	![](../img-large/rflypilot_rflysim-rt连接图.png)
+
 TIP: 可右键单独打开图像查看细节
 
 ### 1.1 关键硬件清单
