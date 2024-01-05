@@ -20,7 +20,7 @@ TIP: 可右键单独打开图像查看细节
 - 连接线：GH1.25转杜邦连接线
 - 通信模块：[正点原子串口转wifi模块](https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&id=609757779633&ns=1&abbucket=8&skuId=4447338308660)
 
-NOTE: Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。Pixhawk 6系列没有提供外置SPI接口。
+NOTE: Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。如Pixhawk 6X、CUAV X7、Pixhawk V6X(CUAV)、Holybro Durandal。
 
 ### 1.2 硬件接口定义图
 
