@@ -20,7 +20,20 @@ TIP: 可右键单独打开图像查看细节
 - 连接线：GH1.25转杜邦连接线
 - 通信模块：[正点原子串口转wifi模块](https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&id=609757779633&ns=1&abbucket=8&skuId=4447338308660)
 
-NOTE: Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。如Pixhawk 6X、CUAV X7、Pixhawk V6X(CUAV)、Holybro Durandal。
+!!! NOTE 
+	Pixhawk 4 目前已经停售，可以替换为具有外置SPI接口的兼容PX4的自动驾驶仪。下面列举了带有SPI接口的飞控型号，以及基本的型号信息。
+
+	|型号|主处理器|频率|备注|
+	|---|---|---|---|
+	|Pixhawk 4|STM32F765| 216MHz|停售|
+	|Pixhawk 5X|STM32F765| 216MHz|停售|
+	|Pixhawk 6X|STM32H753| 480MHz||
+	|Holybro Durandal|STM32H743| 480MHz||
+	|CUAV V5+|STM32F765| 216MHz||
+	|CUAV X7+|STM32H743| 480MHz||
+	|CUAV X7+ Pro|STM32H743| 480MHz||
+	|CUAV Pixhawk V6X|STM32H753| 480MHz||
+	|Kore Carrier board| 仅为载板需要配合Hex Cube | - |该载板引出了SPI接口|
 
 ### 1.2 硬件接口定义图
 
