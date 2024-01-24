@@ -18,3 +18,5 @@ pip install markdown-captions
 pip install mkdocs-resize-images
 pip install mkdocs-git-latest-changes-plugin
 pip install mkdocs-latest-release-plugin
+pip install mkpdfs-mkdocs
+pip install weasyprint

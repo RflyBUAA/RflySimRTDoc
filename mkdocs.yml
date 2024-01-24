@@ -26,8 +26,8 @@ nav:
         - 测试: test/test.md
 
 theme: 
-    name: readthedocs
-    # name: mkdocs
+    # name: readthedocs
+    name: mkdocs
     # name: gitbook
     highlightjs: true
     analytics: {gtag: 'G-274394082'}
@@ -75,6 +75,16 @@ plugins:
       enable_cache: True
       size: [400, 400]
       extensions: ['.jpg', '.jpeg', '.png', '.svg']
+  - with-pdf:
+      verbose: false
+  # - pdf-export:
+  #       verbose: false
+        # media_type: print
+        # combined: true
+        # enabled_if_env: ENABLE_PDF_EXPORT 1
+  # - mkpdfs:
+  #       company: The War Company Inc.
+  #       author: Monsieur Silvestre
 
 # watch:
 #   - mkdocs

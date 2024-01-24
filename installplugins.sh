@@ -38,4 +38,8 @@ pip install mkdocs-git-latest-changes-plugin
 
 pip install mkdocs-latest-release-plugin
 
+pip install mkpdfs-mkdocs
+
 sudo apt-get install git-lfs
+
+sudo apt install weasyprint
