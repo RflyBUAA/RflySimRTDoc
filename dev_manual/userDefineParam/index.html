@@ -1,126 +1,150 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userDefineParam/" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>设置可调参数 - RflySim-RT</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/extra.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u8bbe\u7f6e\u53ef\u8c03\u53c2\u6570";
-        var mkdocs_page_input_path = "dev_manual/userDefineParam.md";
-        var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userDefineParam/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="kechenxu@buaa.edu.cn" name="author"/>
+<link href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userDefineParam/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>设置可调参数 - RflySim-RT</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+          gtag('config', "G-274394082");
+        </script>
+<link href="../../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">RflySim-RT</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">欢迎使用RflySim-RT</a>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">快速开始 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../quickstart/quickstart/">快速开始</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">用户手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/modifyModelParam/">修改模型参数</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/sensorsCalculate/">校准传感器</a>
+</li>
+</ul>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">开发手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../envConfig/">安装开发环境</a>
+</li>
+<li>
+<a class="dropdown-item" href="../userFPGA/">生成FPGA平台文件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../userDefineModel/">生成仿真模型</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">设置可调参数</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">帮助 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../help/readme/">如何更新文档</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">测试 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../test/test/">测试</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../userDefineModel/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../../help/readme/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/dev_manual/userDefineParam.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+</li>
+</ul>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart/">快速开始</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userFPGA/">生成FPGA平台文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">设置可调参数</a>
-    <ul class="current">
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">开发手册</li>
-      <li class="breadcrumb-item active">设置可调参数</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/dev_manual/userDefineParam.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <div><h1 id="_1">设置可调参数<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#_1">设置可调参数</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<div><h1 id="_1">设置可调参数<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
 <p>在更新模型的环节中，我们设置了哪些参数作为全局变量的形式出现，只有以全局变量的形式出现才能够在vitis工程中将其暴露为可修改的参数。</p>
-<p>声明这些可调参数的文件位于路径<code>rfly-sim-rt-vitis\HIL_APP\src\Config\config.c</code>中。下面给出了一段示例代码。在代码中通过ADD_PARAM()来声明这些可调参数，如果需要自行添加新的参数那么需要在此增加新的声明。这些被声明的参数是在其他c文件中声明过的全局变量。<br>
+<p>声明这些可调参数的文件位于路径<code>rfly-sim-rt-vitis\HIL_APP\src\Config\config.c</code>中。下面给出了一段示例代码。在代码中通过ADD_PARAM()来声明这些可调参数，如果需要自行添加新的参数那么需要在此增加新的声明。这些被声明的参数是在其他c文件中声明过的全局变量。<br/>
 </p><pre class="highlight"><code class="language-C">const ModelParam modelParamList[] =
 {
 // 四旋翼
@@ -147,68 +171,92 @@
         ADD_PARAM(BoardRotation, BoardRotation,3),
         ADD_PARAM(IST8310_ConvertRatio, &amp;IST8310_ConvertRatio,1),
         ADD_PARAM(Using_OneShot, &amp;Using_OneShot,1)
-};</code></pre><br>
-ADD_PARAM()的声明如下<br>
+};</code></pre><br/>
+ADD_PARAM()的声明如下<br/>
 <pre class="highlight"><code class="language-c">#define ADD_PARAM(_name, _addr, _len)\
         {\
                 .name = #_name,\
                 .addr = (double *)_addr, \
                 .len = _len \
-        }</code></pre><br>
-即ADD_PARAM()内部的三个参数分别是：<strong>参数的名称</strong>、<strong>参数的指针</strong>、<strong>参数的长度</strong>。如果是标量参数那么其具体表示形举例为<br>
-<pre class="highlight"><code class="language-c">ADD_PARAM(Using_OneShot, &amp;Using_OneShot,1)</code></pre><br>
-如果是数组（数组c\c++中指针，即名称本省就是指针，不需要添加专门的取址符号），那么具体表示形式举例为<br>
-<pre class="highlight"><code class="language-C">ADD_PARAM(BoardRotation, BoardRotation,3)</code></pre><br>
-<strong>参数名称</strong>与<a href="../../user_manual/modifyModelParam/">用户手册</a>中介绍的json文件中的参数名称对应。在json参数文件不存在或者存在但与这里声明的参数存在不一致的情况下，参数文件会由仿真系统重新创建，在创建过程中就根据<strong>参数名称</strong>生成相应的json参数文件。</div>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../userDefineModel/" class="btn btn-neutral float-left" title="生成仿真模型"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../help/readme/" class="btn btn-neutral float-right" title="如何更新文档">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../userDefineModel/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../help/readme/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+        }</code></pre><br/>
+即ADD_PARAM()内部的三个参数分别是：<strong>参数的名称</strong>、<strong>参数的指针</strong>、<strong>参数的长度</strong>。如果是标量参数那么其具体表示形举例为<br/>
+<pre class="highlight"><code class="language-c">ADD_PARAM(Using_OneShot, &amp;Using_OneShot,1)</code></pre><br/>
+如果是数组（数组c\c++中指针，即名称本省就是指针，不需要添加专门的取址符号），那么具体表示形式举例为<br/>
+<pre class="highlight"><code class="language-C">ADD_PARAM(BoardRotation, BoardRotation,3)</code></pre><br/>
+<strong>参数名称</strong>与<a href="../../user_manual/modifyModelParam/">用户手册</a>中介绍的json文件中的参数名称对应。在json参数文件不存在或者存在但与这里声明的参数存在不一致的情况下，参数文件会由仿真系统重新创建，在创建过程中就根据<strong>参数名称</strong>生成相应的json参数文件。</div></div>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

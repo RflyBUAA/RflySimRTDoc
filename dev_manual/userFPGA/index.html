@@ -1,220 +1,272 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userFPGA/" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>生成FPGA平台文件 - RflySim-RT</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/extra.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u751f\u6210FPGA\u5e73\u53f0\u6587\u4ef6";
-        var mkdocs_page_input_path = "dev_manual/userFPGA.md";
-        var mkdocs_page_url = "/RflySimRTDoc/dev_manual/userFPGA/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="kechenxu@buaa.edu.cn" name="author"/>
+<link href="https://rflybuaa.github.io/RflySimRTDoc/dev_manual/userFPGA/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>生成FPGA平台文件 - RflySim-RT</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+          gtag('config', "G-274394082");
+        </script>
+<link href="../../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">RflySim-RT</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">欢迎使用RflySim-RT</a>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">快速开始 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../quickstart/quickstart/">快速开始</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">用户手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/modifyModelParam/">修改模型参数</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/sensorsCalculate/">校准传感器</a>
+</li>
+</ul>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">开发手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../envConfig/">安装开发环境</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">生成FPGA平台文件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../userDefineModel/">生成仿真模型</a>
+</li>
+<li>
+<a class="dropdown-item" href="../userDefineParam/">设置可调参数</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">帮助 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../help/readme/">如何更新文档</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">测试 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../test/test/">测试</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../envConfig/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../userDefineModel/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/dev_manual/userFPGA.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+</li>
+</ul>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart/">快速开始</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">生成FPGA平台文件</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-matlabfpga">1. MATLAB更新FPGA代码</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-vivadoxsa">2. Vivado编译生成.xsa文件</a>
-    </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../userDefineParam/">设置可调参数</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">开发手册</li>
-      <li class="breadcrumb-item active">生成FPGA平台文件</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/dev_manual/userFPGA.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <div><h1 id="fpga">生成FPGA平台文件<a class="headerlink" href="#fpga" title="Permanent link"></a></h1>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#fpga">生成FPGA平台文件</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#1-matlabfpga">1. MATLAB更新FPGA代码</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#2-vivadoxsa">2. Vivado编译生成.xsa文件</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<div><h1 id="fpga">生成FPGA平台文件<a class="headerlink" href="#fpga" title="Permanent link"></a></h1>
 <p>这部分内容涉及的主要软件包括：MATLAB、Vivado。具体的关系为MATLAB/Simulink生成FPGA逻辑代码以IP Core的形式增加到vivado工程中，再由vivado工程编译并输出xsa文件。</p>
 <h2 id="1-matlabfpga">1. MATLAB更新FPGA代码<a class="headerlink" href="#1-matlabfpga" title="Permanent link"></a></h2>
 <p>下图所示的四个模型文件用于生成FPGA IP Core的源码，这里以SensorHub.slx文件举例。</p>
-<p><img alt="" src="../../img-large/genFPGAcode5.png"></p>
-<p>在模型子系统上右键，打开对话窗口<br>
-<img alt="" src="../../img-large/genFPGAcode0.png"></p>
-<p>之后根据提示，选择Yes或者No，之后稍等片刻即可得到下图所示的对话框<br>
-<img alt="" src="../../img-large/genFPGAcode1.png"></p>
-<p>按照下图所示参数进行设置，并在每一步设置好后点击Run This Task，检查运行结果，如果有问题需要根据提示解决，然后再次运行，直到显示Passed。每一步都需要运行。下面几幅图给出了这些步骤的配置。<br>
-<img alt="" src="../../img-large/genFPGAcode2.png"></p>
-<p><img alt="" src="../../img-large/genFPGAcode3.png"></p>
-<p><img alt="" src="../../img-large/genFPGAcode3_1.png"></p>
-<p><img alt="" src="../../img-large/genFPGAcode3_2.png"></p>
-<p><img alt="" src="../../img-large/genFPGAcode4.png"></p>
-<p>前面四个slx模型文件生成的IP Core对应下图中标记处的模块。下图是FPGA逻辑的顶层框图（后文中还会再次提到）。<br>
-<img alt="" src="../../img-large/genFPGAcode6.png"></p>
+<p><img alt="" src="../../img-large/genFPGAcode5.png"/></p>
+<p>在模型子系统上右键，打开对话窗口<br/>
+<img alt="" src="../../img-large/genFPGAcode0.png"/></p>
+<p>之后根据提示，选择Yes或者No，之后稍等片刻即可得到下图所示的对话框<br/>
+<img alt="" src="../../img-large/genFPGAcode1.png"/></p>
+<p>按照下图所示参数进行设置，并在每一步设置好后点击Run This Task，检查运行结果，如果有问题需要根据提示解决，然后再次运行，直到显示Passed。每一步都需要运行。下面几幅图给出了这些步骤的配置。<br/>
+<img alt="" src="../../img-large/genFPGAcode2.png"/></p>
+<p><img alt="" src="../../img-large/genFPGAcode3.png"/></p>
+<p><img alt="" src="../../img-large/genFPGAcode3_1.png"/></p>
+<p><img alt="" src="../../img-large/genFPGAcode3_2.png"/></p>
+<p><img alt="" src="../../img-large/genFPGAcode4.png"/></p>
+<p>前面四个slx模型文件生成的IP Core对应下图中标记处的模块。下图是FPGA逻辑的顶层框图（后文中还会再次提到）。<br/>
+<img alt="" src="../../img-large/genFPGAcode6.png"/></p>
 <h2 id="2-vivadoxsa">2. Vivado编译生成.xsa文件<a class="headerlink" href="#2-vivadoxsa" title="Permanent link"></a></h2>
-<p>打开vivado打开FPGA工程<br>
-<img alt="" src="../../img-large/vivado_build1.png"></p>
-<p>找到工程启动文件<br>
-<img alt="" src="../../img-large/vivado_build2.png"></p>
-<p>如下图操作，可以看到FPGA即PL端的顶层逻辑<br>
-<img alt="" src="../../img-large/vivado_build3.png"></p>
-<p>综合<br>
-<img alt="" src="../../img-large/vivado_build4.png"></p>
-<p>综合完成后，可根据提示进入下一步。或者手动选择下一步。如图<br>
-<img alt="" src="../../img-large/vivado_build5.png"></p>
-<p><img alt="" src="../../img-large/vivado_build6.png"></p>
-<p>完成后，取消<br>
-<img alt="" src="../../img-large/vivado_build7.png"></p>
-<p>生成bit流文件<br>
-<img alt="" src="../../img-large/vivado_build8.png"></p>
+<p>打开vivado打开FPGA工程<br/>
+<img alt="" src="../../img-large/vivado_build1.png"/></p>
+<p>找到工程启动文件<br/>
+<img alt="" src="../../img-large/vivado_build2.png"/></p>
+<p>如下图操作，可以看到FPGA即PL端的顶层逻辑<br/>
+<img alt="" src="../../img-large/vivado_build3.png"/></p>
+<p>综合<br/>
+<img alt="" src="../../img-large/vivado_build4.png"/></p>
+<p>综合完成后，可根据提示进入下一步。或者手动选择下一步。如图<br/>
+<img alt="" src="../../img-large/vivado_build5.png"/></p>
+<p><img alt="" src="../../img-large/vivado_build6.png"/></p>
+<p>完成后，取消<br/>
+<img alt="" src="../../img-large/vivado_build7.png"/></p>
+<p>生成bit流文件<br/>
+<img alt="" src="../../img-large/vivado_build8.png"/></p>
 <div class="admonition note">
 <p class="admonition-title">在执行步骤的等待过程中可以按照下图操作查看进度</p>
-<p><img alt="" src="../../img-large/vivado_build9.png"></p>
+<p><img alt="" src="../../img-large/vivado_build9.png"/></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">生成导出.xsa文件</p>
-<p><img alt="" src="../../img-large/vivado_build10.png"></p>
-<p><img alt="" src="../../img-large/vivado_build11.png"></p>
-<p><img alt="" src="../../img-large/vivado_build12.png"></p>
-<p><img alt="" src="../../img-large/vivado_build13.png"></p>
-</div></div>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../envConfig/" class="btn btn-neutral float-left" title="安装开发环境"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../userDefineModel/" class="btn btn-neutral float-right" title="生成仿真模型">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../envConfig/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../userDefineModel/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+<p><img alt="" src="../../img-large/vivado_build10.png"/></p>
+<p><img alt="" src="../../img-large/vivado_build11.png"/></p>
+<p><img alt="" src="../../img-large/vivado_build12.png"/></p>
+<p><img alt="" src="../../img-large/vivado_build13.png"/></p>
+</div></div></div>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

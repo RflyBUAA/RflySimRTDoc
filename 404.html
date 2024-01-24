@@ -1,157 +1,221 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" />
-      <link rel="shortcut icon" href="/RflySimRTDoc/img/favicon.ico" />
-    <title>RflySim-RT</title>
-    <link rel="stylesheet" href="/RflySimRTDoc/css/theme.css" />
-    <link rel="stylesheet" href="/RflySimRTDoc/css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="/RflySimRTDoc/css/extra.css" rel="stylesheet" />
-    
-    <!--[if lt IE 9]>
-      <script src="/RflySimRTDoc/js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="kechenxu@buaa.edu.cn">
+        
+        <link rel="shortcut icon" href="/RflySimRTDoc/img/favicon.ico">
+        <title>RflySim-RT</title>
+        <link href="/RflySimRTDoc/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/RflySimRTDoc/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/RflySimRTDoc/css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="/RflySimRTDoc/css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
+          gtag('config', "G-274394082");
+        </script> 
+    </head>
 
-<body class="wy-body-for-nav" role="document">
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="/RflySimRTDoc/.">RflySim-RT</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="/RflySimRTDoc/." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="/RflySimRTDoc//search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="/RflySimRTDoc/." class="nav-link">欢迎使用RflySim-RT</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/RflySimRTDoc/quickstart/quickstart/" class="dropdown-item">快速开始</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">用户手册 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/RflySimRTDoc/user_manual/configWIFImodules/" class="dropdown-item">配置WIFI模块</a>
+</li>
+                                    
+<li>
+    <a href="/RflySimRTDoc/user_manual/configforPX41_12/" class="dropdown-item">适配PX4 1.12固件</a>
+</li>
+                                    
+<li>
+    <a href="/RflySimRTDoc/user_manual/modifyModelParam/" class="dropdown-item">修改模型参数</a>
+</li>
+                                    
+<li>
+    <a href="/RflySimRTDoc/user_manual/sensorsCalculate/" class="dropdown-item">校准传感器</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">开发手册 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/RflySimRTDoc/dev_manual/envConfig/" class="dropdown-item">安装开发环境</a>
+</li>
+                                    
+<li>
+    <a href="/RflySimRTDoc/dev_manual/userFPGA/" class="dropdown-item">生成FPGA平台文件</a>
+</li>
+                                    
+<li>
+    <a href="/RflySimRTDoc/dev_manual/userDefineModel/" class="dropdown-item">生成仿真模型</a>
+</li>
+                                    
+<li>
+    <a href="/RflySimRTDoc/dev_manual/userDefineParam/" class="dropdown-item">设置可调参数</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">帮助 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/RflySimRTDoc/help/readme/" class="dropdown-item">如何更新文档</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">测试 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/RflySimRTDoc/test/test/" class="dropdown-item">测试</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/.">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/quickstart/quickstart/">快速开始</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/user_manual/configWIFImodules/">配置WIFI模块</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/user_manual/configforPX41_12/">适配PX4 1.12固件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/user_manual/modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/user_manual/sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/dev_manual/envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/dev_manual/userFPGA/">生成FPGA平台文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/dev_manual/userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/dev_manual/userDefineParam/">设置可调参数</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="/RflySimRTDoc/test/test/">测试</a>
-                  </li>
-              </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+    <div class="row-fluid">
+      <div id="main-content" class="span12">
+        <h1 id="404-page-not-found" style="text-align: center">404</h1>
+        <p style="text-align: center"><strong>Page not found</strong></p>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="/RflySimRTDoc/.">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="/RflySimRTDoc/." class="icon icon-home" aria-label="Docs"></a></li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-
-  <h1 id="404-page-not-found">404</h1>
-
-  <p><strong>Page not found</strong></p>
 
 
             </div>
-          </div><footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
         </div>
-      </div>
 
-    </section>
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="/RflySimRTDoc/js/jquery-3.6.0.min.js"></script>
+        <script src="/RflySimRTDoc/js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "/RflySimRTDoc/",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="/RflySimRTDoc/js/base.js"></script>
+        <script src="/RflySimRTDoc/search/main.js"></script>
 
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-    
-  </span>
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
-    <script src="/RflySimRTDoc/js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "/RflySimRTDoc/";</script>
-    <script src="/RflySimRTDoc/js/theme_extra.js"></script>
-    <script src="/RflySimRTDoc/js/theme.js"></script>
-      <script src="/RflySimRTDoc/search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
 
-</body>
+    </body>
 </html>

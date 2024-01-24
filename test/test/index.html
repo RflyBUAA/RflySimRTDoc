@@ -1,238 +1,212 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/test/test/" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>测试 - RflySim-RT</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/extra.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u6d4b\u8bd5";
-        var mkdocs_page_input_path = "test/test.md";
-        var mkdocs_page_url = "/RflySimRTDoc/test/test/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="kechenxu@buaa.edu.cn" name="author"/>
+<link href="https://rflybuaa.github.io/RflySimRTDoc/test/test/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>测试 - RflySim-RT</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+          gtag('config', "G-274394082");
+        </script>
+<link href="../../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">RflySim-RT</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">欢迎使用RflySim-RT</a>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">快速开始 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../quickstart/quickstart/">快速开始</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">用户手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/modifyModelParam/">修改模型参数</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/sensorsCalculate/">校准传感器</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">开发手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../dev_manual/envConfig/">安装开发环境</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineParam/">设置可调参数</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">帮助 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../help/readme/">如何更新文档</a>
+</li>
+</ul>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">测试 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item active" href="./">测试</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../../help/readme/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/test/test.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+</li>
+</ul>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart/">快速开始</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置可调参数</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">测试</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installing-plugins">Installing Plugins</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using-plugins">Using Plugins</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#developing-plugins">Developing Plugins</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#baseplugin">BasePlugin</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#config_scheme">config_scheme</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#config">config</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#load_configoptions">load_config(options)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#on_event_name">on_&lt;event_name&gt;()</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#events">Events</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#one-time-events">One-time Events</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#global-events">Global Events</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#template-events">Template Events</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#page-events">Page Events</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#event-priorities">Event Priorities</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocspluginsevent_priority">::: mkdocs.plugins.event_priority</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocspluginscombinedevent">::: mkdocs.plugins.CombinedEvent</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#handling-errors">Handling Errors</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocsexceptionsmkdocsexception">::: mkdocs.exceptions.MkDocsException</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocsexceptionsconfigurationerror">::: mkdocs.exceptions.ConfigurationError</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocsexceptionsbuilderror">::: mkdocs.exceptions.BuildError</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocsexceptionspluginerror">::: mkdocs.exceptions.PluginError</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#logging-in-plugins">Logging in plugins</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#mkdocspluginsget_plugin_logger">::: mkdocs.plugins.get_plugin_logger</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#entry-point">Entry Point</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#publishing-a-plugin">Publishing a Plugin</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">测试</li>
-      <li class="breadcrumb-item active">测试</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/test/test.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <div><h1 id="mkdocs-plugins">MkDocs Plugins<a class="headerlink" href="#mkdocs-plugins" title="Permanent link"></a></h1>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#mkdocs-plugins">MkDocs Plugins</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#installing-plugins">Installing Plugins</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#using-plugins">Using Plugins</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#developing-plugins">Developing Plugins</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<div><h1 id="mkdocs-plugins">MkDocs Plugins<a class="headerlink" href="#mkdocs-plugins" title="Permanent link"></a></h1>
 <p>A Guide to installing, using and creating MkDocs Plugins</p>
-<hr>
+<hr/>
 <h2 id="installing-plugins">Installing Plugins<a class="headerlink" href="#installing-plugins" title="Permanent link"></a></h2>
-<p>Before a plugin can be used, it must be installed on the system. If you are<br>
-using a plugin which comes with MkDocs, then it was installed when you installed<br>
-MkDocs. However, to install third party plugins, you need to determine the<br>
+<p>Before a plugin can be used, it must be installed on the system. If you are<br/>
+using a plugin which comes with MkDocs, then it was installed when you installed<br/>
+MkDocs. However, to install third party plugins, you need to determine the<br/>
 appropriate package name and install it using <code>pip</code>:</p>
 <pre class="highlight"><code class="language-bash">pip install mkdocs-foo-plugin</code></pre>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Installing an MkDocs plugin means installing a Python package and executing any code that the author has put in there. So, exercise the usual caution; there's no attempt at sandboxing.</p>
 </div>
-<p>Once a plugin has been successfully installed, it is ready to use. It just needs<br>
-to be <a href="#using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/catalog">Catalog</a><br>
+<p>Once a plugin has been successfully installed, it is ready to use. It just needs<br/>
+to be <a href="#using-plugins">enabled</a> in the configuration file. The <a href="https://github.com/mkdocs/catalog">Catalog</a><br/>
 repository has a large ranked list of plugins that you can install and use.</p>
 <h2 id="using-plugins">Using Plugins<a class="headerlink" href="#using-plugins" title="Permanent link"></a></h2>
-<p>The <a href="../user-guide/configuration.md#plugins"><code>plugins</code></a> configuration option should contain a list of plugins to<br>
-use when building the site. Each "plugin" must be a string name assigned to the<br>
-plugin (see the documentation for a given plugin to determine its "name"). A<br>
+<p>The <a href="../user-guide/configuration.md#plugins"><code>plugins</code></a> configuration option should contain a list of plugins to<br/>
+use when building the site. Each "plugin" must be a string name assigned to the<br/>
+plugin (see the documentation for a given plugin to determine its "name"). A<br/>
 plugin listed here must already be <a href="#installing-plugins">installed</a>.</p>
 <pre class="highlight"><code class="language-yaml">plugins:
   - search</code></pre>
-<p>Some plugins may provide configuration options of their own. If you would like<br>
-to set any configuration options, then you can nest a key/value mapping<br>
-(<code>option_name: option value</code>) of any options that a given plugin supports. Note<br>
-that a colon (<code>:</code>) must follow the plugin name and then on a new line the option<br>
-name and value must be indented and separated by a colon. If you would like to<br>
-define multiple options for a single plugin, each option must be defined on a<br>
+<p>Some plugins may provide configuration options of their own. If you would like<br/>
+to set any configuration options, then you can nest a key/value mapping<br/>
+(<code>option_name: option value</code>) of any options that a given plugin supports. Note<br/>
+that a colon (<code>:</code>) must follow the plugin name and then on a new line the option<br/>
+name and value must be indented and separated by a colon. If you would like to<br/>
+define multiple options for a single plugin, each option must be defined on a<br/>
 separate line.</p>
 <pre class="highlight"><code class="language-yaml">plugins:
   - search:
       lang: en
       foo: bar</code></pre>
-<p>For information regarding the configuration options available for a given plugin,<br>
+<p>For information regarding the configuration options available for a given plugin,<br/>
 see that plugin's documentation.</p>
-<p>For a list of default plugins and how to override them, see the<br>
+<p>For a list of default plugins and how to override them, see the<br/>
 <a href="../user-guide/configuration.md#plugins">configuration</a> documentation.</p>
 <h2 id="developing-plugins">Developing Plugins<a class="headerlink" href="#developing-plugins" title="Permanent link"></a></h2>
-<p>Like MkDocs, plugins must be written in Python. It is generally expected that<br>
-each plugin would be distributed as a separate Python module, although it is<br>
-possible to define multiple plugins in the same module. At a minimum, a MkDocs<br>
-Plugin must consist of a <a href="#baseplugin">BasePlugin</a> subclass and an <a href="#entry-point">entry point</a> which<br>
+<p>Like MkDocs, plugins must be written in Python. It is generally expected that<br/>
+each plugin would be distributed as a separate Python module, although it is<br/>
+possible to define multiple plugins in the same module. At a minimum, a MkDocs<br/>
+Plugin must consist of a <a href="#baseplugin">BasePlugin</a> subclass and an <a href="#entry-point">entry point</a> which<br/>
 points to it.</p>
 <h3 id="baseplugin">BasePlugin<a class="headerlink" href="#baseplugin" title="Permanent link"></a></h3>
-<p>A subclass of <code>mkdocs.plugins.BasePlugin</code> should define the behavior of the plugin.<br>
-The class generally consists of actions to perform on specific events in the build<br>
+<p>A subclass of <code>mkdocs.plugins.BasePlugin</code> should define the behavior of the plugin.<br/>
+The class generally consists of actions to perform on specific events in the build<br/>
 process as well as a configuration scheme for the plugin.</p>
 <p>All <code>BasePlugin</code> subclasses contain the following attributes:</p>
 <h4 id="config_scheme">config_scheme<a class="headerlink" href="#config_scheme" title="Permanent link"></a></h4>
-<p>A tuple of configuration validation instances. Each item must consist of a<br>
-two item tuple in which the first item is the string name of the<br>
-configuration option and the second item is an instance of<br>
+<p>A tuple of configuration validation instances. Each item must consist of a<br/>
+two item tuple in which the first item is the string name of the<br/>
+configuration option and the second item is an instance of<br/>
 <code>mkdocs.config.config_options.BaseConfigOption</code> or any of its subclasses.</p>
 <p>For example, the following <code>config_scheme</code> defines three configuration options: <code>foo</code>, which accepts a string; <code>bar</code>, which accepts an integer; and <code>baz</code>, which accepts a boolean value.</p>
 <pre class="highlight"><code class="language-python">class MyPlugin(mkdocs.plugins.BasePlugin):
@@ -256,7 +230,7 @@ class MyPlugin(mkdocs.plugins.BasePlugin[MyPluginConfig]):
 <h5 id="examples-of-config-definitions">Examples of config definitions<a class="headerlink" href="#examples-of-config-definitions" title="Permanent link"></a></h5>
 <details class="example" open="open">
 <summary>Example</summary>
-<p><br>
+<p><br/>
 </p><pre class="highlight"><code class="language-python">from mkdocs.config import base, config_options as c
 
 class _ValidationOptions(base.Config):
@@ -283,7 +257,7 @@ class MyPluginConfig(base.Config):
 <!-- -->
 <details class="example">
 <summary>Example</summary>
-<p><br>
+<p><br/>
 </p><pre class="highlight"><code class="language-python">import numbers
 from mkdocs.config import base, config_options as c
 
@@ -302,16 +276,16 @@ class MyPluginConfig(base.Config):
     - width: 12
       height: 2</code></pre>
 </details>
-<p>When the user's configuration is loaded, the above scheme will be used to<br>
-validate the configuration and fill in any defaults for settings not<br>
-provided by the user. The validation classes may be any of the classes<br>
-provided in <code>mkdocs.config.config_options</code> or a third party subclass defined<br>
+<p>When the user's configuration is loaded, the above scheme will be used to<br/>
+validate the configuration and fill in any defaults for settings not<br/>
+provided by the user. The validation classes may be any of the classes<br/>
+provided in <code>mkdocs.config.config_options</code> or a third party subclass defined<br/>
 in the plugin.</p>
-<p>Any settings provided by the user which fail validation or are not defined<br>
+<p>Any settings provided by the user which fail validation or are not defined<br/>
 in the <code>config_scheme</code> will raise a <code>mkdocs.config.base.ValidationError</code>.</p>
 <h4 id="config">config<a class="headerlink" href="#config" title="Permanent link"></a></h4>
-<p>A dictionary of configuration options for the plugin, which is populated by<br>
-the <code>load_config</code> method after configuration validation has completed. Use<br>
+<p>A dictionary of configuration options for the plugin, which is populated by<br/>
+the <code>load_config</code> method after configuration validation has completed. Use<br/>
 this attribute to access options provided by the user.</p>
 <pre class="highlight"><code class="language-python">def on_pre_build(self, config, **kwargs):
     if self.config['baz']:
@@ -326,24 +300,24 @@ this attribute to access options provided by the user.</p>
 </div>
 <p>All <code>BasePlugin</code> subclasses contain the following method(s):</p>
 <h4 id="load_configoptions">load_config(options)<a class="headerlink" href="#load_configoptions" title="Permanent link"></a></h4>
-<p>Loads configuration from a dictionary of options. Returns a tuple of<br>
-<code>(errors, warnings)</code>. This method is called by MkDocs during configuration<br>
+<p>Loads configuration from a dictionary of options. Returns a tuple of<br/>
+<code>(errors, warnings)</code>. This method is called by MkDocs during configuration<br/>
 validation and should not need to be called by the plugin.</p>
 <h4 id="on_event_name">on_&lt;event_name&gt;()<a class="headerlink" href="#on_event_name" title="Permanent link"></a></h4>
-<p>Optional methods which define the behavior for specific <a href="#events">events</a>. The plugin<br>
-should define its behavior within these methods. Replace <code>&lt;event_name&gt;</code> with<br>
-the actual name of the event. For example, the <code>pre_build</code> event would be<br>
+<p>Optional methods which define the behavior for specific <a href="#events">events</a>. The plugin<br/>
+should define its behavior within these methods. Replace <code>&lt;event_name&gt;</code> with<br/>
+the actual name of the event. For example, the <code>pre_build</code> event would be<br/>
 defined in the <code>on_pre_build</code> method.</p>
-<p>Most events accept one positional argument and various keyword arguments. It<br>
-is generally expected that the positional argument would be modified (or<br>
-replaced) by the plugin and returned. If nothing is returned (the method<br>
-returns <code>None</code>), then the original, unmodified object is used. The keyword<br>
-arguments are simply provided to give context and/or supply data which may<br>
-be used to determine how the positional argument should be modified. It is<br>
-good practice to accept keyword arguments as <code>**kwargs</code>. In the event that<br>
-additional keywords are provided to an event in a future version of MkDocs,<br>
+<p>Most events accept one positional argument and various keyword arguments. It<br/>
+is generally expected that the positional argument would be modified (or<br/>
+replaced) by the plugin and returned. If nothing is returned (the method<br/>
+returns <code>None</code>), then the original, unmodified object is used. The keyword<br/>
+arguments are simply provided to give context and/or supply data which may<br/>
+be used to determine how the positional argument should be modified. It is<br/>
+good practice to accept keyword arguments as <code>**kwargs</code>. In the event that<br/>
+additional keywords are provided to an event in a future version of MkDocs,<br/>
 there will be no need to alter your plugin.</p>
-<p>For example, the following event would add an additional static_template to<br>
+<p>For example, the following event would add an additional static_template to<br/>
 the theme config:</p>
 <pre class="highlight"><code class="language-python">class MyPlugin(BasePlugin):
     def on_config(self, config, **kwargs):
@@ -357,133 +331,133 @@ the theme config:</p>
     return config</code></pre>
 </div>
 <h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link"></a></h3>
-<p>There are three kinds of events: <a href="#global-events">Global Events</a>, <a href="#page-events">Page Events</a> and<br>
+<p>There are three kinds of events: <a href="#global-events">Global Events</a>, <a href="#page-events">Page Events</a> and<br/>
 <a href="#template-events">Template Events</a>.</p>
 <details class="card">
-  <summary>
+<summary>
     See a diagram with relations between all the plugin events
   </summary>
-  <div class="card-body">
-    <ul>
-      <li>The events themselves are shown in yellow, with their parameters.
+<div class="card-body">
+<ul>
+<li>The events themselves are shown in yellow, with their parameters.
       </li><li>Arrows show the flow of arguments and outputs of each event.
           Sometimes they're omitted.
       </li><li>The events are chronologically ordered from top to bottom.
       </li><li>Dotted lines appear at splits from global events to per-page events.
       </li><li>Click the events' titles to jump to their description.
     </li></ul>
-  </div>
+</div>
 </details>
-<p><br></p>
+<p><br/></p>
 <h4 id="one-time-events">One-time Events<a class="headerlink" href="#one-time-events" title="Permanent link"></a></h4>
 <p>One-time events run once per <code>mkdocs</code> invocation. The only case where these tangibly differ from <a href="#global-events">global events</a> is for <code>mkdocs serve</code>: global events, unlike these, will run multiple times -- once per <em>build</em>.</p>
 <h5 id="on_startup">on_startup<a class="headerlink" href="#on_startup" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_startup<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_startup<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_shutdown">on_shutdown<a class="headerlink" href="#on_shutdown" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_shutdown<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_shutdown<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_serve">on_serve<a class="headerlink" href="#on_serve" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_serve<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_serve<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h4 id="global-events">Global Events<a class="headerlink" href="#global-events" title="Permanent link"></a></h4>
-<p>Global events are called once per build at either the beginning or end of the<br>
-build process. Any changes made in these events will have a global effect on the<br>
+<p>Global events are called once per build at either the beginning or end of the<br/>
+build process. Any changes made in these events will have a global effect on the<br/>
 entire site.</p>
 <h5 id="on_config">on_config<a class="headerlink" href="#on_config" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_config<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_config<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_pre_build">on_pre_build<a class="headerlink" href="#on_pre_build" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_pre_build<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_pre_build<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_files">on_files<a class="headerlink" href="#on_files" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_files<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_files<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_nav">on_nav<a class="headerlink" href="#on_nav" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_nav<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_nav<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_env">on_env<a class="headerlink" href="#on_env" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_env<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_env<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_post_build">on_post_build<a class="headerlink" href="#on_post_build" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_post_build<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_post_build<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_build_error">on_build_error<a class="headerlink" href="#on_build_error" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_build_error<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_build_error<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h4 id="template-events">Template Events<a class="headerlink" href="#template-events" title="Permanent link"></a></h4>
-<p>Template events are called once for each non-page template. Each template event<br>
-will be called for each template defined in the <a href="../user-guide/configuration.md#extra_templates">extra_templates</a> config setting<br>
-as well as any <a href="../user-guide/configuration.md#static_templates">static_templates</a> defined in the theme. All template events are<br>
+<p>Template events are called once for each non-page template. Each template event<br/>
+will be called for each template defined in the <a href="../user-guide/configuration.md#extra_templates">extra_templates</a> config setting<br/>
+as well as any <a href="../user-guide/configuration.md#static_templates">static_templates</a> defined in the theme. All template events are<br/>
 called after the <a href="#on_env">env</a> event and before any <a href="#page-events">page events</a>.</p>
 <h5 id="on_pre_template">on_pre_template<a class="headerlink" href="#on_pre_template" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_pre_template<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_pre_template<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_template_context">on_template_context<a class="headerlink" href="#on_template_context" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_template_context<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_template_context<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_post_template">on_post_template<a class="headerlink" href="#on_post_template" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_post_template<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_post_template<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h4 id="page-events">Page Events<a class="headerlink" href="#page-events" title="Permanent link"></a></h4>
-<p>Page events are called once for each Markdown page included in the site. All<br>
-page events are called after the <a href="#on_post_template">post_template</a> event and before the<br>
+<p>Page events are called once for each Markdown page included in the site. All<br/>
+page events are called after the <a href="#on_post_template">post_template</a> event and before the<br/>
 <a href="#on_post_build">post_build</a> event.</p>
 <h5 id="on_pre_page">on_pre_page<a class="headerlink" href="#on_pre_page" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_pre_page<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_pre_page<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_page_read_source">on_page_read_source<a class="headerlink" href="#on_page_read_source" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_read_source<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_page_read_source<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_page_markdown">on_page_markdown<a class="headerlink" href="#on_page_markdown" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_markdown<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_page_markdown<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_page_content">on_page_content<a class="headerlink" href="#on_page_content" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_content<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_page_content<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_page_context">on_page_context<a class="headerlink" href="#on_page_context" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_page_context<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_page_context<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h5 id="on_post_page">on_post_page<a class="headerlink" href="#on_post_page" title="Permanent link"></a></h5>
-<p>::: mkdocs.plugins.BasePlugin.on_post_page<br>
-    options:<br>
-        show_root_heading: false<br>
+<p>::: mkdocs.plugins.BasePlugin.on_post_page<br/>
+    options:<br/>
+        show_root_heading: false<br/>
         show_root_toc_entry: false</p>
 <h3 id="event-priorities">Event Priorities<a class="headerlink" href="#event-priorities" title="Permanent link"></a></h3>
 <p>For each event type, corresponding methods of plugins are called in the order that the plugins appear in the <code>plugins</code> <a href="../user-guide/configuration.md#plugins">config</a>.</p>
@@ -498,14 +472,14 @@ page events are called after the <a href="#on_post_template">post_template</a> e
 <h4 id="mkdocsexceptionsconfigurationerror">::: mkdocs.exceptions.ConfigurationError<a class="headerlink" href="#mkdocsexceptionsconfigurationerror" title="Permanent link"></a></h4>
 <h4 id="mkdocsexceptionsbuilderror">::: mkdocs.exceptions.BuildError<a class="headerlink" href="#mkdocsexceptionsbuilderror" title="Permanent link"></a></h4>
 <h4 id="mkdocsexceptionspluginerror">::: mkdocs.exceptions.PluginError<a class="headerlink" href="#mkdocsexceptionspluginerror" title="Permanent link"></a></h4>
-<p>Unexpected and uncaught exceptions will interrupt the build process and produce<br>
-typical Python tracebacks, which are useful for debugging your code. However,<br>
-users generally find tracebacks overwhelming and often miss the helpful error<br>
-message. Therefore, MkDocs will catch any of the errors listed above, retrieve<br>
-the error message, and exit immediately with only the helpful message displayed<br>
+<p>Unexpected and uncaught exceptions will interrupt the build process and produce<br/>
+typical Python tracebacks, which are useful for debugging your code. However,<br/>
+users generally find tracebacks overwhelming and often miss the helpful error<br/>
+message. Therefore, MkDocs will catch any of the errors listed above, retrieve<br/>
+the error message, and exit immediately with only the helpful message displayed<br/>
 to the user.</p>
-<p>Therefore, you might want to catch any exceptions within your plugin and raise a<br>
-<code>PluginError</code>, passing in your own custom-crafted message, so that the build<br>
+<p>Therefore, you might want to catch any exceptions within your plugin and raise a<br/>
+<code>PluginError</code>, passing in your own custom-crafted message, so that the build<br/>
 process is aborted with a helpful message.</p>
 <p>The <a href="#on_build_error">on_build_error</a> event will be triggered for any exception.</p>
 <p>For example:</p>
@@ -528,7 +502,7 @@ class MyPlugin(BasePlugin):
 <p>To ensure that your plugins' log messages adhere with MkDocs' formatting and <code>--verbose</code>/<code>--debug</code> flags, please write the logs to a logger under the <code>mkdocs.plugins.</code> namespace.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><br>
+<p><br/>
 </p><pre class="highlight"><code class="language-python">import logging
 
 log = logging.getLogger(f"mkdocs.plugins.{__name__}")
@@ -549,19 +523,19 @@ if log.getEffectiveLevel() &lt;= logging.DEBUG:
 <h4 id="mkdocspluginsget_plugin_logger">::: mkdocs.plugins.get_plugin_logger<a class="headerlink" href="#mkdocspluginsget_plugin_logger" title="Permanent link"></a></h4>
 </div>
 <h3 id="entry-point">Entry Point<a class="headerlink" href="#entry-point" title="Permanent link"></a></h3>
-<p>Plugins need to be packaged as Python libraries (distributed on PyPI separate<br>
-from MkDocs) and each must register as a Plugin via a setuptools <code>entry_points</code>.<br>
+<p>Plugins need to be packaged as Python libraries (distributed on PyPI separate<br/>
+from MkDocs) and each must register as a Plugin via a setuptools <code>entry_points</code>.<br/>
 Add the following to your <code>setup.py</code> script:</p>
 <pre class="highlight"><code class="language-python">entry_points={
     'mkdocs.plugins': [
         'pluginname = path.to.some_plugin:SomePluginClass',
     ]
 }</code></pre>
-<p>The <code>pluginname</code> would be the name used by users (in the config file) and<br>
-<code>path.to.some_plugin:SomePluginClass</code> would be the importable plugin itself<br>
-(<code>from path.to.some_plugin import SomePluginClass</code>) where <code>SomePluginClass</code> is a<br>
-subclass of <a href="#baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple<br>
-Plugin classes could exist in the same module. Simply define each as a separate<br>
+<p>The <code>pluginname</code> would be the name used by users (in the config file) and<br/>
+<code>path.to.some_plugin:SomePluginClass</code> would be the importable plugin itself<br/>
+(<code>from path.to.some_plugin import SomePluginClass</code>) where <code>SomePluginClass</code> is a<br/>
+subclass of <a href="#baseplugin">BasePlugin</a> which defines the plugin behavior. Naturally, multiple<br/>
+Plugin classes could exist in the same module. Simply define each as a separate<br/>
 entry point.</p>
 <pre class="highlight"><code class="language-python">entry_points={
     'mkdocs.plugins': [
@@ -569,56 +543,83 @@ entry point.</p>
         'featureB = path.to.my_plugins:PluginB'
     ]
 }</code></pre>
-<p>Note that registering a plugin does not activate it. The user still needs to<br>
+<p>Note that registering a plugin does not activate it. The user still needs to<br/>
 tell MkDocs to use it via the config.</p>
 <h3 id="publishing-a-plugin">Publishing a Plugin<a class="headerlink" href="#publishing-a-plugin" title="Permanent link"></a></h3>
-<p>You should publish a package on <a href="https://pypi.org/">PyPI</a>, then add it to the <a href="https://github.com/mkdocs/catalog">Catalog</a> for discoverability. Plugins are strongly recommended to have a unique plugin name (entry point name) according to the catalog.</p></div>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../help/readme/" class="btn btn-neutral float-left" title="如何更新文档"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../../help/readme/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-  </span>
+<p>You should publish a package on <a href="https://pypi.org/">PyPI</a>, then add it to the <a href="https://github.com/mkdocs/catalog">Catalog</a> for discoverability. Plugins are strongly recommended to have a unique plugin name (entry point name) according to the catalog.</p></div></div>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

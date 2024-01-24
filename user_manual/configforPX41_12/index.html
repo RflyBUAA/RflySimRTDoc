@@ -1,124 +1,148 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/user_manual/configforPX41_12/" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>适配PX4 1.12固件 - RflySim-RT</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/extra.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u9002\u914dPX4 1.12\u56fa\u4ef6";
-        var mkdocs_page_input_path = "user_manual/configforPX41_12.md";
-        var mkdocs_page_url = "/RflySimRTDoc/user_manual/configforPX41_12/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="kechenxu@buaa.edu.cn" name="author"/>
+<link href="https://rflybuaa.github.io/RflySimRTDoc/user_manual/configforPX41_12/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>适配PX4 1.12固件 - RflySim-RT</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+          gtag('config', "G-274394082");
+        </script>
+<link href="../../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">RflySim-RT</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">欢迎使用RflySim-RT</a>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">快速开始 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../quickstart/quickstart/">快速开始</a>
+</li>
+</ul>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">用户手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../configWIFImodules/">配置WIFI模块</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">适配PX4 1.12固件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../modifyModelParam/">修改模型参数</a>
+</li>
+<li>
+<a class="dropdown-item" href="../sensorsCalculate/">校准传感器</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">开发手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../dev_manual/envConfig/">安装开发环境</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineParam/">设置可调参数</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">帮助 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../help/readme/">如何更新文档</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">测试 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../test/test/">测试</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../configWIFImodules/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../modifyModelParam/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/user_manual/configforPX41_12.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+</li>
+</ul>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart/">快速开始</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../configWIFImodules/">配置WIFI模块</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">适配PX4 1.12固件</a>
-    <ul class="current">
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置可调参数</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">用户手册</li>
-      <li class="breadcrumb-item active">适配PX4 1.12固件</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/user_manual/configforPX41_12.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <div><h1 id="px4-112">如何适配PX4 1.12版本固件<a class="headerlink" href="#px4-112" title="Permanent link"></a></h1>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#px4-112">如何适配PX4 1.12版本固件</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<div><h1 id="px4-112">如何适配PX4 1.12版本固件<a class="headerlink" href="#px4-112" title="Permanent link"></a></h1>
 <div class="admonition tip">
 <p class="admonition-title">1.12版本固件相较1.11版本固件有一些变化。以下内容读者了解即可。</p>
 <ol>
@@ -127,7 +151,7 @@
 </ol>
 </div>
 <p>以下内容需要用户手动操作，以适配1.12版本的固件。</p>
-<p>1.12版本在传感器启动脚本上需要做的改动与1.11版本不同。1.12版本应该修改rc.board_sensors（这里只针对Pixhawk 4，其他硬件用户可据此模仿进行修改）为：<br>
+<p>1.12版本在传感器启动脚本上需要做的改动与1.11版本不同。1.12版本应该修改rc.board_sensors（这里只针对Pixhawk 4，其他硬件用户可据此模仿进行修改）为：<br/>
 </p><pre class="highlight"><code>#!/bin/sh
 #
 # PX4 FMUv5 specific board sensors init
@@ -162,57 +186,81 @@ ist8310 -I -R 10 start
 # External compass on GPS1/I2C1 (the 3rd external bus): standard Holybro Pixhawk 4 or CUAV V5 GPS/compass puck (with lights, safety button, and buzzer)
 ist8310 -X -b 1 -R 10 start
 fi</code></pre>
-<p>修改后的脚本逻辑是：优先启动外置传感器，如果启动失败则会启动内置传感器。<br>
-编译出的固件既可以用于仿真也可以用于实飞，不需要分别编译两个不同的固件。</p></div>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../configWIFImodules/" class="btn btn-neutral float-left" title="配置WIFI模块"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../modifyModelParam/" class="btn btn-neutral float-right" title="修改模型参数">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../configWIFImodules/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../modifyModelParam/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+<p>修改后的脚本逻辑是：优先启动外置传感器，如果启动失败则会启动内置传感器。<br/>
+编译出的固件既可以用于仿真也可以用于实飞，不需要分别编译两个不同的固件。</p></div></div>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

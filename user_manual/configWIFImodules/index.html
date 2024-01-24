@@ -1,133 +1,163 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/user_manual/configWIFImodules/" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>配置WIFI模块 - RflySim-RT</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/extra.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u914d\u7f6eWIFI\u6a21\u5757";
-        var mkdocs_page_input_path = "user_manual/configWIFImodules.md";
-        var mkdocs_page_url = "/RflySimRTDoc/user_manual/configWIFImodules/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="kechenxu@buaa.edu.cn" name="author"/>
+<link href="https://rflybuaa.github.io/RflySimRTDoc/user_manual/configWIFImodules/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>配置WIFI模块 - RflySim-RT</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+          gtag('config', "G-274394082");
+        </script>
+<link href="../../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">RflySim-RT</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">欢迎使用RflySim-RT</a>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">快速开始 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../quickstart/quickstart/">快速开始</a>
+</li>
+</ul>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">用户手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item active" href="./">配置WIFI模块</a>
+</li>
+<li>
+<a class="dropdown-item" href="../configforPX41_12/">适配PX4 1.12固件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../modifyModelParam/">修改模型参数</a>
+</li>
+<li>
+<a class="dropdown-item" href="../sensorsCalculate/">校准传感器</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">开发手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../dev_manual/envConfig/">安装开发环境</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineParam/">设置可调参数</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">帮助 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../help/readme/">如何更新文档</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">测试 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../test/test/">测试</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../../quickstart/quickstart/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../configforPX41_12/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/user_manual/configWIFImodules.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+</li>
+</ul>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart/">快速开始</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">配置WIFI模块</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1">1 初次使用</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2">2 设置网络</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3">3 更多设置请参考</a>
-    </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../configforPX41_12/">适配PX4 1.12固件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置可调参数</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">用户手册</li>
-      <li class="breadcrumb-item active">配置WIFI模块</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/user_manual/configWIFImodules.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <div><h1 id="wifi">配置WIFI模块<a class="headerlink" href="#wifi" title="Permanent link"></a></h1>
-<p>这套系统需要使用<strong>串口转WIFI模块</strong>发送模型的位置姿态等用于显示的数据。用户可以使用任何串口转WIFI模块，只需要按照串口正确连接即可。<br>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#wifi">配置WIFI模块</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#1">1 初次使用</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#2">2 设置网络</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#3">3 更多设置请参考</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<div><h1 id="wifi">配置WIFI模块<a class="headerlink" href="#wifi" title="Permanent link"></a></h1>
+<p>这套系统需要使用<strong>串口转WIFI模块</strong>发送模型的位置姿态等用于显示的数据。用户可以使用任何串口转WIFI模块，只需要按照串口正确连接即可。<br/>
 要求为：串口转WIFI模块配置为波特率921600，并以UDP透传模式向局域网中用户指定主机IP和端口20010发送数据。</p>
-<p>这里以正点原子的<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&amp;id=609757779633&amp;ns=1&amp;abbucket=8&amp;skuId=4447338308660">ATK-ESP8266</a>为例说明配置方法。其他模块配置要求类似，但是用到的指令可能有所区别。<br>
+<p>这里以正点原子的<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.18.69a09754bcIZd5&amp;id=609757779633&amp;ns=1&amp;abbucket=8&amp;skuId=4447338308660">ATK-ESP8266</a>为例说明配置方法。其他模块配置要求类似，但是用到的指令可能有所区别。<br/>
 配置前需要自行准备USB转串口模块，以便与串口转WIFI模块连接配置其参数。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -141,21 +171,20 @@
 <p class="admonition-title">Note</p>
 <p>WIFI模块模块出厂默认波特率115200</p>
 </div>
-<p>1.设置WIFI模式为SAT，也就是作为网卡连接局域网<br>
+<p>1.设置WIFI模式为SAT，也就是作为网卡连接局域网<br/>
 </p><pre class="highlight"><code>AT+CWMODE=1</code></pre>
-<p>2.重启模块，使前面的设置生效<br>
+<p>2.重启模块，使前面的设置生效<br/>
 </p><pre class="highlight"><code>AT+RST</code></pre>
-<p>3.指定WIFI名称和密码，将<code>&lt;wifi-name&gt;</code>替换为局域网网络名称，将<code>&lt;password&gt;</code>替换为局域网密码<br>
+<p>3.指定WIFI名称和密码，将<code>&lt;wifi-name&gt;</code>替换为局域网网络名称，将<code>&lt;password&gt;</code>替换为局域网密码<br/>
 </p><pre class="highlight"><code>AT+CWJAP="&lt;wifi-name&gt;","&lt;password&gt;"</code></pre>
-<p>4.启用单连接模式<br>
+<p>4.启用单连接模式<br/>
 </p><pre class="highlight"><code>AT+CIPMUX=0</code></pre>
-<p>5.指定模块要转发的目标机地址和目标端口号。将<code>192.168.XXX.XXX</code>改为目标主机的IP地址，不建议设置为<code>255.255.255.255</code>。<br>
+<p>5.指定模块要转发的目标机地址和目标端口号。将<code>192.168.XXX.XXX</code>改为目标主机的IP地址，不建议设置为<code>255.255.255.255</code>。<br/>
 </p><pre class="highlight"><code>AT+CIPSTART="UDP","192.168.XXX.XXX",14550</code></pre>
 <h2 id="2">2 设置网络<a class="headerlink" href="#2" title="Permanent link"></a></h2>
-<p>如果在使用中更换了局域网络，那么需要重新设置WIFI模块的网络连接。<br>
+<p>如果在使用中更换了局域网络，那么需要重新设置WIFI模块的网络连接。<br/>
 RflySim3D从端口20010读取飞行器的位置姿态数据。</p>
 <!-- TIP: QGC地面站的端口号是14550 -->
-
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -164,19 +193,17 @@ RflySim3D从端口20010读取飞行器的位置姿态数据。</p>
 <li>串口转WIFI模块串口端最终应配置为<strong>921600</strong>波特率</li>
 </ul>
 </div>
-<p>1.退出透传模式（不包括换行符，否则无效）<br>
+<p>1.退出透传模式（不包括换行符，否则无效）<br/>
 </p><pre class="highlight"><code>+++</code></pre>
 <p>2.查看当前连接状态</p>
 <pre class="highlight"><code>AT+CIPSTATUS</code></pre>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357693609-64b1ba55-ad10-44d0-be4e-4cc18b0ce256.png#averageHue=%230d490d&height=66&id=KS4JA&originHeight=78&originWidth=391&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7433&status=done&style=none&title=&width=333) -->
-
-<p>3.获取模块 IP 地址<br>
+<p>3.获取模块 IP 地址<br/>
 </p><pre class="highlight"><code>AT+CIFSR</code></pre>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357074005-f527bd1d-80c8-4aa8-b2d5-4fd8572fae8f.png#averageHue=%230e4a0e&height=66&id=w2dJj&originHeight=74&originWidth=371&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7563&status=done&style=none&title=&width=333) -->
-
-<p>4.指定（修改）WIFI名称和密码<br>
+<p>4.指定（修改）WIFI名称和密码<br/>
 </p><pre class="highlight"><code>AT+CWJAP="&lt;wifi-name&gt;","&lt;password&gt;"</code></pre>
-<p>5.指定上电透传模式参数。<br>
+<p>5.指定上电透传模式参数。<br/>
 </p><pre class="highlight"><code>AT+SAVETRANSLINK=&lt;mode&gt;,&lt;remote IP&gt;,&lt;remote port&gt;,&lt;type&gt;,&lt;TCP keep alive&gt;,&lt;UDP local port&gt;</code></pre>
 <table>
 <thead>
@@ -212,65 +239,88 @@ RflySim3D从端口20010读取飞行器的位置姿态数据。</p>
 </tr>
 </tbody>
 </table>
-<p>例如：<br>
+<p>例如：<br/>
 </p><pre class="highlight"><code>AT+SAVETRANSLINK=1,"192.168.XXX.XXX",20010,"UDP",20011</code></pre>
-<p>6.修改串口比特率<br>
+<p>6.修改串口比特率<br/>
 </p><pre class="highlight"><code>AT+UART=921600,8,1,0,0</code></pre>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2020/png/1166025/1603357052829-c00b0375-f6bc-44e8-ba03-71b9f71b58d6.png#averageHue=%23074507&height=45&id=oevYq&originHeight=50&originWidth=366&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3230&status=done&style=none&title=&width=329) -->
-
-<p>7.退出开机透传模式<br>
+<p>7.退出开机透传模式<br/>
 </p><pre class="highlight"><code>AT+SAVETRANSLINK=0</code></pre>
 <h2 id="3">3 更多设置请参考<a class="headerlink" href="#3" title="Permanent link"></a></h2>
-<p><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/1166025/1663297701072-8afc670e-7056-4274-bc65-264ab8bc136a.pdf">ATK-ESP8266 WIFI用户手册_V1.3.pdf</a></p></div>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../quickstart/quickstart/" class="btn btn-neutral float-left" title="快速开始"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../configforPX41_12/" class="btn btn-neutral float-right" title="适配PX4 1.12固件">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../../quickstart/quickstart/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../configforPX41_12/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/1166025/1663297701072-8afc670e-7056-4274-bc65-264ab8bc136a.pdf">ATK-ESP8266 WIFI用户手册_V1.3.pdf</a></p></div></div>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

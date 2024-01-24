@@ -1,150 +1,176 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="kechenxu@buaa.edu.cn" /><link rel="canonical" href="https://rflybuaa.github.io/RflySimRTDoc/quickstart/quickstart/" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>快速开始 - RflySim-RT</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/extra.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u5feb\u901f\u5f00\u59cb";
-        var mkdocs_page_input_path = "quickstart/quickstart.md";
-        var mkdocs_page_url = "/RflySimRTDoc/quickstart/quickstart/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="kechenxu@buaa.edu.cn" name="author"/>
+<link href="https://rflybuaa.github.io/RflySimRTDoc/quickstart/quickstart/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>快速开始 - RflySim-RT</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-274394082"></script>
+<script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', "G-274394082");
-      </script>
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> RflySim-RT
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+          gtag('config', "G-274394082");
+        </script>
+<link href="../../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">RflySim-RT</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">欢迎使用RflySim-RT</a>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">快速开始 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item active" href="./">快速开始</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">用户手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/modifyModelParam/">修改模型参数</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../user_manual/sensorsCalculate/">校准传感器</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">开发手册 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../dev_manual/envConfig/">安装开发环境</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../dev_manual/userDefineParam/">设置可调参数</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">帮助 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../help/readme/">如何更新文档</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">测试 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../test/test/">测试</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../.." rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../../user_manual/configWIFImodules/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/quickstart/quickstart.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+</li>
+</ul>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用RflySim-RT</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">快速开始</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">快速开始</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1">1. 硬件连接</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#11">1.1 关键硬件清单</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#12">1.2 硬件接口定义图</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#13">1.3 其他连接</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2">2. 飞控固件设置</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3">3. 固件参数设置</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4">4. 开发板固件安装</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5">5. 飞控上电</a>
-    </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">用户手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configWIFImodules/">配置WIFI模块</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/modifyModelParam/">修改模型参数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user_manual/sensorsCalculate/">校准传感器</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">开发手册</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/envConfig/">安装开发环境</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userFPGA/">生成FPGA平台文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineModel/">生成仿真模型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../dev_manual/userDefineParam/">设置可调参数</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">帮助</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../help/readme/">如何更新文档</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">测试</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../test/test/">测试</a>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">RflySim-RT</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">快速开始</li>
-      <li class="breadcrumb-item active">快速开始</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc/blob/master/docs/quickstart/quickstart.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <div><h1 id="_1">快速开始<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#_1">快速开始</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#1">1. 硬件连接</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#2">2. 飞控固件设置</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#3">3. 固件参数设置</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#4">4. 开发板固件安装</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#5">5. 飞控上电</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<div><h1 id="_1">快速开始<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
 <p>首先介绍硬件连接，读者请按照文档指引完成硬件连接。之后介绍软件配置，读者可据此实现第一次运行。</p>
 <h2 id="1">1. 硬件连接<a class="headerlink" href="#1" title="Permanent link"></a></h2>
-<p>本系统的硬件连接如下图所示。<br>
-<img alt="" src="../../img-large/%E6%A1%86%E5%9B%BE.png"></p>
+<p>本系统的硬件连接如下图所示。<br/>
+<img alt="" src="../../img-large/%E6%A1%86%E5%9B%BE.png"/></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>本仿真系统也支持飞控系统RflyPilot，连接图如下。详细内容可以参考该<a href="https://rflypilot.github.io">RflyPilot的文档</a>。<br>
-<img alt="" src="../../img-large/rflypilot_rflysim-rt%E8%BF%9E%E6%8E%A5%E5%9B%BE.png"></p>
+<p>本仿真系统也支持飞控系统RflyPilot，连接图如下。详细内容可以参考该<a href="https://rflypilot.github.io">RflyPilot的文档</a>。<br/>
+<img alt="" src="../../img-large/rflypilot_rflysim-rt%E8%BF%9E%E6%8E%A5%E5%9B%BE.png"/></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -234,8 +260,8 @@
 <p class="admonition-title">Note</p>
 <p>每个接口的左数第一个引脚是PIN 1, 也就是VCC</p>
 </div>
-<p><img alt="图：Pixhawk 4 上用到的接口" src="../../img/pixhawk4pinout.png"></p>
-<p><img alt="图：Pixhawk 4 连接实物图" src="../../img/pixhawk4connect.png"></p>
+<p><img alt="图：Pixhawk 4 上用到的接口" src="../../img/pixhawk4pinout.png"/></p>
+<p><img alt="图：Pixhawk 4 连接实物图" src="../../img/pixhawk4connect.png"/></p>
 <p>I2C A接口定义</p>
 <table>
 <thead>
@@ -416,23 +442,22 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>以上给出了所用到的接口定义。更详细的接口定义可以参考<br>
+<p>以上给出了所用到的接口定义。更详细的接口定义可以参考<br/>
 <a href="https://www.yuque.com/attachments/yuque/0/2021/pdf/1166025/1627387378406-23e412b3-557b-4c01-bcb7-93daf58663f1.pdf">Pixhawk4-Pinouts.pdf</a></p>
 </div>
 <p><strong>开发板IO接口定义图, 管脚和红框中的定义标记依次对应</strong></p>
-<p><img alt="图：开发板IO接口定义" src="../../img-large/%E5%BC%80%E5%8F%91%E6%9D%BF%E7%AE%A1%E8%84%9A%E5%AE%9A%E4%B9%89.png"></p>
+<p><img alt="图：开发板IO接口定义" src="../../img-large/%E5%BC%80%E5%8F%91%E6%9D%BF%E7%AE%A1%E8%84%9A%E5%AE%9A%E4%B9%89.png"/></p>
 <p>如上图（<code>图：开发板IO接口定义</code>）所示，将串口wifi模块安装到开发板左下角位置上。效果图如下</p>
-<p><img alt="图：wifi模块的安装效果" src="../../img/wifi%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%88%E6%9E%9C.png"></p>
+<p><img alt="图：wifi模块的安装效果" src="../../img/wifi%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%88%E6%9E%9C.png"/></p>
 <!-- ![image.png](https://cdn.nlark.com/yuque/0/2021/png/1166025/1627398665804-20ddf57c-881a-4e30-9eb3-e97b722219c7.png#averageHue=%236b7274&height=434&id=u6f8a0674&originHeight=737&originWidth=821&originalType=binary&ratio=1&rotation=0&showTitle=false&size=799912&status=done&style=none&title=&width=484) -->
-
 <h3 id="13">1.3 其他连接<a class="headerlink" href="#13" title="Permanent link"></a></h3>
 <p>1.将开发板的PS串口通过数据线与电脑USB接口连接</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>串口用于系统调试，建议使用<a href="https://mobaxterm.mobatek.net/"><strong>MobaXterm</strong></a>\<br>
-<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a>\<br>
-<a href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a>\<br>
-<a href="https://github.com/kingToolbox/WindTerm">WindTerm</a><br>
+<p>串口用于系统调试，建议使用<a href="https://mobaxterm.mobatek.net/"><strong>MobaXterm</strong></a>\<br/>
+<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a>\<br/>
+<a href="https://www.vandyke.com/products/securecrt/index.html">SecureCRT</a>\<br/>
+<a href="https://github.com/kingToolbox/WindTerm">WindTerm</a><br/>
 等的工具在电脑上打开串口连接，实现命令行功能。尽管其他的串口助手软件也可使用，但是无法实现命令行的交互效果。</p>
 </div>
 <p>2.连接开发板电源</p>
@@ -441,19 +466,19 @@
 <p><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.32f12e8dZlbJXh&amp;id=599221327119&amp;_u=rqvdro2801a">可以购买带开关的DC电源线, 免去电源插拔的繁琐操作</a></p>
 </div>
 <h2 id="2">2. 飞控固件设置<a class="headerlink" href="#2" title="Permanent link"></a></h2>
-<p><strong>RflySim-RT</strong>借助FPGA模拟真实的传感器逻辑从而实现硬件在环仿真的目的。比较通用的做法是将原有传感器去除，并在原有焊接接口上飞线并与仿真平台连接。好在，Pixhawk 4上提供了外置的SPI和I2C接口，可以借助这些接口直接与仿真器连接。因此，需要让飞控默认使用外置SPI和I2C接口，与仿真器进行通信。<br>
+<p><strong>RflySim-RT</strong>借助FPGA模拟真实的传感器逻辑从而实现硬件在环仿真的目的。比较通用的做法是将原有传感器去除，并在原有焊接接口上飞线并与仿真平台连接。好在，Pixhawk 4上提供了外置的SPI和I2C接口，可以借助这些接口直接与仿真器连接。因此，需要让飞控默认使用外置SPI和I2C接口，与仿真器进行通信。<br/>
 这里采用修改PX4启动脚本的方式让自动驾驶仪在启动的时候优先尝试连接外部SPI的IMU，从而实现一次烧录，既能用于仿真也能用于实飞的目的。这里修改<strong>飞控的传感器启动脚本进行简单修改重新编译烧录到飞控中</strong>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>默认支持PX4 v1.11版本的固件。对于v1.12的支持请参考<a href="../../user_manual/configforPX41_12/">适配PX4 1.12固件</a>。区别主要在于启动脚本的修改内容有细微的变化。 </p>
 </div>
-<p>这里假设用户使用RflySim进行控制算法的开发。为了能够与RflySim-RT实现仿真，需要修改固件源码的启动脚本。对于Pixhawk 4飞控而言，启动脚本路径位于<strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\rc.board_sensors</strong>。<br>
+<p>这里假设用户使用RflySim进行控制算法的开发。为了能够与RflySim-RT实现仿真，需要修改固件源码的启动脚本。对于Pixhawk 4飞控而言，启动脚本路径位于<strong>X:\PX4PSP\Firmware\boards\px4\fmu-v5\init\rc.board_sensors</strong>。<br/>
 其他类型的飞控可在路径 <strong>\Firmware\boards</strong> 中查找。<code>X</code>是RflySim的安装盘符，默认是C盘。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果使用官方原生固件，也需要到对应的目录<code>Firmware\boards\px4\fmu-v5\init\</code>下修改rc.board_sensors文件，需要修改内容也是一样的。建议使用vscode之类的编辑软件。因为回车符的区别，不建议使用Windows系统的记事本。</p>
 </div>
-<p>使用编辑器打开rc.board_sensors。修改为如下内容<br>
+<p>使用编辑器打开rc.board_sensors。修改为如下内容<br/>
 </p><pre class="highlight"><code>#!/bin/sh
 #
 # PX4 FMUv5 specific board sensors init
@@ -487,19 +512,19 @@ fi
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
-<li>请再次确认飞控中安装的PX4飞控固件版本是1.11.3版本。<br> <br>
-<img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E5%9B%BA%E4%BB%B6%E7%89%88%E6%9C%AC.png"></li>
-<li>且飞控的模式是四旋翼。<br><br>
-<img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E6%9C%BA%E6%9E%B6%E7%B1%BB%E5%9E%8B.png"></li>
+<li>请再次确认飞控中安装的PX4飞控固件版本是1.11.3版本。<br/> <br/>
+<img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E5%9B%BA%E4%BB%B6%E7%89%88%E6%9C%AC.png"/></li>
+<li>且飞控的模式是四旋翼。<br/><br/>
+<img alt="" src="../../img/%E7%A1%AE%E8%AE%A4%E6%9C%BA%E6%9E%B6%E7%B1%BB%E5%9E%8B.png"/></li>
 </ul>
 </div>
 <h2 id="3">3. 固件参数设置<a class="headerlink" href="#3" title="Permanent link"></a></h2>
-<p>成功运行仿真系统只需要修改以下参数为指定值，见下图<br>
-<img alt="" src="../../img-large/SER_GPS1_BAUD.png"></p>
-<p><img alt="" src="../../img-large/GPS_UBX_DYNMODEL.png"></p>
+<p>成功运行仿真系统只需要修改以下参数为指定值，见下图<br/>
+<img alt="" src="../../img-large/SER_GPS1_BAUD.png"/></p>
+<p><img alt="" src="../../img-large/GPS_UBX_DYNMODEL.png"/></p>
 <h2 id="4">4. 开发板固件安装<a class="headerlink" href="#4" title="Permanent link"></a></h2>
 <p>开发板采用SD启动方式。操作步骤如下:</p>
-<p>1.从开发板上取下SD卡，使用读卡器将固件复制到SD卡根目录上。<br>
+<p>1.从开发板上取下SD卡，使用读卡器将固件复制到SD卡根目录上。<br/>
 固件下载链接：<a href="https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653">https://bhpan.buaa.edu.cn:443/link/1FF3201F500F3D00A9C483235A36B653</a>有效期限：2023-09-01 23:59</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -509,22 +534,22 @@ fi
 </ul>
 </div>
 <p>2.通过拨码开关，设置开发板的上电启动模式为SD卡模式。拨码开关设置参考下图，应设置为0101，对应到图中从左到右是<strong>上下上下</strong>。</p>
-<p><img alt="" src="../../img-large/%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p><img alt="" src="../../img-large/%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E7%A4%BA%E6%84%8F%E5%9B%BE.png"/></p>
 <p>3.将SD卡插回到开发板上。</p>
-<hr>
+<hr/>
 <p>完成以上设置后，给开发板通电，并且连接USB到电脑，可以在设备管理器中看到（<strong>确认已经安装CP210X的驱动</strong>），使用串口终端连接串口。</p>
-<p><img alt="" src="../../img-large/%E4%B8%B2%E5%8F%A3%E5%9C%A8%E8%AE%BE%E5%A4%87%E4%B8%8A%E7%9A%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png"></p>
+<p><img alt="" src="../../img-large/%E4%B8%B2%E5%8F%A3%E5%9C%A8%E8%AE%BE%E5%A4%87%E4%B8%8A%E7%9A%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png"/></p>
 <p>这里使用MobaXterm举例打开串口，波特率设置为115200，打开后在串口终端里输入<strong>help</strong>并且<strong>回车</strong>。见下图：</p>
-<p><img alt="" src="../../img-large/shell.gif"></p>
-<p>当然也可以先连接串口再打开开发板，或者按下开发板的复位键，应该能看到更多启动信息。见下图：<br>
-<img alt="" src="../../img-large/shell2.gif"></p>
+<p><img alt="" src="../../img-large/shell.gif"/></p>
+<p>当然也可以先连接串口再打开开发板，或者按下开发板的复位键，应该能看到更多启动信息。见下图：<br/>
+<img alt="" src="../../img-large/shell2.gif"/></p>
 <p>如果连接了串口转wifi模块，打开RflySim3D软件应该可以看到一架四旋翼飞行器出现在窗口中（如果没有显示，请先检查wifi模块是否正常连接到局域网中）</p>
-<p><img alt="" src="../../img-large/%E5%9B%9B%E6%97%8B%E7%BF%BC%E9%A3%9E%E8%A1%8C%E5%99%A8%E5%9C%A83D%E4%B8%AD%E6%98%BE%E7%A4%BA.png"></p>
+<p><img alt="" src="../../img-large/%E5%9B%9B%E6%97%8B%E7%BF%BC%E9%A3%9E%E8%A1%8C%E5%99%A8%E5%9C%A83D%E4%B8%AD%E6%98%BE%E7%A4%BA.png"/></p>
 <h2 id="5">5. 飞控上电<a class="headerlink" href="#5" title="Permanent link"></a></h2>
 <p>连接飞控与电脑（确保已经按照前面步骤重刷修改过启动脚本的固件），打开QGC可以看到地面站连接到飞控. 在地面站的控制台中输入<code>sensors status</code> 回车，可以看到飞控读取到的传感器信息。</p>
-<p><img alt="" src="../../img-large/QGC.gif"></p>
+<p><img alt="" src="../../img-large/QGC.gif"/></p>
 <p>如果配置过程没问题得话，可以获得传感器状态信息如下图。这些传感器数据实际上是FPGA模拟出来的，飞控却会认为这是真实的传感器。</p>
-<p><img alt="" src="../../img-large/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F%E4%BC%A0%E6%84%9F%E5%99%A8%E8%BF%9E%E6%8E%A5.png"></p>
+<p><img alt="" src="../../img-large/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F%E4%BC%A0%E6%84%9F%E5%99%A8%E8%BF%9E%E6%8E%A5.png"/></p>
 <div class="admonition info inline end">
 <p class="admonition-title">如果没有出现以上效果请再次确认</p>
 <ul>
@@ -533,56 +558,80 @@ fi
 <li>确认飞控和开发板物理接线正确。 </li>
 <li>检查地线是否正确连接。</li>
 </ul>
-</div></div>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../.." class="btn btn-neutral float-left" title="欢迎使用RflySim-RT"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../user_manual/configWIFImodules/" class="btn btn-neutral float-right" title="配置WIFI模块">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-        <span>
-          <a href="https://github.com/RflyBUAA/RflySimRTDoc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../user_manual/configWIFImodules/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+</div></div></div>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
